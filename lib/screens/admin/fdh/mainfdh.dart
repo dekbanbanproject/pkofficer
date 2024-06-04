@@ -15,10 +15,11 @@ class MainFdh extends StatefulWidget {
 class _MainFdhState extends State<MainFdh> {
   int currentIndex = 2;
   List screens = const [
-    MainAuthpidsit(), // 0
+      Scaffold(), // 0
     MainPidsit(), // 1
     // MainFdh(),        // 2
-    Scaffold(), // 2
+   
+    MainAuthpidsit(), //2
     MainPullPidsit(), // 3
     MainPidsitReport(), // 4
     // Scaffold()         // 5
