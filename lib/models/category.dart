@@ -11,7 +11,7 @@ final List<Category> categories = [
   Category(title: "Electric", image: "images/electrice.png"),
   Category(title: "Plumbing", image: "images/Plumbing.png"),
   Category(title: "Phone", image: "images/tel_1.png"),
-  Category(title: "Pull Authen", image: "images/authen.png")
+  Category(title: "Air", image: "images/air.png")
 ];
 
 final List<Category> categoriespage = [

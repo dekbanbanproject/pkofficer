@@ -60,6 +60,45 @@ class _CategoriesState extends State<Categories> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
+              children: [ 
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      ('/mainair'),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(90.0),
+                    ),
+                    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage("images/airnew.png.png"),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10), 
+                const Text(
+                  "Air",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
               children: [
                 ElevatedButton(
                   onPressed: () {
@@ -214,6 +253,7 @@ class _CategoriesState extends State<Categories> {
               ],
             ),
           ),
+          
         ],
       ),
       //   child: Column(
