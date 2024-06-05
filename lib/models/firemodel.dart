@@ -10,6 +10,11 @@ class Firemodel {
   String? fire_check_body;
   String? fire_check_gauge;
   String? fire_check_drawback;
+  String? fire_check_injection_name;
+  String? fire_check_joystick_name;
+  String? fire_check_body_name;
+  String? fire_check_gauge_name;
+  String? fire_check_drawback_name;
   String? user_id;
    String? fire_id;
 
@@ -25,6 +30,11 @@ class Firemodel {
     this.fire_check_body,
     this.fire_check_gauge,
     this.fire_check_drawback,
+      this.fire_check_injection_name,
+    this.fire_check_joystick_name,
+    this.fire_check_body_name,
+    this.fire_check_gauge_name,
+    this.fire_check_drawback_name,
     this.user_id,
      this.fire_id,
   });
@@ -48,6 +58,15 @@ class Firemodel {
         json['fire_check_gauge'] ?? '';
     fire_check_drawback =
         json['fire_check_drawback'] ?? '';
+        fire_check_injection_name = json['fire_check_injection_name'] ?? '';
+    fire_check_joystick_name =
+        json['fire_check_joystick_name'] ?? '';
+    fire_check_body_name =
+        json['fire_check_body_name'] ?? '';
+    fire_check_gauge_name =
+        json['fire_check_gauge_name'] ?? '';
+    fire_check_drawback_name =
+        json['fire_check_drawback_name'] ?? '';
     user_id = json['user_id'] ?? '';
     fire_id = json['fire_id'] ?? '';
   }
@@ -65,6 +84,11 @@ class Firemodel {
     data['fire_check_body'] = fire_check_body;
     data['fire_check_gauge'] = fire_check_gauge;
     data['fire_check_drawback'] = fire_check_drawback;
+      data['fire_check_injection_name'] = fire_check_injection_name;
+    data['fire_check_joystick_name'] = fire_check_joystick_name;
+    data['fire_check_body_name'] = fire_check_body_name;
+    data['fire_check_gauge_name'] = fire_check_gauge_name;
+    data['fire_check_drawback_name'] = fire_check_drawback_name;
     data['user_id'] = user_id;
     data['fire_id'] = fire_id;
     return data;

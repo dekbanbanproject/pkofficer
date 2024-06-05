@@ -14,7 +14,7 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 250,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
@@ -31,15 +31,15 @@ class _CategoriesState extends State<Categories> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(70.0),
+                      borderRadius: BorderRadius.circular(90.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 130,
-                      width: 100,
+                      height: 150,
+                      width: 120,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -70,15 +70,15 @@ class _CategoriesState extends State<Categories> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(70.0),
+                      borderRadius: BorderRadius.circular(90.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 130,
-                      width: 100,
+                      height: 150,
+                      width: 120,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -110,15 +110,15 @@ class _CategoriesState extends State<Categories> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(70.0),
+                      borderRadius: BorderRadius.circular(90.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 130,
-                      width: 100,
+                      height: 150,
+                      width: 120,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -149,15 +149,15 @@ class _CategoriesState extends State<Categories> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(70.0),
+                      borderRadius: BorderRadius.circular(90.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 130,
-                      width: 100,
+                      height: 150,
+                      width: 120,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -188,15 +188,15 @@ class _CategoriesState extends State<Categories> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(70.0),
+                      borderRadius: BorderRadius.circular(90.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      height: 130,
-                      width: 100,
+                      height: 150,
+                      width: 120,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(

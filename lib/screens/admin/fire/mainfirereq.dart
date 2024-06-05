@@ -99,69 +99,362 @@ class _MainfirereqState extends State<Mainfirereq> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: buildListView(),
+                      child: HeaderListview(),
                     ),
+                    // FireListView(),
+                    buildListView(),
+                    // child: TableListView(),
                   ],
                 ),
               ),
               MainFireadd()
             ]),
-            // body: SingleChildScrollView(
-            //   child: Padding(
-            //     padding: const EdgeInsets.only(top: 1,left: 10,right: 10),
-            //     child: Column(
-            //       crossAxisAlignment: CrossAxisAlignment.start,
-            //       children: [
-            //         const SizedBox(height: 15),
-            //         // Row(
-            //         //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //         //   children: [
-            //         //     IconButton(
-            //         //       style: IconButton.styleFrom(
-            //         //           backgroundColor: MyConstant.kprimaryColor,
-            //         //           padding: const EdgeInsets.all(20)),
-            //         //       onPressed: () => Navigator.push(
-            //         //         context,
-            //         //         MaterialPageRoute(
-            //         //           builder: (context) => const MainfireDetail(),
-            //         //         ),
-            //         //       ),
-            //         //       iconSize: 30,
-            //         //       icon: const Icon(Icons.qr_code_scanner_rounded,
-            //         //           color: Color.fromARGB(255, 255, 64, 121)),
-            //         //     ),
-            //         //     Text('บันทึกข้อมูลถังดับเพลิง', style: MyConstant().h4back()),
-            //         //     IconButton(
-            //         //       style: IconButton.styleFrom(
-            //         //           backgroundColor: MyConstant.kprimaryColor,
-            //         //           padding: const EdgeInsets.all(20)),
-            //         //       onPressed: () => Navigator.push(
-            //         //           context,
-            //         //           MaterialPageRoute(
-            //         //             builder: (context) => const MainFireadd(),
-            //         //           )).then((value) => listFire()),
-            //         //       iconSize: 30,
-            //         //       icon: const Icon(Icons.qr_code_scanner_rounded,
-            //         //           color: Colors.lightBlueAccent),
-            //         //     ),
-            //         //   ],
-            //         // ),
-            //         Padding(
-            //           padding: const EdgeInsets.only(top: 10),
-            //           child: buildSearch(),
-            //         ),
-            //         Padding(
-            //           padding: const EdgeInsets.only(top: 10),
-            //           child: buildListView(),
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
           ),
         ),
       );
+  HeaderListview() {
+    return ListView.builder(
+      padding: const EdgeInsets.only(top: 2),
+      shrinkWrap: true,
+      physics: const ScrollPhysics(),
+      // itemCount: searchfireModel.length,
+      itemBuilder: (context, index) => Slidable( 
+        child: Column(
+          children: [
+            Padding(
+              padding:
+                  const EdgeInsets.only(left: 0, right: 0, top: 1, bottom: 3),
+              child: Container(
+                height: 60,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: const Border(
+                    top: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
+                    left: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
+                    right:
+                        BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
+                    bottom:
+                        BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
+                  ),
+                  // color: Color(0xFFBFBFBF),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: MyConstant.shadowColor.withOpacity(0.05),
+                      spreadRadius: 1.5,
+                      blurRadius: 1.5,
+                      offset: const Offset(0, 1),
+                      // color: Colors.black26,
+                      // offset: Offset(0, 2),
+                      // blurRadius: 6.0,
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Center(
+                      child: ListTile(
+                        leading: Text(
+                          'รหัสถังดับเพลิง',
+                          style: MyConstant().h3dark(),
+                        ),
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'วันที่',
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              'สายฉีด',
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              'คันบังคับ',
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              'ตัวถัง',
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              'เกจความดัน',
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              'สิ่งกีดขวาง',
+                              style: MyConstant().h3dark(),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  // Row HeaderListview() {
+  //   return Row(
+  //     children: [
+  //       Column(
+  //         children: [
+  // Center(
+  //   child: ListTile(
+  //     leading: Text(
+  //         'รหัสถังดับเพลิง' ,
+  //       style: MyConstant().h3dark(),
+  //     ),
+  //     title: Row(
+  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //       children: [
+  //         Text(
+  //           'วันที่',
+  //           style: MyConstant().h3dark(),
+  //         ),
+  //         Text(
+  //           'สายฉีด',
+  //           style: MyConstant().h3dark(),
+  //         ),
+  //         Text(
+  //           'คันบังคับ',
+  //           style: MyConstant().h3dark(),
+  //         ),
+  //         Text(
+  //           'ตัวถัง',
+  //           style: MyConstant().h3dark(),
+  //         ),
+  //         Text(
+  //           'เกจความดัน',
+  //           style: MyConstant().h3dark(),
+  //         ),
+  //         Text(
+  //           'สิ่งกีดขวาง',
+  //           style: MyConstant().h3dark(),
+  //         ),
+  //       ],
+  //     ),
+  //   ),
+  // ),
+  //         ],
+  //       ),
+  //     ],
+  //   );
   // }
+  // Row HeaderListview() {
+  //   return Row(
+  //     children: [
+  //       Expanded(
+  //         flex: 2,
+  //         child: Text('รหัสถังดับเพลิง'),
+  //       ),
+  //       Expanded(
+  //         flex: 2,
+  //         child: Text('วันที่'),
+  //       ),
+  //        Expanded(
+  //         flex: 1,
+  //         child: Text('สายฉีด'),
+  //       ),
+  //        Expanded(
+  //         flex: 1,
+  //         child: Text('คันบังคับ'),
+  //       ),
+  //        Expanded(
+  //         flex: 1,
+  //         child: Text('ตัวถัง'),
+  //       ),
+  //        Expanded(
+  //         flex: 1,
+  //         child: Text('เกจความดัน'),
+  //       ),
+  //        Expanded(
+  //         flex: 1,
+  //         child: Text('สิ่งกีดขวาง'),
+  //       ),
+  //     ],
+
+  //   );
+  // }
+
+  // }
+  FireListView() => ListView.builder(
+        shrinkWrap: true,
+        physics: const ScrollPhysics(),
+        itemCount: searchfireModel.length,
+        itemBuilder: (context, index) => Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Text(searchfireModel[index].fire_num!),
+            ),
+            Expanded(
+              flex: 2,
+              child: Text(searchfireModel[index].check_date!),
+            ),
+            Expanded(
+              flex: 1,
+              child: Text(searchfireModel[index].fire_check_injection_name!),
+            ),
+            Expanded(
+              flex: 1,
+              child: Text(searchfireModel[index].fire_check_joystick_name!),
+            ),
+            Expanded(
+              flex: 1,
+              child: Text(searchfireModel[index].fire_check_body_name!),
+            ),
+            Expanded(
+              flex: 1,
+              child: Text(searchfireModel[index].fire_check_gauge_name!),
+            ),
+            Expanded(
+              flex: 1,
+              child: Text(searchfireModel[index].fire_check_drawback_name!),
+            ),
+          ],
+        ),
+      );
+  TableListView() {
+    return ListView.builder(
+      padding: const EdgeInsets.only(top: 2),
+      shrinkWrap: true,
+      physics: const ScrollPhysics(),
+      itemCount: searchfireModel.length,
+      itemBuilder: (context, index) => Slidable(
+        endActionPane: ActionPane(
+          motion: const StretchMotion(),
+          children: [
+            Container(
+              child: SlidableAction(
+                onPressed: ((context) {
+                  MaterialPageRoute route = MaterialPageRoute(
+                    builder: (context) => MainFireedit(
+                      fireModeledit: searchfireModel[index],
+                    ),
+                  );
+                  Navigator.push(context, route).then((value) => listFire());
+                }),
+                backgroundColor: const Color.fromARGB(255, 253, 158, 49),
+                icon: Icons.edit_rounded,
+              ),
+            ),
+            Container(
+              child: SlidableAction(
+                // onPressed: () => deletCheck(searcharticlecheckModel[index].cctv_check_id),
+                onPressed: (context) => delectCheck(searchfireModel[index]),
+                backgroundColor: const Color.fromARGB(255, 253, 23, 23),
+                icon: Icons.delete,
+              ),
+            ),
+          ],
+        ),
+        child: Column(
+          children: [
+            Padding(
+              padding:
+                  const EdgeInsets.only(left: 0, right: 0, top: 3, bottom: 3),
+              child: Container(
+                height: 1000,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: const Border(
+                    top: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
+                    left: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
+                    right:
+                        BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
+                    bottom:
+                        BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
+                  ),
+                  // color: Color(0xFFBFBFBF),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: MyConstant.shadowColor.withOpacity(0.05),
+                      spreadRadius: 1.5,
+                      blurRadius: 1.5,
+                      offset: const Offset(0, 1),
+                      // color: Colors.black26,
+                      // offset: Offset(0, 2),
+                      // blurRadius: 6.0,
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Text('รายการที่ตรวจเช็คแล้ว'),
+                    Table(
+                      border: TableBorder.all(color: Colors.black),
+                      columnWidths: {
+                        0: FixedColumnWidth(200.0),
+                        1: FixedColumnWidth(100.0),
+                        2: FixedColumnWidth(80.0),
+                        3: FixedColumnWidth(80.0),
+                        4: FixedColumnWidth(80.0),
+                        5: FixedColumnWidth(80.0),
+                      },
+                      children: [
+                        TableRow(children: [
+                          Container(
+                            margin: EdgeInsets.all(5),
+                            child: Text(
+                              searchfireModel[index].fire_num!,
+                              style: MyConstant().h3dark(),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(5),
+                            child: Text(
+                              searchfireModel[index].fire_check_injection_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(5),
+                            child: Text(
+                              searchfireModel[index].fire_check_joystick_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(5),
+                            child: Text(
+                              searchfireModel[index].fire_check_body_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(5),
+                            child: Text(
+                              searchfireModel[index].fire_check_gauge_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(5),
+                            child: Text(
+                              searchfireModel[index].fire_check_drawback_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                          ),
+                        ])
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   Container buildSearch() {
     return Container(
@@ -243,9 +536,9 @@ class _MainfirereqState extends State<Mainfirereq> {
           children: [
             Padding(
               padding:
-                  const EdgeInsets.only(left: 0, right: 0, top: 3, bottom: 3),
+                  const EdgeInsets.only(left: 0, right: 0, top: 1, bottom: 3),
               child: Container(
-                height: 55,
+                height: 60,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: const Border(
@@ -271,42 +564,46 @@ class _MainfirereqState extends State<Mainfirereq> {
                     ),
                   ],
                 ),
-                child: Center(
-                  child: ListTile(
-                    leading: Text(
-                      searchfireModel[index].fire_num!,
-                      style: MyConstant().h5dark(),
+                child: Column(
+                  children: [
+                    Center(
+                      child: ListTile(
+                        leading: Text(
+                          searchfireModel[index].fire_num!,
+                          style: MyConstant().h3dark(),
+                        ),
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              searchfireModel[index].check_date!,
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              searchfireModel[index].fire_check_injection_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              searchfireModel[index].fire_check_joystick_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              searchfireModel[index].fire_check_body_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              searchfireModel[index].fire_check_gauge_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                            Text(
+                              searchfireModel[index].fire_check_drawback_name!,
+                              style: MyConstant().h3dark(),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    title: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          searchfireModel[index].check_date!,
-                          style: MyConstant().h5dark(),
-                        ),
-                        Text(
-                          searchfireModel[index].fire_check_injection!,
-                          style: MyConstant().h5dark(),
-                        ),
-                        Text(
-                          searchfireModel[index].fire_check_joystick!,
-                          style: MyConstant().h5dark(),
-                        ),
-                        Text(
-                          searchfireModel[index].fire_check_body!,
-                          style: MyConstant().h5dark(),
-                        ),
-                        Text(
-                          searchfireModel[index].fire_check_gauge!,
-                          style: MyConstant().h5dark(),
-                        ),
-                        Text(
-                          searchfireModel[index].fire_check_drawback!,
-                          style: MyConstant().h5dark(),
-                        ),
-                      ],
-                    ),
-                  ),
+                  ],
                 ),
               ),
             ),

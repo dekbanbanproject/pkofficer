@@ -93,8 +93,8 @@ class _MainHomeState extends State<MainHome> {
               // ),
               SizedBox(height: 30),
               Categories(),
-              SizedBox(height: 30),
-              FdhCategory(),
+              // SizedBox(height: 30),
+              // FdhCategory(),
               SizedBox(height: 30),
               Pramirn(),
 
