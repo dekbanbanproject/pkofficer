@@ -14,10 +14,49 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
+      height: 200,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      ('/firemainpage'),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(70.0),
+                    ),
+                    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Container(
+                      height: 130,
+                      width: 100,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage("images/fire.png"),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  "Fire",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -31,15 +70,15 @@ class _CategoriesState extends State<Categories> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 70,
-                      width: 50,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -49,7 +88,7 @@ class _CategoriesState extends State<Categories> {
                     ),
                   ),
                 ),
-                 const SizedBox(height: 20),
+                 const SizedBox(height: 10),
                 const Text(
                   "CCTV",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -57,45 +96,7 @@ class _CategoriesState extends State<Categories> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      ('/firemainpage'),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 70,
-                      width: 50,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage("images/fire.png"),
-                            fit: BoxFit.cover),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  "Fire",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
+          
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -109,15 +110,15 @@ class _CategoriesState extends State<Categories> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 70,
-                      width: 50,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -127,7 +128,7 @@ class _CategoriesState extends State<Categories> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 const Text(
                   "Electric",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -148,15 +149,15 @@ class _CategoriesState extends State<Categories> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 70,
-                      width: 50,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -166,7 +167,7 @@ class _CategoriesState extends State<Categories> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 const Text(
                   "Plumbing",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -187,15 +188,15 @@ class _CategoriesState extends State<Categories> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      height: 70,
-                      width: 50,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -205,7 +206,7 @@ class _CategoriesState extends State<Categories> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20), 
+                const SizedBox(height: 10), 
                 const Text(
                   "Phone",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

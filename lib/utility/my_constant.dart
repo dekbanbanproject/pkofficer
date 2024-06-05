@@ -196,8 +196,14 @@ TextStyle appnameheader() =>
       const TextStyle(fontSize: 17, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
 TextStyle h2title() =>
       const TextStyle(fontSize: 20, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
+      TextStyle h1title() =>
+      const TextStyle(fontSize: 40, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
   TextStyle h2save() => const TextStyle(
       fontSize: 20,
+      color: Color.fromARGB(255, 11, 185, 162),
+      fontWeight: FontWeight.bold);
+      TextStyle h1save() => const TextStyle(
+      fontSize: 30,
       color: Color.fromARGB(255, 11, 185, 162),
       fontWeight: FontWeight.bold);
 

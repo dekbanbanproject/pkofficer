@@ -11,7 +11,7 @@ class _FdhCategoryState extends State<FdhCategory> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
+      height: 200,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
@@ -25,15 +25,15 @@ class _FdhCategoryState extends State<FdhCategory> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 70,
-                      width: 50,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -43,7 +43,7 @@ class _FdhCategoryState extends State<FdhCategory> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 const Text(
                   "FDH",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -61,15 +61,15 @@ class _FdhCategoryState extends State<FdhCategory> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 70,
-                      width: 50,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -79,7 +79,7 @@ class _FdhCategoryState extends State<FdhCategory> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 const Text(
                   "Authen",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -97,15 +97,15 @@ class _FdhCategoryState extends State<FdhCategory> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 70,
-                      width: 50,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -115,7 +115,7 @@ class _FdhCategoryState extends State<FdhCategory> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 const Text(
                   "สปสช.",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -131,15 +131,15 @@ class _FdhCategoryState extends State<FdhCategory> {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 70,
-                      width: 50,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -149,7 +149,7 @@ class _FdhCategoryState extends State<FdhCategory> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 const Text(
                   "30 บาท",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -165,15 +165,15 @@ class _FdhCategoryState extends State<FdhCategory> {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 70,
-                      width: 50,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -183,7 +183,7 @@ class _FdhCategoryState extends State<FdhCategory> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 const Text(
                   "telemedicine",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

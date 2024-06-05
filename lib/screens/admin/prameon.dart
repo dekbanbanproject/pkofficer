@@ -32,15 +32,15 @@ class _PramirnState extends State<Pramirn> {
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40.0),
+                      borderRadius: BorderRadius.circular(70.0),
                     ),
                     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 90,
-                      width: 90,
+                      height: 130,
+                      width: 100,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(

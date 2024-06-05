@@ -164,11 +164,11 @@ class _MainFireaddState extends State<MainFireadd> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                          radius: 50,
+                          radius: 80,
                           child: Icon(
                             Icons.qr_code_scanner_sharp,
                             color: Colors.orange,
-                            size: 50,
+                            size: 80,
                           ),
                         ),
                       ],
@@ -177,7 +177,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 const Center(
                   child: SizedBox(
-                    height: 3,
+                    height: 10,
                   ),
                 ),
                 const Text('SCAN QRCODE FIRE EXTINGUISHER'),
@@ -195,9 +195,9 @@ class _MainFireaddState extends State<MainFireadd> {
                 Padding(
                   padding: const EdgeInsets.only(
                     top: 15,
-                    bottom: 3,
-                    left: 10,
-                    right: 10,
+                    bottom: 10,
+                    left: 20,
+                    right: 20,
                   ),
                   child: Container(
                     decoration: BoxDecoration(
@@ -242,7 +242,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 3, left: 10, right: 10),
+                      top: 3, bottom: 10, left: 20, right: 20),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -286,7 +286,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 3, left: 10, right: 10),
+                      top: 3, bottom: 10, left: 20, right: 20),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -330,7 +330,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 3, left: 10, right: 10),
+                      top: 3, bottom: 10, left: 20, right: 20),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -374,7 +374,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 3, left: 10, right: 10),
+                      top: 3, bottom: 10, left: 20, right: 20),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -432,22 +432,22 @@ class _MainFireaddState extends State<MainFireadd> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(vertical: 18),
-          width: size * 0.6,
+          margin: const EdgeInsets.symmetric(vertical: 20),
+          width: size * 0.4,
           child: Padding(
             padding: const EdgeInsets.only(top: 3),
             child: ElevatedButton.icon(
               icon: const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Icon(
-                  Icons.save,
+                  Icons.save_as,
                   color: Color.fromARGB(255, 8, 190, 166),
-                  size: 30.0,
+                  size: 50.0,
                 ),
               ),
               label: Text(
-                'Save',
-                style: MyConstant().h2save(),
+                'บันทึก',
+                style: MyConstant().h1save(),
               ),
               onPressed: () => comfirmDialog(),
               style: ElevatedButton.styleFrom(
@@ -483,10 +483,16 @@ class _MainFireaddState extends State<MainFireadd> {
                         bodyStatus.isEmpty ||
                         gaugeStatus.isEmpty ||
                         drawbackStatus.isEmpty) {
-                      MyDialog().normalDialog(
-                          context, 'ยังไม่ได้เลือก', 'ข้อมูลว่าง');
-                      //  return
-                      // Navigator.pop(context);
+                      MyDialog().normalDialog(context, 'ยังไม่ได้เลือก', 'ข้อมูลว่าง');
+                       
+                      // setState(() {  
+                      //   barcodeScanRes = '';
+                      //   injectionStatus = '';
+                      //   joystickStatus = '';
+                      //   bodyStatus = '';
+                      //   gaugeStatus = '';
+                      //   drawbackStatus = '';
+                      // });
                     } else {
                       // Navigator.pop(context);
                       saveActive();
