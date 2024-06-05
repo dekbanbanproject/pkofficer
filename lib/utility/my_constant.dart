@@ -88,7 +88,7 @@ class MyConstant {
   static String routeMainfireshow = '/mainfireshow';
   static String routeFireMainPage = '/firemainpage';
   static String routeFireaddPage  = '/fireadd';
-  static String routeMainairPage  = '/mainair';
+  static String routeMainAirNew  = '/mainairnew';
   var version = const Text(
       // 'V.641105', style: TextStyle(color: Colors.white),
       'V.670511',

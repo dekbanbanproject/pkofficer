@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:pkofficer/utility/my_constant.dart';
 import 'package:pkofficer/widgets/home_app_bar.dart';
 
-class MainFirereport extends StatefulWidget {
-  const MainFirereport({super.key});
+class FireAddPage extends StatefulWidget {
+  const FireAddPage({super.key});
 
   @override
-  State<MainFirereport> createState() => _MainFirereportState();
+  State<FireAddPage> createState() => _FireAddPageState();
 }
 
-class _MainFirereportState extends State<MainFirereport> {
+class _FireAddPageState extends State<FireAddPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -30,7 +29,7 @@ class _MainFirereportState extends State<MainFirereport> {
               SizedBox(height: 15),
               Center(
                 child: Text(
-                  'MainFirereport',style: TextStyle(fontSize: 50,color: Color.fromARGB(255, 27, 207, 180)), 
+                  'FireAddPage',style: TextStyle(fontSize: 50,color: Color.fromARGB(255, 27, 207, 180)), 
                 ),
               ),
             ],

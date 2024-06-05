@@ -7,6 +7,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:pkofficer/models/firelistmodel.dart';
 import 'package:pkofficer/screens/admin/fire/firechang.dart';
 import 'package:pkofficer/utility/my_constant.dart';
+import 'package:pkofficer/widgets/home_app_bar.dart';
 
 class MainFirerepaire extends StatefulWidget {
   const MainFirerepaire({super.key});
@@ -55,40 +56,74 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 70),
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
+                child: CustomAppBar(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10, bottom: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [                
+                    Text('รายการที่รอเปลี่ยนถังดับเพลิง', style: MyConstant().h1title()),                
+                  ],
+                ),
+              ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // IconButton(
-                  //   style: IconButton.styleFrom(
-                  //       backgroundColor: MyConstant.kprimaryColor,
-                  //       padding: const EdgeInsets.all(20)),
-                  //   onPressed: () => Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //       builder: (context) => const MainfireDetail(),
-                  //     ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'รหัสถังดับเพลิง',
+                      style: MyConstant().h3header(),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'ขนาด(ปอนด์)',
+                      style: MyConstant().h3header(),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40, right: 20),
+                    child: Text(
+                      'ถังสี',
+                      style: MyConstant().h3header(),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30, right: 20),
+                    child: Text(
+                      'สถานที่ติดตั้ง',
+                      style: MyConstant().h3header(),
+                    ),
+                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(left: 20, right: 20),
+                  //   child: Text(
+                  //     'ตัวถัง',
+                  //     style: MyConstant().h3header(),
                   //   ),
-                  //   iconSize: 30,
-                  //   icon: const Icon(Icons.qr_code_scanner_rounded,
-                  //       color: Color.fromARGB(255, 255, 64, 121)),
                   // ),
-                  Text('รายการที่รอเปลี่ยนถังดับเพลิง', style: MyConstant().h2back()),
-                  // IconButton(
-                  //   style: IconButton.styleFrom(
-                  //       backgroundColor: MyConstant.kprimaryColor,
-                  //       padding: const EdgeInsets.all(20)),
-                  //   onPressed: () => Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //         builder: (context) => const MainFireadd(),
-                  //       )).then((value) => listFire()),
-                  //   iconSize: 30,
-                  //   icon: const Icon(Icons.qr_code_scanner_rounded,
-                  //       color: Colors.lightBlueAccent),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(left: 20, right: 20),
+                  //   child: Text(
+                  //     'เกจความดัน',
+                  //     style: MyConstant().h3header(),
+                  //   ),
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(left: 20, right: 20),
+                  //   child: Text(
+                  //     'สิ่งกีดขวาง',
+                  //     style: MyConstant().h3header(),
+                  //   ),
                   // ),
                 ],
               ),
+              
               // Padding(
               //   padding: const EdgeInsets.only(top: 10),
               //   child: buildSearch(),
@@ -125,7 +160,7 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
                   Navigator.push(context, route).then((value) => listFire());
                 }),
                 backgroundColor: const Color.fromARGB(255, 253, 158, 49),
-                icon: Icons.edit_rounded,
+                icon: Icons.edit_square,
               ),
             ),
             // Container(
@@ -169,42 +204,97 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
                   ],
                 ),
                 child: Center(
-                  child: ListTile(
-                    leading: Text(
-                      searchfireModel[index].fire_num!,
-                      style: MyConstant().h5dark(),
-                    ),
-                    title: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          searchfireModel[index].fire_name!,
-                          style: MyConstant().h4dark(),
+                      child: ListTile(
+                        leading:   
+                            Text(
+                              searchfireModel[index].fire_num!,
+                              style: MyConstant().h4dark(),
+                            
                         ),
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                           
+                              children: [ 
+                                // Text(
+                                //   searchfireModel[index].check_date!,
+                                //   style: MyConstant().h4dark(),
+                                // ),
+                                // Padding(
+                                //   padding: const EdgeInsets.only(left: 30,right: 40),
+                                //   child: Text(
+                                //     searchfireModel[index]
+                                //         .fire_check_injection_name!,
+                                //     style: MyConstant().h4dark(),
+                                //   ),
+                                // ),
+                                // Padding(
+                                //   padding: const EdgeInsets.only(left: 30,right: 40),
+                                //   child: Text(
+                                //     searchfireModel[index]
+                                //         .fire_check_joystick_name!,
+                                //     style: MyConstant().h4dark(),
+                                //   ),
+                                // ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 50,right: 50),
+                                  child: Text(
+                                    searchfireModel[index].fire_size!,
+                                    style: MyConstant().h4dark(),
+                                  ),
+                                ),
+                                 Padding(
+                                   padding: const EdgeInsets.only(left: 70,right: 20),
+                                   child: Text(
+                                    searchfireModel[index].fire_color!,
+                                    style: MyConstant().h4dark(),
+                                                                   ),
+                                 ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 30,right: 10),
+                                  child: Text(
+                                    searchfireModel[index]
+                                        .fire_location!,
+                                    style: MyConstant().h4dark(),
+                                  ),
+                                ),
+                              ],
+                          
+                        ),
+                        // subtitle: Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //   children: [
+                        //     // Text(
+                        //     //   searchfireModel[index].fire_num!,
+                        //     //   style: MyConstant().h3dark(),
+                        //     // ),
                         // Text(
-                        //   searchfireModel[index].fire_check_injection!,
-                        //   style: MyConstant().h5dark(),
+                        //   searchfireModel[index].check_date!,
+                        //   style: MyConstant().h3dark(),
                         // ),
-                        // Text(
-                        //   searchfireModel[index].fire_check_joystick!,
-                        //   style: MyConstant().h5dark(),
+                        //     Text(
+                        //       searchfireModel[index].fire_check_injection_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //     Text(
+                        //      searchfireModel[index].fire_check_joystick_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //     Text(
+                        //        searchfireModel[index].fire_check_body_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //     Text(
+                        //       searchfireModel[index].fire_check_gauge_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //     Text(
+                        //       searchfireModel[index].fire_check_drawback_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //   ],
                         // ),
-                        // Text(
-                        //   searchfireModel[index].fire_check_body!,
-                        //   style: MyConstant().h5dark(),
-                        // ),
-                        // Text(
-                        //   searchfireModel[index].fire_check_gauge!,
-                        //   style: MyConstant().h5dark(),
-                        // ),
-                        // Text(
-                        //   searchfireModel[index].fire_check_drawback!,
-                        //   style: MyConstant().h5dark(),
-                        // ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
               ),
             ),
           ],

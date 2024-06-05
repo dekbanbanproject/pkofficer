@@ -1,31 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:pkofficer/screens/admin/fdh/mainpullpidsit.dart';
-import 'package:pkofficer/screens/admin/fire/mainfirereport.dart';
+import 'package:pkofficer/screens/admin/air/mainairhome.dart';
+import 'package:pkofficer/screens/admin/cctv/mainhome.dart';
+import 'package:pkofficer/screens/admin/cctv/mainreport.dart';
 import 'package:pkofficer/screens/admin/fire/mainfirereq.dart';
-import 'package:pkofficer/screens/admin/fire/mainfireshow.dart';
+import 'package:pkofficer/screens/admin/profiles/mainprofile.dart';
+import 'package:pkofficer/states/nortify.dart';
 import 'package:pkofficer/utility/my_constant.dart';
+import 'package:pkofficer/widgets/home_app_bar.dart';
 
-class MainFire extends StatefulWidget {
-  const MainFire({super.key});
+class MainAirNew extends StatefulWidget {
+  const MainAirNew({super.key});
 
   @override
-  State<MainFire> createState() => _MainFireState();
+  State<MainAirNew> createState() => _MainAirNewState();
 }
 
-class _MainFireState extends State<MainFire> {
+class _MainAirNewState extends State<MainAirNew> {
   int currentIndex = 2;
   List screens = const [
-    Mainfirereq(), // 0
+    // MainCctvAdd(),
+    Scaffold(), // 0
     Scaffold(), // 1
-    MainFireshow(), // 2
-    MainFirereport(), // 3
-    MainPullPidsit(), // 4
+    MainAirHome(), // 2
+    Scaffold(), // 3
+    Scaffold(), // 4
+    Scaffold() // 5
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color.fromARGB(255, 241, 248, 248),
-      
+      // backgroundColor: Color.fromARGB(255, 224, 248, 246),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
@@ -33,7 +38,7 @@ class _MainFireState extends State<MainFire> {
           });
         },
         shape: const CircleBorder(),
-        backgroundColor: MyConstant.cctvaddColor,
+        backgroundColor: Color.fromARGB(255, 9, 197, 181),
         child: const Icon(
           Icons.home,
           color: Colors.white,
@@ -44,7 +49,7 @@ class _MainFireState extends State<MainFire> {
       bottomNavigationBar: BottomAppBar(
         elevation: 5,
         height: 100,
-        color: Colors.white,
+        color: Color.fromARGB(255, 211, 245, 242),
         shape: const CircularNotchedRectangle(),
         notchMargin: 15,
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -58,7 +63,8 @@ class _MainFireState extends State<MainFire> {
                 });
               },
               icon: Icon(
-                Icons.person,
+                // Icons.video_camera_front,
+                Icons.fire_extinguisher,
                 size: 50,
                 color: currentIndex == 0
                     ? MyConstant.cctvhomeColor
@@ -72,7 +78,7 @@ class _MainFireState extends State<MainFire> {
                 });
               },
               icon: Icon(
-                Icons.file_download,
+                Icons.edit_square,
                 size: 50,
                 color: currentIndex == 1
                     ? MyConstant.kcctvtColor
@@ -103,7 +109,7 @@ class _MainFireState extends State<MainFire> {
                 });
               },
               icon: Icon(
-                Icons.select_all,
+                Icons.person,
                 size: 50,
                 color: currentIndex == 4
                     ? MyConstant.cctvprofileColor

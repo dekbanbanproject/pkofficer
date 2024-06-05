@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:pkofficer/widgets/home_app_bar.dart';
 
-class MainAirPage extends StatefulWidget {
-  const MainAirPage({super.key});
+class MainAirHome extends StatefulWidget {
+  const MainAirHome({super.key});
 
   @override
-  State<MainAirPage> createState() => _MainAirPageState();
+  State<MainAirHome> createState() => _MainAirHomeState();
 }
 
-class _MainAirPageState extends State<MainAirPage> {
+class _MainAirHomeState extends State<MainAirHome> {
   @override
   Widget build(BuildContext context) {
-   return const Scaffold(
-      backgroundColor: Colors.white,
+    return const Scaffold(
+      backgroundColor: Color.fromARGB(255, 241, 248, 248),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(15),
@@ -23,12 +23,7 @@ class _MainAirPageState extends State<MainAirPage> {
               //for custom appbar
               CustomAppBar(),
               //for searchbar
-              SizedBox(height: 15),
-              Center(
-                child: Text(
-                  'MainAirPage',style: TextStyle(fontSize: 50,color: Color.fromARGB(255, 27, 207, 180)), 
-                ),
-              ),
+              
             ],
           ),
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pkofficer/pages/home.dart';
 import 'package:pkofficer/screens/admin/air/mainair.dart';
+import 'package:pkofficer/screens/admin/air/mainairnew.dart';
 import 'package:pkofficer/screens/admin/authen/authenspsch.dart';
 import 'package:pkofficer/screens/admin/cctv/maincctv.dart';
 import 'package:pkofficer/screens/admin/cctv/maincctvadd.dart';
@@ -39,7 +40,7 @@ final Map<String, WidgetBuilder> map = {
   '/mainfireshow': (BuildContext context) => const MainFireshow(),
   '/firemainpage': (BuildContext context) => const FireMainPage(),
   '/routeFireaddPage': (BuildContext context) => const MainFireadd(),
-  '/routeMainairPage': (BuildContext context) => const MainAirPage()
+  '/mainairnew': (BuildContext context) => const MainAirNew()
 };
 
 String? initlalRoute;

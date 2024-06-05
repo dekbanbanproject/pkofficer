@@ -53,7 +53,7 @@ class _MainfirereqState extends State<Mainfirereq> {
   Widget build(BuildContext context) => DefaultTabController(
         length: 5,
         child: Scaffold(
-          backgroundColor: Colors.white,
+          // backgroundColor: Colors.white,
           body: NestedScrollView(
             floatHeaderSlivers: true,
             headerSliverBuilder: (context, innerBoxIsScrolled) => [
@@ -93,12 +93,18 @@ class _MainfirereqState extends State<Mainfirereq> {
               SingleChildScrollView(
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: buildSearch(),
-                    ),
                     Column(
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10, bottom: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('รายการที่ตรวจเช็คแล้ว',
+                                  style: MyConstant().h1title()),
+                            ],
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(
                               top: 5, left: 20, right: 20, bottom: 5),
@@ -110,7 +116,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                                   'รหัสถังดับเพลิง',
                                   style: MyConstant().h3header(),
                                 ),
-                              ),                            
+                              ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
@@ -118,45 +124,53 @@ class _MainfirereqState extends State<Mainfirereq> {
                                   style: MyConstant().h3header(),
                                 ),
                               ),
-                               Padding(
-                                padding: const EdgeInsets.only(left: 40,right: 20),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 40, right: 20),
                                 child: Text(
                                   'สายฉีด',
                                   style: MyConstant().h3header(),
                                 ),
                               ),
-                               Padding(
-                                padding: const EdgeInsets.only(left: 30,right: 20),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 30, right: 20),
                                 child: Text(
                                   'คันบังคับ',
                                   style: MyConstant().h3header(),
                                 ),
                               ),
-                               Padding(
-                                padding: const EdgeInsets.only(left: 20,right: 20),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 20, right: 20),
                                 child: Text(
                                   'ตัวถัง',
                                   style: MyConstant().h3header(),
                                 ),
                               ),
-                               Padding(
-                                padding: const EdgeInsets.only(left: 20,right: 20),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 20, right: 20),
                                 child: Text(
                                   'เกจความดัน',
                                   style: MyConstant().h3header(),
                                 ),
                               ),
-                               Padding(
-                                padding: const EdgeInsets.only(left: 20,right: 20),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 20, right: 20),
                                 child: Text(
                                   'สิ่งกีดขวาง',
                                   style: MyConstant().h3header(),
                                 ),
                               ),
-                               
                             ],
                           ),
                         ),
+                         Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 20,right: 20,bottom: 8),
+                      child: buildSearch(),
+                    ),
                         Padding(
                           padding: const EdgeInsets.only(
                               top: 5, left: 20, right: 20, bottom: 5),
@@ -179,7 +193,7 @@ class _MainfirereqState extends State<Mainfirereq> {
           ),
         ),
       );
-      
+
   FireListView() => ListView.builder(
         shrinkWrap: true,
         physics: const ScrollPhysics(),
@@ -465,94 +479,62 @@ class _MainfirereqState extends State<Mainfirereq> {
                   children: [
                     Center(
                       child: ListTile(
-                        leading:   
-                            Text(
-                              searchfireModel[index].fire_num!,
-                              style: MyConstant().h4dark(),
-                            
+                        leading: Text(
+                          searchfireModel[index].fire_num!,
+                          style: MyConstant().h4dark(),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                           
-                              children: [ 
-                                Text(
-                                  searchfireModel[index].check_date!,
-                                  style: MyConstant().h4dark(),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 30,right: 40),
-                                  child: Text(
-                                    searchfireModel[index]
-                                        .fire_check_injection_name!,
-                                    style: MyConstant().h4dark(),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 30,right: 40),
-                                  child: Text(
-                                    searchfireModel[index]
-                                        .fire_check_joystick_name!,
-                                    style: MyConstant().h4dark(),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 30,right: 40),
-                                  child: Text(
-                                    searchfireModel[index].fire_check_body_name!,
-                                    style: MyConstant().h4dark(),
-                                  ),
-                                ),
-                                 Padding(
-                                   padding: const EdgeInsets.only(left: 40,right: 40),
-                                   child: Text(
-                                    searchfireModel[index].fire_check_gauge_name!,
-                                    style: MyConstant().h4dark(),
-                                                                   ),
-                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 40,right: 10),
-                                  child: Text(
-                                    searchfireModel[index]
-                                        .fire_check_drawback_name!,
-                                    style: MyConstant().h4dark(),
-                                  ),
-                                ),
-                              ],
-                          
+                          children: [
+                            Text(
+                              searchfireModel[index].check_date!,
+                              style: MyConstant().h4dark(),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 30, right: 40),
+                              child: Text(
+                                searchfireModel[index]
+                                    .fire_check_injection_name!,
+                                style: MyConstant().h4dark(),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 30, right: 40),
+                              child: Text(
+                                searchfireModel[index]
+                                    .fire_check_joystick_name!,
+                                style: MyConstant().h4dark(),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 30, right: 40),
+                              child: Text(
+                                searchfireModel[index].fire_check_body_name!,
+                                style: MyConstant().h4dark(),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 40, right: 40),
+                              child: Text(
+                                searchfireModel[index].fire_check_gauge_name!,
+                                style: MyConstant().h4dark(),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 40, right: 10),
+                              child: Text(
+                                searchfireModel[index]
+                                    .fire_check_drawback_name!,
+                                style: MyConstant().h4dark(),
+                              ),
+                            ),
+                          ],
                         ),
-                        // subtitle: Row(
-                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //   children: [
-                        //     // Text(
-                        //     //   searchfireModel[index].fire_num!,
-                        //     //   style: MyConstant().h3dark(),
-                        //     // ),
-                        // Text(
-                        //   searchfireModel[index].check_date!,
-                        //   style: MyConstant().h3dark(),
-                        // ),
-                        //     Text(
-                        //       searchfireModel[index].fire_check_injection_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //     Text(
-                        //      searchfireModel[index].fire_check_joystick_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //     Text(
-                        //        searchfireModel[index].fire_check_body_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //     Text(
-                        //       searchfireModel[index].fire_check_gauge_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //     Text(
-                        //       searchfireModel[index].fire_check_drawback_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //   ],
-                        // ),
                       ),
                     ),
                   ],

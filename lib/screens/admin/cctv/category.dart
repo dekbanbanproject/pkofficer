@@ -65,7 +65,7 @@ class _CategoriesState extends State<Categories> {
                   onPressed: () {
                     Navigator.pushNamed(
                       context,
-                      ('/mainair'),
+                      ('/mainairnew'),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -78,11 +78,11 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       height: 150,
-                      width: 150,
+                      width: 120,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                            image: AssetImage("images/airnew.png.png"),
+                            image: AssetImage("images/airnew.png"),
                             fit: BoxFit.cover),
                       ),
                     ),
@@ -102,10 +102,10 @@ class _CategoriesState extends State<Categories> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // Navigator.pushNamed(
-                    //   context,
-                    //   ('/firemainpage'),
-                    // );
+                    Navigator.pushNamed(
+                      context,
+                      ('/cctvmain'),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
