@@ -5,6 +5,7 @@ import 'package:pkofficer/screens/admin/cctv/mainhome.dart';
 import 'package:pkofficer/screens/admin/profiles/mainprofile.dart';
 import 'package:pkofficer/screens/admin/cctv/mainreport.dart';
 import 'package:pkofficer/screens/admin/fire/mainfirereq.dart';
+import 'package:pkofficer/states/nortify.dart';
 import 'package:pkofficer/utility/my_constant.dart';
 
 class AdminNew extends StatefulWidget {
@@ -17,7 +18,7 @@ class AdminNew extends StatefulWidget {
 int currentIndex = 2;
 List screens = const [
   // MainCctvAdd(),
-  MaincctvReq(), // 0
+  NortifyPage(), // 0
   Mainfirereq(), // 1
   MainHome(), // 2
   MainReport(), // 3
@@ -41,16 +42,26 @@ class _AdminNewState extends State<AdminNew> {
         child: const Icon(
           Icons.home,
           color: Colors.white,
-          size: 35,
+          size: 50,
         ),
+        // child: IconButton(
+        //   style: IconButton.styleFrom(
+        //     backgroundColor: MyConstant.cctvaddColor,
+        //     // padding: const EdgeInsets.all(30),
+        //   ),
+        //   iconSize: 50,
+        //   icon: const Icon(Icons.home),
+        //   color: Colors.white,
+        //   onPressed: () {},
+        // ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        elevation: 1,
-        height: 70,
-        color: Colors.white,
+        elevation: 5,
+        height: 100,
+        color: const Color.fromARGB(255, 248, 224, 224),
         shape: const CircularNotchedRectangle(),
-        notchMargin: 10,
+        notchMargin: 15,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,7 +74,7 @@ class _AdminNewState extends State<AdminNew> {
               },
               icon: Icon(
                 Icons.notifications_outlined,
-                size: 30,
+                size: 50,
                 color: currentIndex == 0
                     ? MyConstant.cctvhomeColor
                     : Colors.grey.shade400,
@@ -77,14 +88,14 @@ class _AdminNewState extends State<AdminNew> {
               },
               icon: Icon(
                 Icons.bookmark_add,
-                size: 30,
+                size: 50,
                 color: currentIndex == 1
                     ? MyConstant.kcctvtColor
                     : Colors.grey.shade400,
               ),
             ),
             const SizedBox(
-              width: 15,
+              width: 50,
             ),
             IconButton(
               onPressed: () {
@@ -94,7 +105,7 @@ class _AdminNewState extends State<AdminNew> {
               },
               icon: Icon(
                 Icons.bar_chart,
-                size: 30,
+                size: 50,
                 color: currentIndex == 3
                     ? MyConstant.cctvtreportColor
                     : Colors.grey.shade400,
@@ -108,7 +119,7 @@ class _AdminNewState extends State<AdminNew> {
               },
               icon: Icon(
                 Icons.person,
-                size: 30,
+                size: 50,
                 color: currentIndex == 4
                     ? MyConstant.cctvprofileColor
                     : Colors.grey.shade400,

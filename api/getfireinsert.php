@@ -26,6 +26,31 @@
             $fire_check_body              = $_GET['fire_check_body'];
             $fire_check_gauge             = $_GET['fire_check_gauge'];
             $fire_check_drawback          = $_GET['fire_check_drawback'];
+            if ($fire_check_injection == '0') {
+                $fire_check_injection_name = 'ปกติ';
+            } else {
+                $fire_check_injection_name = 'ชำรุด';
+            }
+            if ($fire_check_joystick == '0') {
+                $fire_check_joystick_name = 'ปกติ';
+            } else {
+                $fire_check_joystick_name = 'ชำรุด';
+            }
+            if ($fire_check_body == '0') {
+                $fire_check_body_name = 'ปกติ';
+            } else {
+                $fire_check_body_name = 'ชำรุด';
+            }
+            if ($fire_check_gauge == '0') {
+                $fire_check_gauge_name = 'ปกติ';
+            } else {
+                $fire_check_gauge_name = 'ชำรุด';
+            }
+            if ($fire_check_drawback == '0') {
+                $fire_check_drawback_name = 'ปกติ';
+            } else {
+                $fire_check_drawback_name = 'ชำรุด';
+            }
 
             $sql2 = "SELECT * FROM fire WHERE fire_id = '$fire_id'";
             $result2 = mysqli_query($conn, $sql2);
@@ -51,8 +76,8 @@
                 echo "false";
             } else {
     
-                    $sql = "INSERT INTO `fire_check` (`fire_check_id`,`check_date`,`fire_num`,`user_id`,`fire_check_injection`,`fire_check_joystick`,`fire_check_body`,`fire_check_gauge`,`fire_check_drawback`,`fire_name`,`fire_check_location`,`fire_check_color`,`fire_id`) 
-                    VALUES(Null,'$date','$fire_num','$user_id','$fire_check_injection','$fire_check_joystick','$fire_check_body','$fire_check_gauge','$fire_check_drawback','$fire_name','$fire_check_location','$fire_check_color','$fire_id_')";
+                    $sql = "INSERT INTO `fire_check` (`fire_check_id`,`check_date`,`fire_num`,`user_id`,`fire_check_injection`,`fire_check_injection_name`,`fire_check_joystick`,`fire_check_joystick_name`,`fire_check_body`,`fire_check_body_name`,`fire_check_gauge`,`fire_check_gauge_name`,`fire_check_drawback`,`fire_check_drawback_name`,`fire_name`,`fire_check_location`,`fire_check_color`,`fire_id`) 
+                    VALUES(Null,'$date','$fire_num','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_name','$fire_check_location','$fire_check_color','$fire_id_')";
                     $result = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
 
                     if ($fire_check_injection =='1' || $fire_check_joystick == '1' || $fire_check_body=='1' || $fire_check_gauge == '1' || $fire_check_drawback =='1') {

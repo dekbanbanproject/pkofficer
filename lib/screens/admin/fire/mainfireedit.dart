@@ -639,13 +639,13 @@ class _MainFireeditState extends State<MainFireedit> {
               icon: const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Icon(
-                  Icons.save,
+                  Icons.save_as,
                   color: Color.fromARGB(255, 8, 190, 166),
-                  size: 30.0,
+                  size: 50.0,
                 ),
               ),
               label: Text(
-                'Update',
+                'แก้ไข',
                 style: MyConstant().h2save(),
               ),
               onPressed: () => comfirmDialog(),

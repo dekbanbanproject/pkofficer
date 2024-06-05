@@ -24,6 +24,32 @@
             $body                   = $_GET['fire_check_body'];
             $gauge                  = $_GET['fire_check_gauge'];
             $drawback               = $_GET['fire_check_drawback'];
+
+            if ($injection == '0') {
+                $fire_check_injection_name = 'ปกติ';
+            } else {
+                $fire_check_injection_name = 'ชำรุด';
+            }
+            if ($joystick == '0') {
+                $fire_check_joystick_name = 'ปกติ';
+            } else {
+                $fire_check_joystick_name = 'ชำรุด';
+            }
+            if ($body == '0') {
+                $fire_check_body_name = 'ปกติ';
+            } else {
+                $fire_check_body_name = 'ชำรุด';
+            }
+            if ($gauge == '0') {
+                $fire_check_gauge_name = 'ปกติ';
+            } else {
+                $fire_check_gauge_name = 'ชำรุด';
+            }
+            if ($drawback == '0') {
+                $fire_check_drawback_name = 'ปกติ';
+            } else {
+                $fire_check_drawback_name = 'ชำรุด';
+            }
             //Qury article_data
             // $sql3 = "SELECT `article_num` FROM cctv_check WHERE cctv_check_id = '$cctv_check_id'";
             // $resline3 = mysqli_query($conn, $sql3) or die ("Error : $sql3" .mysqli_error());
@@ -45,7 +71,7 @@
                  $fire_location      = $obje["fire_location"]; 
                  $fire_color         = $obje["fire_color"];   
              }
-             $sql = "UPDATE `fire_check` SET `fire_name` = '$fire_name',`fire_check_location` = '$fire_location',`fire_check_color` = '$fire_color',`fire_check_injection` = '$injection',`fire_check_joystick` = '$joystick',`fire_check_body` = '$body',`fire_check_gauge` = '$gauge',`fire_check_drawback` = '$drawback' WHERE fire_check_id = '$fire_check_id'";
+             $sql = "UPDATE `fire_check` SET `fire_name` = '$fire_name',`fire_check_location` = '$fire_location',`fire_check_color` = '$fire_color',`fire_check_injection` = '$injection',`fire_check_injection_name` = '$fire_check_injection_name',`fire_check_joystick` = '$joystick',`fire_check_joystick_name` = '$fire_check_joystick_name',`fire_check_body` = '$body',`fire_check_body_name` = '$fire_check_body_name',`fire_check_gauge` = '$gauge',`fire_check_gauge_name` = '$fire_check_gauge_name',`fire_check_drawback` = '$drawback',`fire_check_drawback_name` = '$fire_check_drawback_name' WHERE fire_check_id = '$fire_check_id'";
             // $sql = "UPDATE `cctv_check` SET `cctv_camera_screen` = '$screen',`cctv_camera_corner` = '$corner',`cctv_camera_drawback` = '$drawback',`cctv_camera_save` = '$camera_save',`cctv_camera_power_backup` = '$power_backup',`cctv_type` = '$cctv_type_',`cctv_location` = '$cctv_location_' WHERE cctv_check_id = '$cctv_check_id'";
             $result = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
 

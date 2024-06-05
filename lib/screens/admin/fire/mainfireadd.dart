@@ -494,7 +494,7 @@ class _MainFireaddState extends State<MainFireadd> {
                       //   drawbackStatus = '';
                       // });
                     } else {
-                      // Navigator.pop(context);
+                      Navigator.pop(context);
                       saveActive();
                     }
                   },

@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:pkofficer/utility/my_constant.dart';
 import 'package:pkofficer/utility/my_dialog.dart';
+import 'package:pkofficer/widgets/home_app_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainProfile extends StatefulWidget {
@@ -25,23 +26,23 @@ class _MainProfileState extends State<MainProfile> {
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: const Padding(
-          padding: EdgeInsets.only(right: 5),
-          child: Center(
-            child: Text(
-              'Profile',
-              // _gleaveModel.LEAVE_PERSON_FULLNAME,
-              style: TextStyle(
-                fontSize: 30,
-                fontFamily: 'Kanit-Regular',
-                color: Color.fromARGB(255, 4, 197, 193),
-              ),
-            ),
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   title: const Padding(
+      //     padding: EdgeInsets.only(right: 5),
+      //     child: Center(
+      //       child: Text(
+      //         'Profile',
+      //         // _gleaveModel.LEAVE_PERSON_FULLNAME,
+      //         style: TextStyle(
+      //           fontSize: 30,
+      //           fontFamily: 'Kanit-Regular',
+      //           color: Color.fromARGB(255, 4, 197, 193),
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -50,6 +51,12 @@ class _MainProfileState extends State<MainProfile> {
             key: formKey,
             child: ListView(
               children: [
+               
+                  Padding(
+                    padding: const EdgeInsets.only(top: 0,left: 15,right: 15),
+                    child: CustomAppBar(),
+                  ),
+                    SizedBox(height: 15),
                 buildImage(size),
                 // builAppname(),
                 buildUser(size),
@@ -109,11 +116,11 @@ class _MainProfileState extends State<MainProfile> {
                 child: Icon(
                   Icons.fingerprint,
                   color: Color.fromARGB(255, 8, 190, 166),
-                  size: 30.0,
+                  size: 50.0,
                 ),
               ),
               label: Text(
-                'Update',
+                'แก้ไข',
                 style: MyConstant().h2save(),
               ),
               onPressed: () {
@@ -268,9 +275,9 @@ class _MainProfileState extends State<MainProfile> {
           margin: const EdgeInsets.only(top: 30),
           width: size * 0.5,
           child: Padding(
-            padding: const EdgeInsets.all(2.0),
+            padding: const EdgeInsets.all(10.0),
             child: CircleAvatar(
-              radius: 110,
+              radius: 150,
               child: Image.asset(
                 "images/technician_1.png",
                 // "images/techserevice.png",

@@ -97,12 +97,79 @@ class _MainfirereqState extends State<Mainfirereq> {
                       padding: const EdgeInsets.all(8.0),
                       child: buildSearch(),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: HeaderListview(),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 5, left: 20, right: 20, bottom: 5),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'รหัสถังดับเพลิง',
+                                  style: MyConstant().h3header(),
+                                ),
+                              ),                            
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'วันที่',
+                                  style: MyConstant().h3header(),
+                                ),
+                              ),
+                               Padding(
+                                padding: const EdgeInsets.only(left: 40,right: 20),
+                                child: Text(
+                                  'สายฉีด',
+                                  style: MyConstant().h3header(),
+                                ),
+                              ),
+                               Padding(
+                                padding: const EdgeInsets.only(left: 30,right: 20),
+                                child: Text(
+                                  'คันบังคับ',
+                                  style: MyConstant().h3header(),
+                                ),
+                              ),
+                               Padding(
+                                padding: const EdgeInsets.only(left: 20,right: 20),
+                                child: Text(
+                                  'ตัวถัง',
+                                  style: MyConstant().h3header(),
+                                ),
+                              ),
+                               Padding(
+                                padding: const EdgeInsets.only(left: 20,right: 20),
+                                child: Text(
+                                  'เกจความดัน',
+                                  style: MyConstant().h3header(),
+                                ),
+                              ),
+                               Padding(
+                                padding: const EdgeInsets.only(left: 20,right: 20),
+                                child: Text(
+                                  'สิ่งกีดขวาง',
+                                  style: MyConstant().h3header(),
+                                ),
+                              ),
+                               
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 5, left: 20, right: 20, bottom: 5),
+                          child: buildListView(),
+                        ),
+                      ],
                     ),
+                    // Padding(
+                    //   padding: const EdgeInsets.all(8.0),
+                    //   child: HeaderListview(),
+                    // ),
                     // FireListView(),
-                    buildListView(),
+                    // buildListView(),
                     // child: TableListView(),
                   ],
                 ),
@@ -112,177 +179,7 @@ class _MainfirereqState extends State<Mainfirereq> {
           ),
         ),
       );
-  HeaderListview() {
-    return ListView.builder(
-      padding: const EdgeInsets.only(top: 2),
-      shrinkWrap: true,
-      physics: const ScrollPhysics(),
-      // itemCount: searchfireModel.length,
-      itemBuilder: (context, index) => Slidable( 
-        child: Column(
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.only(left: 0, right: 0, top: 1, bottom: 3),
-              child: Container(
-                height: 60,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: const Border(
-                    top: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-                    left: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-                    right:
-                        BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-                    bottom:
-                        BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-                  ),
-                  // color: Color(0xFFBFBFBF),
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: MyConstant.shadowColor.withOpacity(0.05),
-                      spreadRadius: 1.5,
-                      blurRadius: 1.5,
-                      offset: const Offset(0, 1),
-                      // color: Colors.black26,
-                      // offset: Offset(0, 2),
-                      // blurRadius: 6.0,
-                    ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    Center(
-                      child: ListTile(
-                        leading: Text(
-                          'รหัสถังดับเพลิง',
-                          style: MyConstant().h3dark(),
-                        ),
-                        title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'วันที่',
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              'สายฉีด',
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              'คันบังคับ',
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              'ตัวถัง',
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              'เกจความดัน',
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              'สิ่งกีดขวาง',
-                              style: MyConstant().h3dark(),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-  // Row HeaderListview() {
-  //   return Row(
-  //     children: [
-  //       Column(
-  //         children: [
-  // Center(
-  //   child: ListTile(
-  //     leading: Text(
-  //         'รหัสถังดับเพลิง' ,
-  //       style: MyConstant().h3dark(),
-  //     ),
-  //     title: Row(
-  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //       children: [
-  //         Text(
-  //           'วันที่',
-  //           style: MyConstant().h3dark(),
-  //         ),
-  //         Text(
-  //           'สายฉีด',
-  //           style: MyConstant().h3dark(),
-  //         ),
-  //         Text(
-  //           'คันบังคับ',
-  //           style: MyConstant().h3dark(),
-  //         ),
-  //         Text(
-  //           'ตัวถัง',
-  //           style: MyConstant().h3dark(),
-  //         ),
-  //         Text(
-  //           'เกจความดัน',
-  //           style: MyConstant().h3dark(),
-  //         ),
-  //         Text(
-  //           'สิ่งกีดขวาง',
-  //           style: MyConstant().h3dark(),
-  //         ),
-  //       ],
-  //     ),
-  //   ),
-  // ),
-  //         ],
-  //       ),
-  //     ],
-  //   );
-  // }
-  // Row HeaderListview() {
-  //   return Row(
-  //     children: [
-  //       Expanded(
-  //         flex: 2,
-  //         child: Text('รหัสถังดับเพลิง'),
-  //       ),
-  //       Expanded(
-  //         flex: 2,
-  //         child: Text('วันที่'),
-  //       ),
-  //        Expanded(
-  //         flex: 1,
-  //         child: Text('สายฉีด'),
-  //       ),
-  //        Expanded(
-  //         flex: 1,
-  //         child: Text('คันบังคับ'),
-  //       ),
-  //        Expanded(
-  //         flex: 1,
-  //         child: Text('ตัวถัง'),
-  //       ),
-  //        Expanded(
-  //         flex: 1,
-  //         child: Text('เกจความดัน'),
-  //       ),
-  //        Expanded(
-  //         flex: 1,
-  //         child: Text('สิ่งกีดขวาง'),
-  //       ),
-  //     ],
-
-  //   );
-  // }
-
-  // }
+      
   FireListView() => ListView.builder(
         shrinkWrap: true,
         physics: const ScrollPhysics(),
@@ -518,8 +415,8 @@ class _MainfirereqState extends State<Mainfirereq> {
                   );
                   Navigator.push(context, route).then((value) => listFire());
                 }),
-                backgroundColor: const Color.fromARGB(255, 253, 158, 49),
-                icon: Icons.edit_rounded,
+                backgroundColor: Color.fromARGB(255, 252, 169, 75),
+                icon: Icons.edit_square,
               ),
             ),
             Container(
@@ -568,39 +465,94 @@ class _MainfirereqState extends State<Mainfirereq> {
                   children: [
                     Center(
                       child: ListTile(
-                        leading: Text(
-                          searchfireModel[index].fire_num!,
-                          style: MyConstant().h3dark(),
+                        leading:   
+                            Text(
+                              searchfireModel[index].fire_num!,
+                              style: MyConstant().h4dark(),
+                            
                         ),
                         title: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              searchfireModel[index].check_date!,
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              searchfireModel[index].fire_check_injection_name!,
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              searchfireModel[index].fire_check_joystick_name!,
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              searchfireModel[index].fire_check_body_name!,
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              searchfireModel[index].fire_check_gauge_name!,
-                              style: MyConstant().h3dark(),
-                            ),
-                            Text(
-                              searchfireModel[index].fire_check_drawback_name!,
-                              style: MyConstant().h3dark(),
-                            ),
-                          ],
+                          mainAxisAlignment: MainAxisAlignment.start,
+                           
+                              children: [ 
+                                Text(
+                                  searchfireModel[index].check_date!,
+                                  style: MyConstant().h4dark(),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 30,right: 40),
+                                  child: Text(
+                                    searchfireModel[index]
+                                        .fire_check_injection_name!,
+                                    style: MyConstant().h4dark(),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 30,right: 40),
+                                  child: Text(
+                                    searchfireModel[index]
+                                        .fire_check_joystick_name!,
+                                    style: MyConstant().h4dark(),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 30,right: 40),
+                                  child: Text(
+                                    searchfireModel[index].fire_check_body_name!,
+                                    style: MyConstant().h4dark(),
+                                  ),
+                                ),
+                                 Padding(
+                                   padding: const EdgeInsets.only(left: 40,right: 40),
+                                   child: Text(
+                                    searchfireModel[index].fire_check_gauge_name!,
+                                    style: MyConstant().h4dark(),
+                                                                   ),
+                                 ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 40,right: 10),
+                                  child: Text(
+                                    searchfireModel[index]
+                                        .fire_check_drawback_name!,
+                                    style: MyConstant().h4dark(),
+                                  ),
+                                ),
+                              ],
+                          
                         ),
+                        // subtitle: Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //   children: [
+                        //     // Text(
+                        //     //   searchfireModel[index].fire_num!,
+                        //     //   style: MyConstant().h3dark(),
+                        //     // ),
+                        // Text(
+                        //   searchfireModel[index].check_date!,
+                        //   style: MyConstant().h3dark(),
+                        // ),
+                        //     Text(
+                        //       searchfireModel[index].fire_check_injection_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //     Text(
+                        //      searchfireModel[index].fire_check_joystick_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //     Text(
+                        //        searchfireModel[index].fire_check_body_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //     Text(
+                        //       searchfireModel[index].fire_check_gauge_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //     Text(
+                        //       searchfireModel[index].fire_check_drawback_name!,
+                        //       style: MyConstant().h3dark(),
+                        //     ),
+                        //   ],
+                        // ),
                       ),
                     ),
                   ],

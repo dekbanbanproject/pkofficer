@@ -253,7 +253,7 @@ TextStyle h2title() =>
   TextStyle h3white() =>
       TextStyle(fontSize: 14, color: white, fontWeight: FontWeight.bold);
        TextStyle h3header() =>
-      TextStyle(fontSize: 18, color: Color.fromARGB(255, 11, 185, 162), fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 17, color: Color.fromARGB(255, 11, 185, 162), fontWeight: FontWeight.bold);
 
   TextStyle h1back() =>
       TextStyle(fontSize: 24, color: back, fontWeight: FontWeight.bold);
