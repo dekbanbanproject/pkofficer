@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -25,10 +26,11 @@ class _MainProfileState extends State<MainProfile> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passappController = TextEditingController();
   List<String> pathimage = [];
-  List<File?> files = [];
+  // List<File?> files = [];
   bool statusImage = false; //ไม่มีการเปลี่ยนแปลง
 
-  late File file;
+  late File _image;
+  // Uint8List? _image;
 
   @override
   void initState() {
@@ -73,7 +75,6 @@ class _MainProfileState extends State<MainProfile> {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 250, 236, 236),
-      
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -91,11 +92,15 @@ class _MainProfileState extends State<MainProfile> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    IconButton(
-                      onPressed: () => chooseImage(ImageSource.camera),
-                      icon: Icon(Icons.add_a_photo),
-                      iconSize: 70,
-                      color: Colors.lightBlue,
+                    Positioned(
+                      bottom: -0,
+                      left: 140,
+                      child: IconButton(
+                        onPressed: () => chooseImage(ImageSource.camera),
+                        icon: Icon(Icons.add_a_photo),
+                        iconSize: 70,
+                        color: Colors.lightBlue,
+                      ),
                     ),
                     IconButton(
                       onPressed: () => chooseImage(ImageSource.gallery),
@@ -118,17 +123,22 @@ class _MainProfileState extends State<MainProfile> {
   }
 
   Future<Null> chooseImage(ImageSource imageSource) async {
+    final ImagePicker picker = ImagePicker();
     try {
-      var object = await ImagePicke
+      var object = await picker.getImage(
+        source: imageSource,
+        maxHeight: 800.0,
+        maxWidth: 800.0,
+      );
       // var object = await ImagePicker().getImage(
       //   source: imageSource,
       //   maxHeight: 800.0,
       //   maxWidth: 800.0,
       // );
 
-      // setState(() {
-      //   file = File(object.path);
-      // });
+      setState(() {
+        _image = File(object!.path);
+      });
     } catch (e) {}
   }
 
@@ -312,12 +322,20 @@ class _MainProfileState extends State<MainProfile> {
             padding: const EdgeInsets.all(10.0),
             child: CircleAvatar(
               radius: 150,
-              child: Image.asset(
-                "images/technician_1.png",
-                // "images/techserevice.png",
-                fit: BoxFit.cover,
-              ),
+              // backgroundImage: NetworkImage("images/technician_1.png"),
+              child: _image == null ? Image.asset("images/technician_1.png", fit: BoxFit.cover)
+              : Image.file(_image)
             ),
+            // Positioned(
+            //   bottom: -0,
+            //   left: 140,
+            //   child: IconButton(
+            //     onPressed: () => chooseImage(ImageSource.camera),
+            //     icon: Icon(Icons.add_a_photo),
+            //     iconSize: 70,
+            //     color: Colors.lightBlue,
+            //   ),
+            // ),
           ),
         ),
       ],
