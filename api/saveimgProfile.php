@@ -7,7 +7,8 @@
         $reponse->message = null;
 
         //Upload Image  file
-        $destination_dir = "http://smarthos-phukieohos.moph.go.th/pkoffice/images/Profile/";
+        // $destination_dir = "http://smarthos-phukieohos.moph.go.th/pkoffice/images/Profile/";
+        $destination_dir = "images/Profile/";
         $base_filename = basename($_FILES["file"]["name"]);
         $target_file = $destination_dir . $base_filename;
 

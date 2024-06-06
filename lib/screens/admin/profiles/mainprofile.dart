@@ -245,7 +245,7 @@ class _MainProfileState extends State<MainProfile> {
 
   Future<Null> updateUsersNew({String? username, String? passapp}) async {
     String urlUpload =
-        '${MyConstant.domain}/pkoffice/api/saveimgProfile.php?isAdd=true';
+        '${MyConstant.domain}/pkoffice/api/saveimgProfile.php';
     Random random = Random();
     int i = random.nextInt(1000000);
     String nameFile = 'img$i.jpg';
