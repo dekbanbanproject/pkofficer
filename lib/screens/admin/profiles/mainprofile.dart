@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:pkofficer/models/usersModel.dart';
 import 'package:pkofficer/utility/my_constant.dart';
 import 'package:pkofficer/utility/my_dialog.dart';
@@ -27,6 +28,8 @@ class _MainProfileState extends State<MainProfile> {
   List<File?> files = [];
   bool statusImage = false; //ไม่มีการเปลี่ยนแปลง
 
+  late File file;
+
   @override
   void initState() {
     super.initState();
@@ -34,8 +37,6 @@ class _MainProfileState extends State<MainProfile> {
     convertStringToArray();
     getusers();
   }
-
-  
 
   Future<Null> getusers() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -51,9 +52,9 @@ class _MainProfileState extends State<MainProfile> {
       for (var item in json.decode(value.data!)) {
         UsersModel model = UsersModel.fromJson(item);
         var username = model.username.toString();
-        var img      = model.img!.toString();
+        var img = model.img!.toString();
         print('### ==>>>$username');
-         print(' ###img ==>>>$img');
+        print(' ###img ==>>>$img');
       }
     });
   }
@@ -72,23 +73,7 @@ class _MainProfileState extends State<MainProfile> {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 250, 236, 236),
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   title: const Padding(
-      //     padding: EdgeInsets.only(right: 5),
-      //     child: Center(
-      //       child: Text(
-      //         'Profile',
-      //         // _gleaveModel.LEAVE_PERSON_FULLNAME,
-      //         style: TextStyle(
-      //           fontSize: 30,
-      //           fontFamily: 'Kanit-Regular',
-      //           color: Color.fromARGB(255, 4, 197, 193),
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
+      
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -102,7 +87,24 @@ class _MainProfileState extends State<MainProfile> {
                   child: CustomAppBar(),
                 ),
                 SizedBox(height: 13),
-                buildImage(size), 
+                buildImage(size),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () => chooseImage(ImageSource.camera),
+                      icon: Icon(Icons.add_a_photo),
+                      iconSize: 70,
+                      color: Colors.lightBlue,
+                    ),
+                    IconButton(
+                      onPressed: () => chooseImage(ImageSource.gallery),
+                      icon: Icon(Icons.add_photo_alternate),
+                      iconSize: 70,
+                      color: Color.fromARGB(255, 3, 211, 226),
+                    ),
+                  ],
+                ),
                 // builAppname(),
                 buildUser(size),
                 buildPassword(size),
@@ -113,6 +115,21 @@ class _MainProfileState extends State<MainProfile> {
         ),
       ),
     );
+  }
+
+  Future<Null> chooseImage(ImageSource imageSource) async {
+    try {
+      var object = await ImagePicke
+      // var object = await ImagePicker().getImage(
+      //   source: imageSource,
+      //   maxHeight: 800.0,
+      //   maxWidth: 800.0,
+      // );
+
+      // setState(() {
+      //   file = File(object.path);
+      // });
+    } catch (e) {}
   }
 
   Row updateButtom(double size) {
