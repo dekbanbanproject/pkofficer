@@ -1,5 +1,9 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:pkofficer/models/usersModel.dart';
 import 'package:pkofficer/utility/my_constant.dart';
 import 'package:pkofficer/utility/my_dialog.dart';
 import 'package:pkofficer/widgets/home_app_bar.dart';
@@ -13,10 +17,51 @@ class MainProfile extends StatefulWidget {
 }
 
 class _MainProfileState extends State<MainProfile> {
+  List<UsersModel> usersModel = [];
+  // UsersModel? usersModel;
   bool statusRedEye = true;
   final formKey = GlobalKey<FormState>();
   TextEditingController usernameController = TextEditingController();
   TextEditingController passappController = TextEditingController();
+  List<String> pathimage = [];
+  List<File?> files = [];
+  bool statusImage = false; //ไม่มีการเปลี่ยนแปลง
+
+  @override
+  void initState() {
+    super.initState();
+    // usersModel_ = widget.usersModel;
+    convertStringToArray();
+    getusers();
+  }
+
+  
+
+  Future<Null> getusers() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    String id = preferences.getString('id')!;
+    // String username = preferences.getString('username')!;
+    // String passapp = preferences.getString('passapp')!;
+    // String img = preferences.getString('img')!;
+    // print('######## userid = $id,username = $username,passapp = $passapp,img = $img');
+    final api =
+        '${MyConstant.domain}/pkoffice/api/getusers.php?isAdd=true&id=$id';
+    await Dio().get(api).then((value) async {
+      // print('## value for API Users ==>  $value');
+      for (var item in json.decode(value.data!)) {
+        UsersModel model = UsersModel.fromJson(item);
+        var username = model.username.toString();
+        var img      = model.img!.toString();
+        print('### ==>>>$username');
+         print(' ###img ==>>>$img');
+      }
+    });
+  }
+
+  void convertStringToArray() async {
+    // print('######## userid = $id,username = $username,passapp = $passapp,img = $img');
+  }
+
   void clearField() {
     usernameController.clear();
     passappController.clear();
@@ -26,6 +71,7 @@ class _MainProfileState extends State<MainProfile> {
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 250, 236, 236),
       // appBar: AppBar(
       //   backgroundColor: Colors.white,
       //   title: const Padding(
@@ -51,12 +97,11 @@ class _MainProfileState extends State<MainProfile> {
             key: formKey,
             child: ListView(
               children: [
-               
-                  Padding(
-                    padding: const EdgeInsets.only(top: 0,left: 15,right: 15),
-                    child: CustomAppBar(),
-                  ),
-                    SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(top: 0, left: 15, right: 15),
+                  child: CustomAppBar(),
+                ),
+                SizedBox(height: 13),
                 buildImage(size),
                 // builAppname(),
                 buildUser(size),
@@ -70,53 +115,22 @@ class _MainProfileState extends State<MainProfile> {
     );
   }
 
-  Row buildSubmitlogin(double size) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 18),
-          width: size * 0.6,
-          child: ElevatedButton(
-            style: MyConstant().mybuttonStyle(),
-            onPressed: () {
-              if (formKey.currentState!.validate()) {
-                String username = usernameController.text;
-                String passapp = passappController.text;
-                print('## username = $username, passapp = $passapp');
-                checkLogin(username: username, passapp: passapp);
-                // checkAuthen();
-              }
-            },
-            child: Text(
-              'Login',
-              style: MyConstant().h2White(),
-            ),
-            // child:  ElevatedButton(
-            //                 onPressed: () => scanQR(),
-            //              child: Text('Start QR scan'))
-          ),
-        ),
-      ],
-    );
-  }
-
   Row updateButtom(double size) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           margin: const EdgeInsets.symmetric(vertical: 18),
-          width: size * 0.6,
+          width: size * 0.3,
           child: Padding(
-            padding: const EdgeInsets.only(top: 3),
+            padding: const EdgeInsets.only(top: 25),
             child: ElevatedButton.icon(
               icon: const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Icon(
                   Icons.fingerprint,
                   color: Color.fromARGB(255, 8, 190, 166),
-                  size: 50.0,
+                  size: 70.0,
                 ),
               ),
               label: Text(
@@ -127,7 +141,10 @@ class _MainProfileState extends State<MainProfile> {
                 if (formKey.currentState!.validate()) {
                   String username = usernameController.text;
                   String passapp = passappController.text;
-                  print('## username = $username, passapp = $passapp');
+                  String img = pathimage.toString();
+
+                  print(
+                      '## username = $username, passapp = $passapp, image = $img');
                   checkLogin(username: username, passapp: passapp);
                 }
               },
@@ -178,8 +195,8 @@ class _MainProfileState extends State<MainProfile> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 15),
-          width: size * 0.6,
+          margin: const EdgeInsets.only(top: 25),
+          width: size * 0.4,
           child: TextFormField(
             controller: passappController,
             validator: (value) {
@@ -234,7 +251,7 @@ class _MainProfileState extends State<MainProfile> {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 25),
-          width: size * 0.6,
+          width: size * 0.4,
           child: TextFormField(
             controller: usernameController,
             validator: (value) {
@@ -290,165 +307,3 @@ class _MainProfileState extends State<MainProfile> {
     );
   }
 }
-
-//   buildListView() {
-//     return Column(
-//       children: [
-//         Padding(
-//           padding: const EdgeInsets.only(left: 0, right: 0, top: 3, bottom: 3),
-//           child: Container(
-//             height: 55,
-//             width: double.infinity,
-//             decoration: BoxDecoration(
-//               border: Border(
-//                 top: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 left: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 right: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 bottom: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//               ),
-//               // color: Color(0xFFBFBFBF),
-//               color: Colors.white,
-//               borderRadius: BorderRadius.circular(15.0),
-//               boxShadow: [
-//                 BoxShadow(
-//                   color: MyConstant.shadowColor.withOpacity(0.05),
-//                   spreadRadius: 1.5,
-//                   blurRadius: 1.5,
-//                   offset: Offset(0, 1),
-//                   // color: Colors.black26,
-//                   // offset: Offset(0, 2),
-//                   // blurRadius: 6.0,
-//                 ),
-//               ],
-//             ),
-//             // child: Center(
-//             //   child: ListTile(
-//             //     leading: Text(
-//             //       searcharticlecheckModel[index].articleNum!,
-//             //       style: MyConstant().h5dark(),
-//             //     ),
-//             //     title: Row(
-//             //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//             //       children: [
-//             //         Text(
-//             //           searcharticlecheckModel[index].cctv_check_date!,
-//             //           style: MyConstant().h5dark(),
-//             //         ),
-//             //         Text(
-//             //           searcharticlecheckModel[index].cctv_camera_screen!,
-//             //           style: MyConstant().h5dark(),
-//             //         ),
-//             //         Text(
-//             //           searcharticlecheckModel[index].cctv_camera_corner!,
-//             //           style: MyConstant().h5dark(),
-//             //         ),
-//             //         Text(
-//             //           searcharticlecheckModel[index].cctv_camera_drawback!,
-//             //           style: MyConstant().h5dark(),
-//             //         ),
-//             //         Text(
-//             //           searcharticlecheckModel[index].cctv_camera_save!,
-//             //           style: MyConstant().h5dark(),
-//             //         ),
-//             //         Text(
-//             //           searcharticlecheckModel[index]
-//             //               .cctv_camera_power_backup!,
-//             //           style: MyConstant().h5dark(),
-//             //         ),
-//             //       ],
-//             //     ),
-//             //   ),
-//             // ),
-//           ),
-//         ),
-//         Padding(
-//           padding: const EdgeInsets.only(left: 0, right: 0, top: 10, bottom: 3),
-//           child: Container(
-//             height: 55,
-//             width: double.infinity,
-//             decoration: BoxDecoration(
-//               border: Border(
-//                 top: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 left: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 right: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 bottom: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//               ),
-//               // color: Color(0xFFBFBFBF),
-//               color: Colors.white,
-//               borderRadius: BorderRadius.circular(15.0),
-//               boxShadow: [
-//                 BoxShadow(
-//                   color: MyConstant.shadowColor.withOpacity(0.05),
-//                   spreadRadius: 1.5,
-//                   blurRadius: 1.5,
-//                   offset: Offset(0, 1),
-//                   // color: Colors.black26,
-//                   // offset: Offset(0, 2),
-//                   // blurRadius: 6.0,
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//         Padding(
-//           padding: const EdgeInsets.only(left: 0, right: 0, top: 10, bottom: 3),
-//           child: Container(
-//             height: 55,
-//             width: double.infinity,
-//             decoration: BoxDecoration(
-//               border: Border(
-//                 top: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 left: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 right: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 bottom: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//               ),
-//               // color: Color(0xFFBFBFBF),
-//               color: Colors.white,
-//               borderRadius: BorderRadius.circular(15.0),
-//               boxShadow: [
-//                 BoxShadow(
-//                   color: MyConstant.shadowColor.withOpacity(0.05),
-//                   spreadRadius: 1.5,
-//                   blurRadius: 1.5,
-//                   offset: Offset(0, 1),
-//                   // color: Colors.black26,
-//                   // offset: Offset(0, 2),
-//                   // blurRadius: 6.0,
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//         Padding(
-//           padding: const EdgeInsets.only(left: 0, right: 0, top: 10, bottom: 3),
-//           child: Container(
-//             height: 55,
-//             width: double.infinity,
-//             decoration: BoxDecoration(
-//               border: Border(
-//                 top: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 left: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 right: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//                 bottom: BorderSide(color: Color.fromARGB(255, 102, 217, 252)),
-//               ),
-//               // color: Color(0xFFBFBFBF),
-//               color: Colors.white,
-//               borderRadius: BorderRadius.circular(15.0),
-//               boxShadow: [
-//                 BoxShadow(
-//                   color: MyConstant.shadowColor.withOpacity(0.05),
-//                   spreadRadius: 1.5,
-//                   blurRadius: 1.5,
-//                   offset: Offset(0, 1),
-//                   // color: Colors.black26,
-//                   // offset: Offset(0, 2),
-//                   // blurRadius: 6.0,
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }

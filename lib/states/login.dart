@@ -26,6 +26,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 236, 214, 247),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -53,7 +54,7 @@ class _LoginState extends State<Login> {
       children: [
         Container(
           margin: const EdgeInsets.symmetric(vertical: 18),
-          width: size * 0.6,
+          width: size * 0.3,
           // child: ElevatedButton(
           //   style: MyConstant().mybuttonStyle(),
           // onPressed: () {
@@ -68,19 +69,19 @@ class _LoginState extends State<Login> {
           //   // child: Text('Login',style: MyConstant().h2White(),),
           // ),
           child: Padding(
-            padding: const EdgeInsets.only(top: 3),
+            padding: const EdgeInsets.only(top: 20),
             child: ElevatedButton.icon(
               icon: const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Icon(
                   Icons.fingerprint_rounded,
                   color: Color.fromARGB(255, 8, 190, 166),
-                  size: 30.0,
+                  size: 70.0,
                 ),
               ),
               label: Text(
                 'Login',
-                style: MyConstant().h2save(),
+                style: MyConstant().h1login(),
               ),
               onPressed: () {
                 if (formKey.currentState!.validate()) {
@@ -114,15 +115,17 @@ class _LoginState extends State<Login> {
             context, 'ไม่มี $username ในฐานข้อมูล', 'Username ผิด');
       } else {
         for (var item in json.decode(value.data!)) {
-          UsersModel model = UsersModel.fromMap(item);
+          UsersModel model = UsersModel.fromJson(item);
           if (passapp == model.passapp) {
-            String type = model.type;
+            String? type = model.type;
+             String? username = model.username;
+              String? id = model.id;
             print('## value for API ===> $type');
             SharedPreferences preferences =
                 await SharedPreferences.getInstance();
-            preferences.setString('type', type);
-            preferences.setString('username', model.username);
-            preferences.setString('id', model.id);
+            preferences.setString('type', type!);
+            preferences.setString('username', username!);
+            preferences.setString('id', id!);
 
             switch (type) {
               case 'ADMIN':
@@ -153,7 +156,7 @@ class _LoginState extends State<Login> {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 15),
-          width: size * 0.6,
+          width: size * 0.5,
           child: TextFormField(
             controller: passappController,
             validator: (value) {
@@ -208,7 +211,7 @@ class _LoginState extends State<Login> {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 25),
-          width: size * 0.6,
+          width: size * 0.5,
           child: TextFormField(
             controller: usernameController,
             validator: (value) {
@@ -246,7 +249,7 @@ class _LoginState extends State<Login> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 25),
+          margin: const EdgeInsets.only(top: 30),
           child: ShowTitle(
             title: MyConstant.appName,
             textStyle: MyConstant().appnameheader(),
@@ -261,9 +264,16 @@ class _LoginState extends State<Login> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 90),
-          width: size * 0.4,
-          child: ShowImage(path: MyConstant.img_logo),
+          height: 200,
+          width: 200,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(
+                image: AssetImage("images/logo.png"), fit: BoxFit.cover),
+          ),
+          margin: const EdgeInsets.only(top: 200),
+          // width: size * 0.3,
+          // child: ShowImage(path: MyConstant.img_logo),
         ),
       ],
     );

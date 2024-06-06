@@ -12,7 +12,7 @@ class MyConstant {
   static String BASE_URL =
       "http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/pull_hosapi";
 
-  static String appName = 'PK-OFFice';
+  static String appName = 'PK-OFFicer';
   // static String domain = 'http://27.254.191.157/';
   static String domain                   = 'http://smarthos-phukieohos.moph.go.th';
   // static String authenspsch              = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/authen_spsch';
@@ -209,17 +209,20 @@ class MyConstant {
 
   TextStyle h1dark() =>
       TextStyle(fontSize: 22, color: back, fontWeight: FontWeight.normal);
-
+TextStyle h4version() =>
+      TextStyle(fontSize: 22, color: Color.fromARGB(255, 247, 84, 138), fontWeight: FontWeight.normal);
   TextStyle h1White() =>
       TextStyle(fontSize: 24, color: white, fontWeight: FontWeight.bold);
 TextStyle appnameheader() =>
-      const TextStyle(fontSize: 24, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
+      const TextStyle(fontSize: 60, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
   TextStyle h2() =>
       const TextStyle(fontSize: 17, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
 TextStyle h2title() =>
       const TextStyle(fontSize: 20, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
       TextStyle h1title() =>
       const TextStyle(fontSize: 40, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
+        TextStyle h1login() =>
+      const TextStyle(fontSize: 30, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
   TextStyle h2save() => const TextStyle(
       fontSize: 20,
       color: Color.fromARGB(255, 11, 185, 162),

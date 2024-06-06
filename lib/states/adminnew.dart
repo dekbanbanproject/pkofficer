@@ -6,6 +6,7 @@ import 'package:pkofficer/screens/admin/profiles/mainprofile.dart';
 import 'package:pkofficer/screens/admin/cctv/mainreport.dart';
 import 'package:pkofficer/screens/admin/fire/mainfirereq.dart';
 import 'package:pkofficer/states/nortify.dart';
+import 'package:pkofficer/states/setting.dart';
 import 'package:pkofficer/utility/my_constant.dart';
 
 class AdminNew extends StatefulWidget {
@@ -19,7 +20,7 @@ int currentIndex = 2;
 List screens = const [
   // MainCctvAdd(),
   NortifyPage(), // 0
-  Mainfirereq(), // 1
+  SettingPage(), // 1
   MainHome(), // 2
   MainReport(), // 3
   MainProfile(), // 4
@@ -87,7 +88,7 @@ class _AdminNewState extends State<AdminNew> {
                 });
               },
               icon: Icon(
-                Icons.bookmark_add,
+                Icons.manage_accounts,
                 size: 50,
                 color: currentIndex == 1
                     ? MyConstant.kcctvtColor
@@ -118,7 +119,7 @@ class _AdminNewState extends State<AdminNew> {
                 });
               },
               icon: Icon(
-                Icons.person,
+                Icons.lock_person,
                 size: 50,
                 color: currentIndex == 4
                     ? MyConstant.cctvprofileColor

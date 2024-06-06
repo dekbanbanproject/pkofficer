@@ -14,7 +14,7 @@ class _NortifyPageState extends State<NortifyPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Colors.white,
+       backgroundColor: Color.fromARGB(255, 250, 236, 236),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(15),

@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -28,14 +28,14 @@ class CustomAppBar extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    ' PKOFFicer ',
+                    ' PK-OFFicer ',
                     style: MyConstant().h1title(),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 15),
                     child: Text(
                       ' V.670605',
-                      style: MyConstant().h1dark(),
+                      style: MyConstant().h4version(),
                     ),
                   ),
                 ],
