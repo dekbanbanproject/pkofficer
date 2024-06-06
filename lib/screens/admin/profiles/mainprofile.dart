@@ -102,7 +102,7 @@ class _MainProfileState extends State<MainProfile> {
                   child: CustomAppBar(),
                 ),
                 SizedBox(height: 13),
-                buildImage(size),
+                buildImage(size), 
                 // builAppname(),
                 buildUser(size),
                 buildPassword(size),
