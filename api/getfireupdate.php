@@ -75,10 +75,18 @@
             // $sql = "UPDATE `cctv_check` SET `cctv_camera_screen` = '$screen',`cctv_camera_corner` = '$corner',`cctv_camera_drawback` = '$drawback',`cctv_camera_save` = '$camera_save',`cctv_camera_power_backup` = '$power_backup',`cctv_type` = '$cctv_type_',`cctv_location` = '$cctv_location_' WHERE cctv_check_id = '$cctv_check_id'";
             $result = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
 
+            // if ($injection =='1' || $joystick == '1' || $body=='1' || $gauge == '1' || $drawback =='1') {
+            //     $sqlup    = "UPDATE `fire` SET `active` = 'N' WHERE fire_num = '$fire_num'"; 
+            //     $resultup = mysqli_query($conn, $sqlup) or die ("Error : $sqlup" .mysqli_error()); 
+            // } 
             if ($injection =='1' || $joystick == '1' || $body=='1' || $gauge == '1' || $drawback =='1') {
                 $sqlup    = "UPDATE `fire` SET `active` = 'N' WHERE fire_num = '$fire_num'"; 
                 $resultup = mysqli_query($conn, $sqlup) or die ("Error : $sqlup" .mysqli_error()); 
-            } 
+            } else {
+                $sqlup    = "UPDATE `fire` SET `active` = 'Y' WHERE fire_num = '$fire_num'"; 
+                $resultup = mysqli_query($conn, $sqlup) or die ("Error : $sqlup" .mysqli_error()); 
+            }
+            
             
             // $article_num = $_GET['article_num'];
             // $sql = "DELETE FROM cctv_check WHERE article_num = '$article_num'";
