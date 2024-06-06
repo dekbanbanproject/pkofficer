@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
+// import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
+import 'dart:math';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +27,11 @@ class _MainProfileState extends State<MainProfile> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passappController = TextEditingController();
   List<String> pathimage = [];
-  // List<File?> files = [];
+  // List<dynamic> img = [];
   bool statusImage = false; //ไม่มีการเปลี่ยนแปลง
-
-  late File _image;
-  // Uint8List? _image;
+  final picker = ImagePicker();
+  File? imageFile;
+  // Uint8List? img;
 
   @override
   void initState() {
@@ -44,9 +45,7 @@ class _MainProfileState extends State<MainProfile> {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String id = preferences.getString('id')!;
     // String username = preferences.getString('username')!;
-    // String passapp = preferences.getString('passapp')!;
-    // String img = preferences.getString('img')!;
-    // print('######## userid = $id,username = $username,passapp = $passapp,img = $img');
+
     final api =
         '${MyConstant.domain}/pkoffice/api/getusers.php?isAdd=true&id=$id';
     await Dio().get(api).then((value) async {
@@ -92,21 +91,37 @@ class _MainProfileState extends State<MainProfile> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Positioned(
-                      bottom: -0,
-                      left: 140,
-                      child: IconButton(
-                        onPressed: () => chooseImage(ImageSource.camera),
-                        icon: Icon(Icons.add_a_photo),
-                        iconSize: 70,
-                        color: Colors.lightBlue,
-                      ),
+                    // Positioned(
+                    //   bottom: -0,
+                    //   left: 140,
+                    //   child: IconButton(
+                    //     onPressed: () => chooseImage(ImageSource.camera),
+                    //     icon: Icon(Icons.add_a_photo),
+                    //     iconSize: 70,
+                    //     color: Colors.lightBlue,
+                    //   ),
+                    // ),
+                    IconButton(
+                      onPressed: () => chooseImage(ImageSource.camera),
+                      icon: Icon(Icons.add_a_photo),
+                      iconSize: 70,
+                      color: Colors.lightBlue,
                     ),
                     IconButton(
                       onPressed: () => chooseImage(ImageSource.gallery),
                       icon: Icon(Icons.add_photo_alternate),
-                      iconSize: 70,
+                      iconSize: 75,
                       color: Color.fromARGB(255, 3, 211, 226),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          imageFile = null;
+                        });
+                      },
+                      icon: Icon(Icons.delete),
+                      iconSize: 70,
+                      color: Color.fromARGB(255, 226, 3, 88),
                     ),
                   ],
                 ),
@@ -122,24 +137,64 @@ class _MainProfileState extends State<MainProfile> {
     );
   }
 
-  Future<Null> chooseImage(ImageSource imageSource) async {
-    final ImagePicker picker = ImagePicker();
-    try {
-      var object = await picker.getImage(
-        source: imageSource,
-        maxHeight: 800.0,
-        maxWidth: 800.0,
-      );
-      // var object = await ImagePicker().getImage(
-      //   source: imageSource,
-      //   maxHeight: 800.0,
-      //   maxWidth: 800.0,
-      // );
+  Row buildImage(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: const EdgeInsets.only(top: 30),
+          width: size * 0.5,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: CircleAvatar(
+                radius: 150,
+                backgroundImage:
+                    imageFile != null ? FileImage(imageFile!) : null),
+            // backgroundImage: NetworkImage("images/technician_1.png"),
+            // child: imgFile == null
+            //     ? Image.asset("images/technician_1.png", fit: BoxFit.cover)
+            //     : Image.file(imgFile)),
+            // child: imgFile != null ? FileImage(imgFile) : null,
+            // Positioned(
+            //   bottom: -0,
+            //   left: 140,
+            //   child: IconButton(
+            //     onPressed: () => chooseImage(ImageSource.camera),
+            //     icon: Icon(Icons.add_a_photo),
+            //     iconSize: 70,
+            //     color: Colors.lightBlue,
+            //   ),
+            // ),
+          ),
+        ),
+      ],
+    );
+  }
 
+  chooseImage(ImageSource imageSource) async {
+    // final ImagePicker picker = ImagePicker();
+    // try {
+    final pickedFile = await picker.pickImage(source: imageSource);
+    if (pickedFile != null) {
       setState(() {
-        _image = File(object!.path);
+        imageFile = File(pickedFile.path);
       });
-    } catch (e) {}
+    }
+    // var object = await picker.getImage(
+    //   source: imageSource,
+    //   maxHeight: 800.0,
+    //   maxWidth: 800.0,
+    // );
+    // var object = await ImagePicker().getImage(
+    //   source: imageSource,
+    //   maxHeight: 800.0,
+    //   maxWidth: 800.0,
+    // );
+
+    // setState(() {
+    //   img = XFile(object!.path);
+    // });
+    // } catch (e) {}
   }
 
   Row updateButtom(double size) {
@@ -172,7 +227,8 @@ class _MainProfileState extends State<MainProfile> {
 
                   print(
                       '## username = $username, passapp = $passapp, image = $img');
-                  checkLogin(username: username, passapp: passapp);
+                  updateUsersNew(username: username, passapp: passapp);
+                  // chooseImage(ImageSource.camera);
                 }
               },
               style: ElevatedButton.styleFrom(
@@ -187,34 +243,50 @@ class _MainProfileState extends State<MainProfile> {
     );
   }
 
-  Future<Null> checkLogin({String? username, String? passapp}) async {
+  Future<Null> updateUsersNew({String? username, String? passapp}) async {
     String apicheckLogin =
         '${MyConstant.domain}/pkoffice/api/signin.php?isAdd=true&username=$username';
-    await Dio().get(apicheckLogin).then((value) async {
-      print('## value for API  ==>  $value');
-      SharedPreferences preferences = await SharedPreferences.getInstance();
-      String id = preferences.getString('id')!;
-      print('######## userid = $id');
-      if (value.toString() == 'null') {
-        String path =
-            '${MyConstant.domain}/pkoffice/api/updateprofile.php?isAdd=true&username=$username&id=$id&password=$passapp';
-        Response res = await Dio().get(path);
-        print('######## ressssssss = $res');
-        try {
-          if (res.toString() == 'true') {
-            MyDialog()
-                .normalDialog(context, 'Update Profile Success', 'Success');
-            clearField();
+    Random random = Random();
+    int i = random.nextInt(1000000);
+    String nameFile = 'img$i.jpg';
+
+    try {
+      Map<String, dynamic> map = Map();
+      map['pickedFile'] =
+          await MultipartFile.fromFile(imageFile!.path, filename: nameFile);
+      FormData formData = FormData.fromMap(map);
+      await Dio().post(apicheckLogin, data: formData).then((value) async {
+        String urlPathImage = '/pkoffice/images/Profile/$nameFile';
+        print('######## urlPathImage = ${MyConstant.domain}$urlPathImage');
+
+        String apiget = '${MyConstant.domain}/pkoffice/api/signin.php?isAdd=true&username=$username';
+        await Dio().get(apiget).then((value) async {
+          print('## value for API  ==>  $value');
+          SharedPreferences preferences = await SharedPreferences.getInstance();
+          String id = preferences.getString('id')!;
+          print('######## userid = $id');
+          if (value.toString() == 'null') {
+            String apiinsert =
+                '${MyConstant.domain}/pkoffice/api/updateprofile.php?isAdd=true&username=$username&id=$id&password=$passapp&img_path=$urlPathImage';
+            Response res = await Dio().get(apiinsert);
+            print('######## ressssssss = $res');
+            try {
+              if (res.toString() == 'true') {
+                MyDialog()
+                    .normalDialog(context, 'Update Profile Success', 'Success');
+                clearField();
+              } else {
+                MyDialog().normalDialog(
+                    context, 'Update Profile UnSuccess', 'UnSuccess');
+              }
+            } catch (e) {}
           } else {
-            MyDialog()
-                .normalDialog(context, 'Update Profile UnSuccess', 'UnSuccess');
+            MyDialog().normalDialog(
+                context, 'มี $username ในฐานข้อมูลแล้ว', 'Username ซ้ำ');
           }
-        } catch (e) {}
-      } else {
-        MyDialog().normalDialog(
-            context, 'มี $username ในฐานข้อมูลแล้ว', 'Username ซ้ำ');
-      }
-    });
+        });
+      });
+    } catch (e) {}
   }
 
   Row buildPassword(double size) {
@@ -305,37 +377,6 @@ class _MainProfileState extends State<MainProfile> {
                 borderRadius: BorderRadius.circular(30),
               ),
             ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Row buildImage(double size) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          margin: const EdgeInsets.only(top: 30),
-          width: size * 0.5,
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: CircleAvatar(
-              radius: 150,
-              // backgroundImage: NetworkImage("images/technician_1.png"),
-              child: _image == null ? Image.asset("images/technician_1.png", fit: BoxFit.cover)
-              : Image.file(_image)
-            ),
-            // Positioned(
-            //   bottom: -0,
-            //   left: 140,
-            //   child: IconButton(
-            //     onPressed: () => chooseImage(ImageSource.camera),
-            //     icon: Icon(Icons.add_a_photo),
-            //     iconSize: 70,
-            //     color: Colors.lightBlue,
-            //   ),
-            // ),
           ),
         ),
       ],

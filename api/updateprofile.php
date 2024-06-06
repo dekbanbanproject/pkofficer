@@ -17,14 +17,15 @@
     if(isset($_GET)){
         if ($_GET['isAdd'] == 'true') {
             $date = date('Y-m-d');
-
+            // img_path
             $id                   = $_GET['id'];  
             $username             = $_GET['username'];
             $passapp              = $_GET['password']; 
             $password_            = $_GET['password']; 
+            $img_path            = $_GET['img_path']; 
             // $password             = Hash::make($password_);
             $password             = password_hash($password_, PASSWORD_DEFAULT);
-            $sql = "UPDATE `users` SET `username` = '$username',`password` = '$password',`passapp` = '$passapp' WHERE id = '$id'";
+            $sql = "UPDATE `users` SET `username` = '$username',`password` = '$password',`passapp` = '$passapp',`img_path` = '$img_path' WHERE id = '$id'";
             $result = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
             if ($result) {
                 echo "true";
