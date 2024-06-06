@@ -244,8 +244,8 @@ class _MainProfileState extends State<MainProfile> {
   }
 
   Future<Null> updateUsersNew({String? username, String? passapp}) async {
-    String apicheckLogin =
-        '${MyConstant.domain}/pkoffice/api/signin.php?isAdd=true&username=$username';
+    String urlUpload =
+        '${MyConstant.domain}/pkoffice/api/saveimgProfile.php?isAdd=true';
     Random random = Random();
     int i = random.nextInt(1000000);
     String nameFile = 'img$i.jpg';
@@ -255,7 +255,7 @@ class _MainProfileState extends State<MainProfile> {
       map['pickedFile'] =
           await MultipartFile.fromFile(imageFile!.path, filename: nameFile);
       FormData formData = FormData.fromMap(map);
-      await Dio().post(apicheckLogin, data: formData).then((value) async {
+      await Dio().post(urlUpload, data: formData).then((value) async {
         String urlPathImage = '/pkoffice/images/Profile/$nameFile';
         print('######## urlPathImage = ${MyConstant.domain}$urlPathImage');
 
