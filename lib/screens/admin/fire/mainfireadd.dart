@@ -164,11 +164,11 @@ class _MainFireaddState extends State<MainFireadd> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                          radius: 80,
+                          radius: 60,
                           child: Icon(
                             Icons.qr_code_scanner_sharp,
                             color: Colors.orange,
-                            size: 80,
+                            size: 60,
                           ),
                         ),
                       ],
@@ -190,14 +190,14 @@ class _MainFireaddState extends State<MainFireadd> {
                 Text(
                   // 'รหัสถังดับเพลิง :$_scanBarcode',
                   'รหัสถังดับเพลิง : $firenum',
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(fontSize: 22),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
                     top: 15,
                     bottom: 10,
-                    left: 20,
-                    right: 20,
+                    left: 40,
+                    right: 40,
                   ),
                   child: Container(
                     decoration: BoxDecoration(
@@ -228,7 +228,7 @@ class _MainFireaddState extends State<MainFireadd> {
                       child: ListTile(
                         leading: const Text(
                           'สายฉีด',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 22),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -242,7 +242,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 20, right: 20),
+                      top: 3, bottom: 10, left: 40, right: 40),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -272,7 +272,7 @@ class _MainFireaddState extends State<MainFireadd> {
                       child: ListTile(
                         leading: const Text(
                           'คันบังคับ',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 22),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -286,7 +286,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 20, right: 20),
+                      top: 3, bottom: 10, left: 40, right: 40),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -316,7 +316,7 @@ class _MainFireaddState extends State<MainFireadd> {
                       child: ListTile(
                         leading: const Text(
                           'ตัวถัง',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 22),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -330,7 +330,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 20, right: 20),
+                      top: 3, bottom: 10, left: 40, right: 40),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -360,7 +360,7 @@ class _MainFireaddState extends State<MainFireadd> {
                       child: ListTile(
                         leading: const Text(
                           'เกจความดัน',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 22),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -374,7 +374,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 20, right: 20),
+                      top: 3, bottom: 2, left: 40, right: 40),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -404,7 +404,7 @@ class _MainFireaddState extends State<MainFireadd> {
                       child: ListTile(
                         leading: const Text(
                           'สิ่งกีดขวาง',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 22),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -435,7 +435,7 @@ class _MainFireaddState extends State<MainFireadd> {
           margin: const EdgeInsets.symmetric(vertical: 20),
           width: size * 0.4,
           child: Padding(
-            padding: const EdgeInsets.only(top: 3),
+            padding: const EdgeInsets.only(top: 2),
             child: ElevatedButton.icon(
               icon: const Padding(
                 padding: EdgeInsets.all(10.0),
@@ -478,12 +478,8 @@ class _MainFireaddState extends State<MainFireadd> {
                     style: MyConstant().h2save(),
                   ),
                   onPressed: () {
-                    if (injectionStatus.isEmpty ||
-                        joystickStatus.isEmpty ||
-                        bodyStatus.isEmpty ||
-                        gaugeStatus.isEmpty ||
-                        drawbackStatus.isEmpty) {
-                      MyDialog().normalDialog(context, 'ยังไม่ได้เลือก', 'ข้อมูลว่าง');
+                    if ( firenum !='' ) {
+                      MyDialog().normalDialog(context, 'ยังไม่ได้สแกน QRCODE', 'รหัสถังดับเพลิงว่าง');
                        
                       // setState(() {  
                       //   barcodeScanRes = '';
@@ -493,6 +489,12 @@ class _MainFireaddState extends State<MainFireadd> {
                       //   gaugeStatus = '';
                       //   drawbackStatus = '';
                       // });
+                    }else if (injectionStatus.isEmpty ||
+                        joystickStatus.isEmpty ||
+                        bodyStatus.isEmpty ||
+                        gaugeStatus.isEmpty ||
+                        drawbackStatus.isEmpty){
+                           MyDialog().normalDialog(context, 'ยังไม่ได้เลือกข้อมูล', 'ข้อมูลว่าง');
                     } else {
                       Navigator.pop(context);
                       saveActive();
@@ -637,7 +639,7 @@ class _MainFireaddState extends State<MainFireadd> {
         child: Row(
           children: <Widget>[
             Radio(
-              value: '0',
+              value: '0',hoverColor: Color.fromARGB(255, 45, 240, 223),
               groupValue: injectionStatus,
               onChanged: (value) {
                 setState(() {
@@ -645,8 +647,9 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ'),
+            const Text('ปกติ',style: TextStyle(fontSize: 22)),
             Radio(
+                activeColor: Colors.pink,
               value: '1',
               groupValue: injectionStatus,
               onChanged: (value) {
@@ -655,7 +658,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด'),
+            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
           ],
         ),
       );
@@ -672,8 +675,9 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ'),
+            const Text('ปกติ',style: TextStyle(fontSize: 22)),
             Radio(
+                activeColor: Colors.pink,
               value: '1',
               groupValue: joystickStatus,
               onChanged: (value) {
@@ -682,7 +686,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด'),
+            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
           ],
         ),
       );
@@ -699,8 +703,8 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ'),
-            Radio(
+            const Text('ปกติ',style: TextStyle(fontSize: 22)),
+            Radio(  activeColor: Colors.pink,
               value: '1',
               groupValue: bodyStatus,
               onChanged: (value) {
@@ -709,7 +713,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด'),
+            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
           ],
         ),
       );
@@ -726,8 +730,8 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ'),
-            Radio(
+            const Text('ปกติ',style: TextStyle(fontSize: 22)),
+            Radio(  activeColor: Colors.pink,
               value: '1',
               groupValue: gaugeStatus,
               onChanged: (value) {
@@ -736,7 +740,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด'),
+            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
           ],
         ),
       );
@@ -753,8 +757,8 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ'),
-            Radio(
+            const Text('ปกติ',style: TextStyle(fontSize: 22)),
+            Radio(  activeColor: Colors.pink,
               value: '1',
               groupValue: drawbackStatus,
               onChanged: (value) {
@@ -763,7 +767,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด'),
+            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
           ],
         ),
       );

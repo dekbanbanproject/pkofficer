@@ -76,7 +76,7 @@ class _LoginState extends State<Login> {
                 child: Icon(
                   Icons.fingerprint_rounded,
                   color: Color.fromARGB(255, 8, 190, 166),
-                  size: 70.0,
+                  size: 40.0,
                 ),
               ),
               label: Text(

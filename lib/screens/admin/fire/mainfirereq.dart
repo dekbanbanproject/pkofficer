@@ -101,7 +101,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text('รายการที่ตรวจเช็คแล้ว',
-                                  style: MyConstant().h1title()),
+                                  style: MyConstant().h2hearder()),
                             ],
                           ),
                         ),
@@ -111,14 +111,14 @@ class _MainfirereqState extends State<Mainfirereq> {
                           child: Row(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(2.0),
                                 child: Text(
                                   'รหัสถังดับเพลิง',
                                   style: MyConstant().h3header(),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.only(left: 5),
                                 child: Text(
                                   'วันที่',
                                   style: MyConstant().h3header(),
@@ -126,7 +126,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 40, right: 20),
+                                    const EdgeInsets.only(left: 10, right: 10),
                                 child: Text(
                                   'สายฉีด',
                                   style: MyConstant().h3header(),
@@ -134,7 +134,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 30, right: 20),
+                                    const EdgeInsets.only(left: 10, right: 10),
                                 child: Text(
                                   'คันบังคับ',
                                   style: MyConstant().h3header(),
@@ -142,7 +142,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 20, right: 20),
+                                    const EdgeInsets.only(left: 10, right: 10),
                                 child: Text(
                                   'ตัวถัง',
                                   style: MyConstant().h3header(),
@@ -150,7 +150,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 20, right: 20),
+                                    const EdgeInsets.only(left: 10, right: 10),
                                 child: Text(
                                   'เกจความดัน',
                                   style: MyConstant().h3header(),
@@ -158,7 +158,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 20, right: 20),
+                                    const EdgeInsets.only(left: 10, right: 10),
                                 child: Text(
                                   'สิ่งกีดขวาง',
                                   style: MyConstant().h3header(),

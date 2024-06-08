@@ -13,96 +13,121 @@ class MyConstant {
       "http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/pull_hosapi";
 
   static String appName = 'PK-OFFicer';
+  static String appbar = 'PK-OFFicer';
+  static String version = '  V.670607';
   // static String domain = 'http://27.254.191.157/';
-  static String domain                    = 'http://smarthos-phukieohos.moph.go.th';
+  static String domain = 'http://smarthos-phukieohos.moph.go.th';
   // static String authenspsch              = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/authen_spsch';
   // static String authenspsch_mini         = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/authen_spsch_mini';
   // static String pullhos                  = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/pull_hosapi'  ;
   // static String pullhosminiapi           = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/pull_hosminiapi';
   // static String fdh_mini_auth            = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_mini_auth';
   // static String fdh_mini_pullhosinv      = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_mini_pullhosinv';
-  // static String fdh_minipullhosnoinv     = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_minipullhosnoinv';  
+  // static String fdh_minipullhosnoinv     = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_minipullhosnoinv';
   // static String fdh_mini_pidsit          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_mini_pidsit';
   // static String fdh_mini_pullbookid      = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_mini_pullbookid';
   // static String fdh_countvn              = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_countvn';
-  // static String fdh_sumincome            = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_sumincome';
-  // static String fdh_countpidsit          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_countpidsit';
-  // static String fdh_countbookid          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_countbookid';
-  // static String fdh_countauthen          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_countauthen';
-  // static String fdh_countauthennull      = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_countauthennull';
-  // static String fdh_sumincome_authen     = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_sumincome_authen';
-  // static String fdh_sumincome_noauthen   = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_sumincome_noauthen';
-  // static String getfirenum               = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/getfirenum';
-  // static String countfiregreenall        = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreenall'; 
-  // static String countfiregreen           = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreen'; 
-  // static String countfireredall          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfireredall';
-  // static String countfirered             = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfirered';
-  // static String countfireredrepaire      = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfireredrepaire';
-  // static String countfiregreenrepaire    = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreenrepaire';
-  // static String fire_pramuan             = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/fire_pramuan';
-  // static String getFiredata              = 'http://smarthos-phukieohos.moph.go.th/pkoffice/api/getfire_detailsave.php?isAdd=true&';
-
-  // static String countfiregreen           = 'http://smarthos-phukieohos.moph.go.th/pkoffice/api/countfire.php?isAddGREEN=true';
-  static String domainin                 = 'http://192.168.0.217';
-  static String authenspsch              = 'http://192.168.0.217/pkbackoffice/public/api/authen_spsch';
-  static String authenspsch_mini         = 'http://192.168.0.217/pkbackoffice/public/api/authen_spsch_mini';
-  static String pullhos                  = 'http://192.168.0.217/pkbackoffice/public/api/pull_hosapi'  ;
-  static String pullhosminiapi           = 'http://192.168.0.217/pkbackoffice/public/api/pull_hosminiapi';
-  static String fdh_mini_auth            = 'http://192.168.0.217/pkbackoffice/public/api/fdh_mini_auth';
-  static String fdh_mini_pullhosinv      = 'http://192.168.0.217/pkbackoffice/public/api/fdh_mini_pullhosinv';
-  static String fdh_minipullhosnoinv     = 'http://192.168.0.217/pkbackoffice/public/api/fdh_minipullhosnoinv';  
-  static String fdh_mini_pidsit          = 'http://192.168.0.217/pkbackoffice/public/api/fdh_mini_pidsit';
-  static String fdh_mini_pullbookid      = 'http://192.168.0.217/pkbackoffice/public/api/fdh_mini_pullbookid';
-  static String fdh_countvn              = 'http://192.168.0.217/pkbackoffice/public/api/fdh_countvn';
-  static String fdh_sumincome            = 'http://192.168.0.217/pkbackoffice/public/api/fdh_sumincome';
-  static String fdh_countpidsit          = 'http://192.168.0.217/pkbackoffice/public/api/fdh_countpidsit';
-  static String fdh_countbookid          = 'http://192.168.0.217/pkbackoffice/public/api/fdh_countbookid';
-  static String fdh_countauthen          = 'http://192.168.0.217/pkbackoffice/public/api/fdh_countauthen';
-  static String fdh_countauthennull      = 'http://192.168.0.217/pkbackoffice/public/api/fdh_countauthennull';
-  static String fdh_sumincome_authen     = 'http://192.168.0.217/pkbackoffice/public/api/fdh_sumincome_authen';
-  static String fdh_sumincome_noauthen   = 'http://192.168.0.217/pkbackoffice/public/api/fdh_sumincome_noauthen';
-  static String getfirenum               = 'http://192.168.0.217/pkbackoffice/public/api/getfirenum';
-  static String countfiregreenall        = 'http://192.168.0.217/pkbackoffice/public/api/countfiregreenall'; 
-  static String countfiregreen           = 'http://192.168.0.217/pkbackoffice/public/api/countfiregreen'; 
-  static String countfireredall          = 'http://192.168.0.217/pkbackoffice/public/api/countfireredall';
-  static String countfirered             = 'http://192.168.0.217/pkbackoffice/public/api/countfirered';
-  static String countfireredrepaire      = 'http://192.168.0.217/pkbackoffice/public/api/countfireredrepaire';
-  static String countfiregreenrepaire    = 'http://192.168.0.217/pkbackoffice/public/api/countfiregreenrepaire';
+  static String fdh_sumincome            = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_sumincome';
+  static String fdh_countpidsit          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_countpidsit';
+  static String fdh_countbookid          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_countbookid';
+  static String fdh_countauthen          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_countauthen';
+  static String fdh_countauthennull      = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_countauthennull';
+  static String fdh_sumincome_authen     = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_sumincome_authen';
+  static String fdh_sumincome_noauthen   = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_sumincome_noauthen';
+  static String getfirenum               = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/getfirenum';
+  static String countfiregreenall        = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreenall';
+  static String countfiregreen           = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreen';
+  static String countfireredall          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfireredall';
+  static String countfirered             = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfirered';
+  static String countfireredrepaire      = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfireredrepaire';
+  static String countfiregreenrepaire    = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreenrepaire';
   static String fire_pramuan             = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/fire_pramuan';
-
   static String getFiredata              = 'http://smarthos-phukieohos.moph.go.th/pkoffice/api/getfire_detailsave.php?isAdd=true&';
+  // static String countfiregreen           = 'http://smarthos-phukieohos.moph.go.th/pkoffice/api/countfire.php?isAddGREEN=true';
+  static String domainin = 'http://192.168.0.217';
+  static String authenspsch =
+      'http://192.168.0.217/pkbackoffice/public/api/authen_spsch';
+  static String authenspsch_mini =
+      'http://192.168.0.217/pkbackoffice/public/api/authen_spsch_mini';
+  static String pullhos =
+      'http://192.168.0.217/pkbackoffice/public/api/pull_hosapi';
+  static String pullhosminiapi =
+      'http://192.168.0.217/pkbackoffice/public/api/pull_hosminiapi';
+  static String fdh_mini_auth =
+      'http://192.168.0.217/pkbackoffice/public/api/fdh_mini_auth';
+  static String fdh_mini_pullhosinv =
+      'http://192.168.0.217/pkbackoffice/public/api/fdh_mini_pullhosinv';
+  static String fdh_minipullhosnoinv =
+      'http://192.168.0.217/pkbackoffice/public/api/fdh_minipullhosnoinv';
+  static String fdh_mini_pidsit =
+      'http://192.168.0.217/pkbackoffice/public/api/fdh_mini_pidsit';
+  static String fdh_mini_pullbookid =
+      'http://192.168.0.217/pkbackoffice/public/api/fdh_mini_pullbookid';
+  static String fdh_countvn =
+      'http://192.168.0.217/pkbackoffice/public/api/fdh_countvn';
+  // static String fdh_sumincome =
+  //     'http://192.168.0.217/pkbackoffice/public/api/fdh_sumincome';
+  // static String fdh_countpidsit =
+  //     'http://192.168.0.217/pkbackoffice/public/api/fdh_countpidsit';
+  // static String fdh_countbookid =
+  //     'http://192.168.0.217/pkbackoffice/public/api/fdh_countbookid';
+  // static String fdh_countauthen =
+  //     'http://192.168.0.217/pkbackoffice/public/api/fdh_countauthen';
+  // static String fdh_countauthennull =
+  //     'http://192.168.0.217/pkbackoffice/public/api/fdh_countauthennull';
+  // static String fdh_sumincome_authen =
+  //     'http://192.168.0.217/pkbackoffice/public/api/fdh_sumincome_authen';
+  // static String fdh_sumincome_noauthen =
+  //     'http://192.168.0.217/pkbackoffice/public/api/fdh_sumincome_noauthen';
+  // static String getfirenum =
+  //     'http://192.168.0.217/pkbackoffice/public/api/getfirenum';
+  // static String countfiregreenall =
+  //     'http://192.168.0.217/pkbackoffice/public/api/countfiregreenall';
+  // static String countfiregreen =
+  //     'http://192.168.0.217/pkbackoffice/public/api/countfiregreen';
+  // static String countfireredall =
+  //     'http://192.168.0.217/pkbackoffice/public/api/countfireredall';
+  // static String countfirered =
+  //     'http://192.168.0.217/pkbackoffice/public/api/countfirered';
+  // static String countfireredrepaire =
+  //     'http://192.168.0.217/pkbackoffice/public/api/countfireredrepaire';
+  // static String countfiregreenrepaire =
+  //     'http://192.168.0.217/pkbackoffice/public/api/countfiregreenrepaire';
+  // static String fire_pramuan =
+  //     'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/fire_pramuan';
 
-  static String routeLogin        = '/login';
-  static String routeHome         = '/home';
-  static String routeUserPage     = '/user';
-  static String routeCameracctv   = '/cameracctv';
-  static String routeCctvhome     = '/cctvhome'; 
-  static String routeAdminPage    = '/admin';
+  // static String getFiredata =
+  //     'http://smarthos-phukieohos.moph.go.th/pkoffice/api/getfire_detailsave.php?isAdd=true&';
+
+  static String routeLogin = '/login';
+  static String routeHome = '/home';
+  static String routeUserPage = '/user';
+  static String routeCameracctv = '/cameracctv';
+  static String routeCctvhome = '/cctvhome';
+  static String routeAdminPage = '/admin';
   static String routeAdminnewPage = '/adminnew';
-  static String routeMainCctvAdd  = '/cctvadd';
-  static String routeMainCctv     = '/cctvmain';
-  static String routeMaincctvReq  = '/maincctvReq';
-  static String routespachScreen  = '/spachscreen';
-  static String routemainfdh      = '/mainfdh';
-  static String routeauthenspsch  = '/authen';
+  static String routeMainCctvAdd = '/cctvadd';
+  static String routeMainCctv = '/cctvmain';
+  static String routeMaincctvReq = '/maincctvReq';
+  static String routespachScreen = '/spachscreen';
+  static String routemainfdh = '/mainfdh';
+  static String routeauthenspsch = '/authen';
   static String routeMainfireshow = '/mainfireshow';
   static String routeFireMainPage = '/firemainpage';
-  static String routeFireaddPage  = '/fireadd';
-  static String routeMainAirNew  = '/mainairnew';
-  var version = const Text(
-      // 'V.641105', style: TextStyle(color: Colors.white),
-      'V.670511',
-      style: TextStyle(
-        color: Colors.orange,
-        fontSize: 17,
-      )
-      // style: MyConstant().h2back(),
-  );
+  static String routeFireaddPage = '/fireadd';
+  static String routeMainAirNew = '/mainairnew';
+  // var version = const Text(
+  //     'V.670607',
+  //     style: TextStyle(
+  //       color: Color.fromARGB(255, 247, 84, 138), fontWeight: FontWeight.normal,
+  //       fontSize: 22
+  //     )
+  // );
 
   _setHeaders() => {
         'Content-type': 'application/json',
         'Accept': 'application/json',
-  };
+      };
 
   _getToken() async {
     SharedPreferences localStorage = await SharedPreferences.getInstance();
@@ -209,25 +234,45 @@ class MyConstant {
 
   TextStyle h1dark() =>
       TextStyle(fontSize: 22, color: back, fontWeight: FontWeight.normal);
-TextStyle h4version() =>
-      TextStyle(fontSize: 22, color: Color.fromARGB(255, 247, 84, 138), fontWeight: FontWeight.normal);
+  TextStyle h4version() => TextStyle(
+      fontSize: 22,
+      color: Color.fromARGB(255, 247, 84, 138),
+      fontWeight: FontWeight.normal);
   TextStyle h1White() =>
       TextStyle(fontSize: 24, color: white, fontWeight: FontWeight.bold);
-TextStyle appnameheader() =>
-      const TextStyle(fontSize: 60, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
-  TextStyle h2() =>
-      const TextStyle(fontSize: 17, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
-TextStyle h2title() =>
-      const TextStyle(fontSize: 20, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
-      TextStyle h1title() =>
-      const TextStyle(fontSize: 40, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
-        TextStyle h1login() =>
-      const TextStyle(fontSize: 30, color: Color.fromARGB(255, 27, 207, 180), fontWeight: FontWeight.bold);
+  TextStyle appnameheader() => const TextStyle(
+      fontSize: 60,
+      color: Color.fromARGB(255, 4, 160, 137),
+      fontWeight: FontWeight.normal);
+  TextStyle appbarname() => const TextStyle(
+      fontSize: 60,
+      color: Color.fromARGB(255, 4, 160, 137),
+      fontWeight: FontWeight.normal);
+  TextStyle h2() => const TextStyle(
+      fontSize: 17,
+      color: Color.fromARGB(255, 27, 207, 180),
+      fontWeight: FontWeight.bold);
+  TextStyle h2title() => const TextStyle(
+      fontSize: 20,
+      color: Color.fromARGB(255, 27, 207, 180),
+      fontWeight: FontWeight.bold);
+  TextStyle h1title() => const TextStyle(
+      fontSize: 40,
+      color: Color.fromARGB(255, 27, 207, 180),
+      fontWeight: FontWeight.bold);
+  TextStyle h1login() => const TextStyle(
+      fontSize: 30,
+      color: Color.fromARGB(255, 27, 207, 180),
+      fontWeight: FontWeight.bold);
+      TextStyle h2hearder() => const TextStyle(
+      fontSize: 30,
+      color: Color.fromARGB(255, 27, 207, 180),
+      fontWeight: FontWeight.bold);
   TextStyle h2save() => const TextStyle(
       fontSize: 20,
       color: Color.fromARGB(255, 11, 185, 162),
       fontWeight: FontWeight.bold);
-      TextStyle h1save() => const TextStyle(
+  TextStyle h1save() => const TextStyle(
       fontSize: 30,
       color: Color.fromARGB(255, 11, 185, 162),
       fontWeight: FontWeight.bold);
@@ -256,8 +301,10 @@ TextStyle h2title() =>
       TextStyle(fontSize: 14, color: primary, fontWeight: FontWeight.bold);
   TextStyle h3white() =>
       TextStyle(fontSize: 14, color: white, fontWeight: FontWeight.bold);
-       TextStyle h3header() =>
-      TextStyle(fontSize: 17, color: Color.fromARGB(255, 11, 185, 162), fontWeight: FontWeight.bold);
+  TextStyle h3header() => TextStyle(
+      fontSize: 17,
+      color: Color.fromARGB(255, 11, 185, 162),
+      fontWeight: FontWeight.bold);
 
   TextStyle h1back() =>
       TextStyle(fontSize: 24, color: back, fontWeight: FontWeight.bold);
