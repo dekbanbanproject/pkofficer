@@ -66,63 +66,63 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [                
-                    Text('รายการที่รอเปลี่ยนถังดับเพลิง', style: MyConstant().h1title()),                
+                    Text('รายการที่รอเปลี่ยนถังดับเพลิง', style: MyConstant().h1newtitle()),                
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'รหัสถังดับเพลิง',
-                      style: MyConstant().h3header(),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'ขนาด(ปอนด์)',
-                      style: MyConstant().h3header(),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 40, right: 20),
-                    child: Text(
-                      'ถังสี',
-                      style: MyConstant().h3header(),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30, right: 20),
-                    child: Text(
-                      'สถานที่ติดตั้ง',
-                      style: MyConstant().h3header(),
-                    ),
-                  ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(left: 20, right: 20),
-                  //   child: Text(
-                  //     'ตัวถัง',
-                  //     style: MyConstant().h3header(),
-                  //   ),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(left: 20, right: 20),
-                  //   child: Text(
-                  //     'เกจความดัน',
-                  //     style: MyConstant().h3header(),
-                  //   ),
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(left: 20, right: 20),
-                  //   child: Text(
-                  //     'สิ่งกีดขวาง',
-                  //     style: MyConstant().h3header(),
-                  //   ),
-                  // ),
-                ],
-              ),
+              // Row(
+              //   children: [
+              //     Padding(
+              //       padding: const EdgeInsets.all(8.0),
+              //       child: Text(
+              //         'รหัสถังดับเพลิง',
+              //         style: MyConstant().h3header(),
+              //       ),
+              //     ),
+              //     Padding(
+              //       padding: const EdgeInsets.all(8.0),
+              //       child: Text(
+              //         'ขนาด(ปอนด์)',
+              //         style: MyConstant().h3header(),
+              //       ),
+              //     ),
+              //     Padding(
+              //       padding: const EdgeInsets.only(left: 40, right: 20),
+              //       child: Text(
+              //         'ถังสี',
+              //         style: MyConstant().h3header(),
+              //       ),
+              //     ),
+              //     Padding(
+              //       padding: const EdgeInsets.only(left: 30, right: 20),
+              //       child: Text(
+              //         'สถานที่ติดตั้ง',
+              //         style: MyConstant().h3header(),
+              //       ),
+              //     ),
+              //     // Padding(
+              //     //   padding: const EdgeInsets.only(left: 20, right: 20),
+              //     //   child: Text(
+              //     //     'ตัวถัง',
+              //     //     style: MyConstant().h3header(),
+              //     //   ),
+              //     // ),
+              //     // Padding(
+              //     //   padding: const EdgeInsets.only(left: 20, right: 20),
+              //     //   child: Text(
+              //     //     'เกจความดัน',
+              //     //     style: MyConstant().h3header(),
+              //     //   ),
+              //     // ),
+              //     // Padding(
+              //     //   padding: const EdgeInsets.only(left: 20, right: 20),
+              //     //   child: Text(
+              //     //     'สิ่งกีดขวาง',
+              //     //     style: MyConstant().h3header(),
+              //     //   ),
+              //     // ),
+              //   ],
+              // ),
               
               // Padding(
               //   padding: const EdgeInsets.only(top: 10),

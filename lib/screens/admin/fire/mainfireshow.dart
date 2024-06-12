@@ -133,7 +133,7 @@ class _MainFireshowState extends State<MainFireshow> {
                   child: CustomAppBar(),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 280),
+                  margin: const EdgeInsets.only(top: 240),
                   decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 229, 244, 253),
                     borderRadius: BorderRadius.only(
@@ -144,7 +144,7 @@ class _MainFireshowState extends State<MainFireshow> {
                 ),
                 SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 140),
+                    padding: const EdgeInsets.only(top: 120),
                     child: Container(
                       // padding: const EdgeInsets.all(8.0),
                       child: Column(

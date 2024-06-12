@@ -46,7 +46,7 @@ class _FireMainPageState extends State<FireMainPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         elevation: 5,
-        height: 100,
+        height: 70,
          color: Color.fromARGB(255, 189, 228, 252),
         shape: const CircularNotchedRectangle(),
         notchMargin: 15,
@@ -63,7 +63,7 @@ class _FireMainPageState extends State<FireMainPage> {
               icon: Icon(
                 // Icons.video_camera_front,
                 Icons.fire_extinguisher,
-                size: 50,
+                size: 30,
                 color: currentIndex == 0
                     ? MyConstant.cctvhomeColor
                     : Colors.grey.shade400,
@@ -77,7 +77,7 @@ class _FireMainPageState extends State<FireMainPage> {
               },
               icon: Icon(
                 Icons.edit_square,
-                size: 50,
+                size: 30,
                 color: currentIndex == 1
                     ? MyConstant.kcctvtColor
                     : Colors.grey.shade400,
@@ -94,7 +94,7 @@ class _FireMainPageState extends State<FireMainPage> {
               },
               icon: Icon(
                 Icons.bar_chart,
-                size: 50,
+                size: 30,
                 color: currentIndex == 3
                     ? MyConstant.cctvtreportColor
                     : Colors.grey.shade400,
@@ -108,7 +108,7 @@ class _FireMainPageState extends State<FireMainPage> {
               },
               icon: Icon(
                 Icons.add_task,
-                size: 50,
+                size: 30,
                 color: currentIndex == 4
                     ? MyConstant.cctvprofileColor
                     : Colors.grey.shade400,

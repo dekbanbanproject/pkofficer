@@ -59,7 +59,7 @@ class _AdminNewState extends State<AdminNew> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         elevation: 5,
-        height: 100,
+        height: 70,
         color: const Color.fromARGB(255, 248, 224, 224),
         shape: const CircularNotchedRectangle(),
         notchMargin: 15,
@@ -75,7 +75,7 @@ class _AdminNewState extends State<AdminNew> {
               },
               icon: Icon(
                 Icons.notifications_outlined,
-                size: 50,
+                size: 30,
                 color: currentIndex == 0
                     ? MyConstant.cctvhomeColor
                     : Colors.grey.shade400,
@@ -89,14 +89,14 @@ class _AdminNewState extends State<AdminNew> {
               },
               icon: Icon(
                 Icons.manage_accounts,
-                size: 50,
+                size: 30,
                 color: currentIndex == 1
                     ? MyConstant.kcctvtColor
                     : Colors.grey.shade400,
               ),
             ),
             const SizedBox(
-              width: 50,
+              width: 30,
             ),
             IconButton(
               onPressed: () {
@@ -106,7 +106,7 @@ class _AdminNewState extends State<AdminNew> {
               },
               icon: Icon(
                 Icons.bar_chart,
-                size: 50,
+                size: 30,
                 color: currentIndex == 3
                     ? MyConstant.cctvtreportColor
                     : Colors.grey.shade400,
@@ -120,7 +120,7 @@ class _AdminNewState extends State<AdminNew> {
               },
               icon: Icon(
                 Icons.lock_person,
-                size: 50,
+                size: 30,
                 color: currentIndex == 4
                     ? MyConstant.cctvprofileColor
                     : Colors.grey.shade400,

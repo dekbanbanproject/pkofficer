@@ -54,7 +54,7 @@ class _LoginState extends State<Login> {
       children: [
         Container(
           margin: const EdgeInsets.symmetric(vertical: 18),
-          width: size * 0.3,
+          width: size * 0.5,
           // child: ElevatedButton(
           //   style: MyConstant().mybuttonStyle(),
           // onPressed: () {
@@ -156,7 +156,7 @@ class _LoginState extends State<Login> {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 15),
-          width: size * 0.5,
+          width: size * 0.6,
           child: TextFormField(
             controller: passappController,
             validator: (value) {
@@ -192,11 +192,11 @@ class _LoginState extends State<Login> {
               enabledBorder: OutlineInputBorder(
                 borderSide:
                     BorderSide(color: Color.fromARGB(255, 27, 207, 180)),
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: MyConstant.warning),
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
           ),
@@ -211,7 +211,7 @@ class _LoginState extends State<Login> {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 25),
-          width: size * 0.5,
+          width: size * 0.6,
           child: TextFormField(
             controller: usernameController,
             validator: (value) {
@@ -231,11 +231,11 @@ class _LoginState extends State<Login> {
               enabledBorder: OutlineInputBorder(
                 borderSide:
                     BorderSide(color: Color.fromARGB(255, 27, 207, 180)),
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: MyConstant.warning),
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
           ),
@@ -249,7 +249,7 @@ class _LoginState extends State<Login> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 30),
+          margin: const EdgeInsets.only(top: 10),
           child: ShowTitle(
             title: MyConstant.appName,
             textStyle: MyConstant().appnameheader(),
@@ -264,14 +264,14 @@ class _LoginState extends State<Login> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          height: 200,
-          width: 200,
+          height: 180,
+          width: 180,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
             image: DecorationImage(
                 image: AssetImage("images/logo.png"), fit: BoxFit.cover),
           ),
-          margin: const EdgeInsets.only(top: 200),
+          margin: const EdgeInsets.only(top: 120),
           // width: size * 0.3,
           // child: ShowImage(path: MyConstant.img_logo),
         ),

@@ -83,10 +83,10 @@ class _MainProfileState extends State<MainProfile> {
             child: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 0, left: 15, right: 15),
+                  padding: const EdgeInsets.only(top: 5, left: 15, right: 15),
                   child: CustomAppBar(),
                 ),
-                SizedBox(height: 13),
+                // SizedBox(height: 13),
                 buildImage(size),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -104,13 +104,13 @@ class _MainProfileState extends State<MainProfile> {
                     IconButton(
                       onPressed: () => chooseImage(ImageSource.camera),
                       icon: Icon(Icons.add_a_photo),
-                      iconSize: 70,
+                      iconSize: 30,
                       color: Colors.lightBlue,
                     ),
                     IconButton(
                       onPressed: () => chooseImage(ImageSource.gallery),
                       icon: Icon(Icons.add_photo_alternate),
-                      iconSize: 75,
+                      iconSize: 35,
                       color: Color.fromARGB(255, 3, 211, 226),
                     ),
                     IconButton(
@@ -120,7 +120,7 @@ class _MainProfileState extends State<MainProfile> {
                         });
                       },
                       icon: Icon(Icons.delete),
-                      iconSize: 70,
+                      iconSize: 30,
                       color: Color.fromARGB(255, 226, 3, 88),
                     ),
                   ],
@@ -142,12 +142,12 @@ class _MainProfileState extends State<MainProfile> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 30),
+          margin: const EdgeInsets.only(top: 2),
           width: size * 0.5,
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(2.0),
             child: CircleAvatar(
-                radius: 150,
+                radius: 120,
                 backgroundImage:
                     imageFile != null ? FileImage(imageFile!) : null),
             // backgroundImage: NetworkImage("images/technician_1.png"),
@@ -203,7 +203,7 @@ class _MainProfileState extends State<MainProfile> {
       children: [
         Container(
           margin: const EdgeInsets.symmetric(vertical: 18),
-          width: size * 0.3,
+          width: size * 0.4,
           child: Padding(
             padding: const EdgeInsets.only(top: 25),
             child: ElevatedButton.icon(
@@ -212,7 +212,7 @@ class _MainProfileState extends State<MainProfile> {
                 child: Icon(
                   Icons.fingerprint,
                   color: Color.fromARGB(255, 8, 190, 166),
-                  size: 70.0,
+                  size: 30.0,
                 ),
               ),
               label: Text(
@@ -295,7 +295,7 @@ class _MainProfileState extends State<MainProfile> {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 25),
-          width: size * 0.4,
+          width: size * 0.7,
           child: TextFormField(
             controller: passappController,
             validator: (value) {
@@ -331,11 +331,11 @@ class _MainProfileState extends State<MainProfile> {
               enabledBorder: OutlineInputBorder(
                 borderSide:
                     const BorderSide(color: Color.fromARGB(255, 27, 207, 180)),
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: MyConstant.warning),
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
           ),
@@ -350,7 +350,7 @@ class _MainProfileState extends State<MainProfile> {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 25),
-          width: size * 0.4,
+          width: size * 0.7,
           child: TextFormField(
             controller: usernameController,
             validator: (value) {
@@ -370,11 +370,11 @@ class _MainProfileState extends State<MainProfile> {
               enabledBorder: OutlineInputBorder(
                 borderSide:
                     const BorderSide(color: Color.fromARGB(255, 27, 207, 180)),
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: MyConstant.warning),
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
           ),

@@ -144,7 +144,7 @@ class _MainFireeditState extends State<MainFireedit> {
                         child: ListTile(
                           leading: const Text(
                             'สายฉีด',
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 17),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -158,7 +158,7 @@ class _MainFireeditState extends State<MainFireedit> {
                   ),
                   Padding(
                       padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 40, right: 40),
+                      top: 3, bottom: 10, left: 10, right: 10),
                     child: Container(
                       decoration: BoxDecoration(
                         border: const Border(
@@ -191,7 +191,7 @@ class _MainFireeditState extends State<MainFireedit> {
                         child: ListTile(
                           leading: const Text(
                             'คันบังคับ',
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 17),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -205,7 +205,7 @@ class _MainFireeditState extends State<MainFireedit> {
                   ),
                   Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 40, right: 40),
+                      top: 3, bottom: 10, left: 10, right: 10),
                     child: Container(
                       decoration: BoxDecoration(
                         border: const Border(
@@ -238,7 +238,7 @@ class _MainFireeditState extends State<MainFireedit> {
                         child: ListTile(
                           leading: const Text(
                             'ตัวถัง',
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 17),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -252,7 +252,7 @@ class _MainFireeditState extends State<MainFireedit> {
                   ),
                   Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 40, right: 40),
+                      top: 3, bottom: 10, left: 10, right: 10),
                     child: Container(
                       decoration: BoxDecoration(
                         border: const Border(
@@ -285,7 +285,7 @@ class _MainFireeditState extends State<MainFireedit> {
                         child: ListTile(
                           leading: const Text(
                             'เกจความดัน',
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 17),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -299,7 +299,7 @@ class _MainFireeditState extends State<MainFireedit> {
                   ),
                   Padding(
                 padding: const EdgeInsets.only(
-                      top: 3, bottom: 2, left: 40, right: 40),
+                      top: 3, bottom: 2, left: 10, right: 10),
                     child: Container(
                       decoration: BoxDecoration(
                         border: const Border(
@@ -332,7 +332,7 @@ class _MainFireeditState extends State<MainFireedit> {
                         child: ListTile(
                           leading: const Text(
                             'สิ่งกีดขวาง',
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(fontSize: 17),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -503,7 +503,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 22)),
+            const Text('ปกติ',style: TextStyle(fontSize: 17)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -514,7 +514,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
           ],
         ),
       );
@@ -530,7 +530,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 22)),
+            const Text('ปกติ',style: TextStyle(fontSize: 17)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -541,7 +541,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
           ],
         ),
       );
@@ -558,7 +558,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 22)),
+            const Text('ปกติ',style: TextStyle(fontSize: 17)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -569,7 +569,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
           ],
         ),
       );
@@ -586,7 +586,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 22)),
+            const Text('ปกติ',style: TextStyle(fontSize: 17)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -597,7 +597,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
           ],
         ),
       );
@@ -614,7 +614,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 22)),
+            const Text('ปกติ',style: TextStyle(fontSize: 17)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -625,7 +625,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 22)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
           ],
         ),
       );

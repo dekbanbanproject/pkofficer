@@ -105,75 +105,75 @@ class _MainfirereqState extends State<Mainfirereq> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              top: 5, left: 20, right: 20, bottom: 5),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: Text(
-                                  'รหัสถังดับเพลิง',
-                                  style: MyConstant().h3header(),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 5),
-                                child: Text(
-                                  'วันที่',
-                                  style: MyConstant().h3header(),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Text(
-                                  'สายฉีด',
-                                  style: MyConstant().h3header(),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Text(
-                                  'คันบังคับ',
-                                  style: MyConstant().h3header(),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Text(
-                                  'ตัวถัง',
-                                  style: MyConstant().h3header(),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Text(
-                                  'เกจความดัน',
-                                  style: MyConstant().h3header(),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Text(
-                                  'สิ่งกีดขวาง',
-                                  style: MyConstant().h3header(),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(
+                        //       top: 5, left: 2, right: 2, bottom: 5),
+                        //   child: Row(
+                        //     children: [
+                        //       Padding(
+                        //         padding: const EdgeInsets.all(2.0),
+                        //         child: Text(
+                        //           'รหัสถังดับเพลิง',
+                        //           style: MyConstant().h3header(),
+                        //         ),
+                        //       ),
+                        //       Padding(
+                        //         padding: const EdgeInsets.only(left: 5),
+                        //         child: Text(
+                        //           'วันที่',
+                        //           style: MyConstant().h3header(),
+                        //         ),
+                        //       ),
+                        //       Padding(
+                        //         padding:
+                        //             const EdgeInsets.only(left: 2, right: 2),
+                        //         child: Text(
+                        //           'สายฉีด',
+                        //           style: MyConstant().h3header(),
+                        //         ),
+                        //       ),
+                        //       Padding(
+                        //         padding:
+                        //             const EdgeInsets.only(left: 2, right: 2),
+                        //         child: Text(
+                        //           'คันบังคับ',
+                        //           style: MyConstant().h3header(),
+                        //         ),
+                        //       ),
+                        //       Padding(
+                        //         padding:
+                        //             const EdgeInsets.only(left: 2, right: 2),
+                        //         child: Text(
+                        //           'ตัวถัง',
+                        //           style: MyConstant().h3header(),
+                        //         ),
+                        //       ),
+                        //       Padding(
+                        //         padding:
+                        //             const EdgeInsets.only(left: 2, right: 2),
+                        //         child: Text(
+                        //           'เกจความดัน',
+                        //           style: MyConstant().h3header(),
+                        //         ),
+                        //       ),
+                        //       Padding(
+                        //         padding:
+                        //             const EdgeInsets.only(left: 2, right: 2),
+                        //         child: Text(
+                        //           'สิ่งกีดขวาง',
+                        //           style: MyConstant().h3header(),
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
                          Padding(
-                      padding: const EdgeInsets.only(top: 8,left: 20,right: 20,bottom: 8),
+                      padding: const EdgeInsets.only(top: 8,left: 2,right: 2,bottom: 8),
                       child: buildSearch(),
                     ),
                         Padding(
                           padding: const EdgeInsets.only(
-                              top: 5, left: 20, right: 20, bottom: 5),
+                              top: 5, left: 2, right: 2, bottom: 5),
                           child: buildListView(),
                         ),
                       ],
@@ -492,7 +492,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 30, right: 40),
+                                  const EdgeInsets.only(left: 10, right: 3),
                               child: Text(
                                 searchfireModel[index]
                                     .fire_check_injection_name!,
@@ -501,7 +501,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 30, right: 40),
+                                  const EdgeInsets.only(left: 2, right: 3),
                               child: Text(
                                 searchfireModel[index]
                                     .fire_check_joystick_name!,
@@ -510,7 +510,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 30, right: 40),
+                                  const EdgeInsets.only(left: 2, right: 3),
                               child: Text(
                                 searchfireModel[index].fire_check_body_name!,
                                 style: MyConstant().h4dark(),
@@ -518,7 +518,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 40, right: 40),
+                                  const EdgeInsets.only(left: 2, right: 3),
                               child: Text(
                                 searchfireModel[index].fire_check_gauge_name!,
                                 style: MyConstant().h4dark(),
@@ -526,7 +526,7 @@ class _MainfirereqState extends State<Mainfirereq> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 40, right: 10),
+                                  const EdgeInsets.only(left: 2, right: 3),
                               child: Text(
                                 searchfireModel[index]
                                     .fire_check_drawback_name!,

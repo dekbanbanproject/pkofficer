@@ -235,13 +235,13 @@ class MyConstant {
   TextStyle h1dark() =>
       TextStyle(fontSize: 22, color: back, fontWeight: FontWeight.normal);
   TextStyle h4version() => TextStyle(
-      fontSize: 22,
+      fontSize: 13,
       color: Color.fromARGB(255, 247, 84, 138),
       fontWeight: FontWeight.normal);
   TextStyle h1White() =>
       TextStyle(fontSize: 24, color: white, fontWeight: FontWeight.bold);
   TextStyle appnameheader() => const TextStyle(
-      fontSize: 60,
+      fontSize: 40,
       color: Color.fromARGB(255, 4, 160, 137),
       fontWeight: FontWeight.normal);
   TextStyle appbarname() => const TextStyle(
@@ -260,12 +260,16 @@ class MyConstant {
       fontSize: 40,
       color: Color.fromARGB(255, 27, 207, 180),
       fontWeight: FontWeight.bold);
+      TextStyle h1newtitle() => const TextStyle(
+      fontSize: 20,
+      color: Color.fromARGB(255, 27, 207, 180),
+      fontWeight: FontWeight.bold);
   TextStyle h1login() => const TextStyle(
-      fontSize: 30,
+      fontSize: 20,
       color: Color.fromARGB(255, 27, 207, 180),
       fontWeight: FontWeight.bold);
       TextStyle h2hearder() => const TextStyle(
-      fontSize: 30,
+      fontSize: 20,
       color: Color.fromARGB(255, 27, 207, 180),
       fontWeight: FontWeight.bold);
   TextStyle h2save() => const TextStyle(
@@ -273,7 +277,7 @@ class MyConstant {
       color: Color.fromARGB(255, 11, 185, 162),
       fontWeight: FontWeight.bold);
   TextStyle h1save() => const TextStyle(
-      fontSize: 30,
+      fontSize: 20,
       color: Color.fromARGB(255, 11, 185, 162),
       fontWeight: FontWeight.bold);
 
@@ -294,7 +298,7 @@ class MyConstant {
   TextStyle h3dark() =>
       TextStyle(fontSize: 17, color: dark, fontWeight: FontWeight.bold);
   TextStyle h4dark() =>
-      TextStyle(fontSize: 15, color: dark, fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 13, color: dark, fontWeight: FontWeight.bold);
   TextStyle h5dark() =>
       TextStyle(fontSize: 13, color: dark, fontWeight: FontWeight.bold);
   TextStyle h3() =>
@@ -302,7 +306,7 @@ class MyConstant {
   TextStyle h3white() =>
       TextStyle(fontSize: 14, color: white, fontWeight: FontWeight.bold);
   TextStyle h3header() => TextStyle(
-      fontSize: 17,
+      fontSize: 14,
       color: Color.fromARGB(255, 11, 185, 162),
       fontWeight: FontWeight.bold);
 

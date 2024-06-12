@@ -16,8 +16,8 @@
     }
     if(isset($_GET)){
         if ($_GET['isAdd'] == 'true') {
-            $date = date('Y-m-d');
-
+            $date   = date('Y-m-d');
+            $months = date('m');
             $fire_id                      = $_GET['fire_id']; 
             // $fire_num                     = $_GET['fire_num'];
             $user_id                      = $_GET['user_id'];
@@ -70,7 +70,7 @@
                 }
             }
 
-            $datacount_ = mysqli_query($conn,"SELECT * FROM fire_check WHERE check_date = '$date' AND fire_num = '$fire_num'");
+            $datacount_ = mysqli_query($conn,"SELECT * FROM fire_check WHERE month(check_date) = '$months' AND fire_num = '$fire_num'");
             $datacount = mysqli_num_rows($datacount_);  
             if ($datacount > 0) {
                 echo "false";

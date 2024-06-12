@@ -16,21 +16,21 @@ class _MainFirereportState extends State<MainFirereport> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(15),
+          padding: EdgeInsets.only(top: 1, left: 10, right: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 15),
               //for custom appbar
               Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: EdgeInsets.only(top: 30, left: 15, right: 15),
                 child: CustomAppBar(),
               ),
               //for searchbar
-              SizedBox(height: 15),
+              // SizedBox(height: 15),
               Center(
                 child: Text(
-                  'MainFirereport',style: TextStyle(fontSize: 50,color: Color.fromARGB(255, 27, 207, 180)), 
+                  'MainFirereport',style: TextStyle(fontSize: 30,color: Color.fromARGB(255, 27, 207, 180)), 
                 ),
               ),
             ],

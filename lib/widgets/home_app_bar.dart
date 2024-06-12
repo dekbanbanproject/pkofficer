@@ -22,18 +22,21 @@ class CustomAppBar extends StatelessWidget {
                     backgroundColor: MyConstant.kprimaryColor,
                     padding: const EdgeInsets.all(10)),
                 onPressed: () {},
-                iconSize: 50,
+                iconSize: 30,
                 color: Colors.lightBlue,
                 icon: const Icon(Icons.beenhere),
               ),
               Row(
                 children: [ 
-                  ShowTitle(
-                      title: MyConstant.appbar,
-                      textStyle: MyConstant().h1title(),
-                    ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 15), 
+                    padding: const EdgeInsets.only(left:2.0),
+                    child: ShowTitle(
+                        title: MyConstant.appbar,
+                        textStyle: MyConstant().h1newtitle(),
+                      ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5), 
                     child: ShowTitle(
                       title: MyConstant.version,
                       textStyle: MyConstant().h4version(),
@@ -62,7 +65,7 @@ class CustomAppBar extends StatelessWidget {
                 //       MaterialPageRoute(builder: (context) => MainFdh());
                 //   Navigator.push(context, route);
                 // },
-                iconSize: 50,
+                iconSize: 30,
                 icon: const Icon(Icons.notifications_outlined),
                 color: Colors.lightBlue,
               ),
@@ -72,7 +75,7 @@ class CustomAppBar extends StatelessWidget {
                   style: IconButton.styleFrom(
                       backgroundColor: MyConstant.kprimaryColor,
                       padding: const EdgeInsets.all(10)),
-                  iconSize: 50,
+                  iconSize: 30,
                   icon: const Icon(Icons.logout),
                   color: Colors.red,
                   tooltip: 'Logout',
