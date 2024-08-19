@@ -95,8 +95,9 @@ class _MainHomeState extends State<MainHome> {
               Categories(),
               // SizedBox(height: 30),
               // FdhCategory(),
-              SizedBox(height: 30),
-              Pramirn(),
+              
+              // SizedBox(height: 30),
+              // Pramirn(),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
