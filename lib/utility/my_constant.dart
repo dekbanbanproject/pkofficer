@@ -12,9 +12,9 @@ class MyConstant {
   static String BASE_URL =
       "http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/pull_hosapi";
 
-  static String appName = 'PK-OFFicer';
-  static String appbar = 'PK-OFFicer';
-  static String version = '  V.670607';
+  static String appName = 'PK-OFFice';
+  static String appbar = 'PK-OFFice';
+  static String version = '  V.670819';
   // static String domain = 'http://27.254.191.157/';
   static String domain = 'http://smarthos-phukieohos.moph.go.th';
   // static String authenspsch              = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/authen_spsch';
