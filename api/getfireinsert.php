@@ -59,10 +59,12 @@
                 while($row = mysqli_fetch_row($result2))
                 {
                     $fire_id_              = $row[0];
-                    $fire_num              = $row[1];
-                    $fire_name             = $row[2];
-                    $fire_check_location   = $row[5]; 
-                    $fire_check_color      = $row[4]; 
+                    $fire_year             = $row[1];
+                    $fire_num              = $row[2];
+                    $fire_name             = $row[3];
+                    $fire_check_location   = $row[6]; 
+                    $fire_check_color      = $row[5]; 
+
                     // $fire_id               = $row["fire_id"];
                     // $fire_name             = $row["fire_name"];
                     // $fire_check_location   = $row["fire_location"]; 

@@ -243,7 +243,7 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
                                   ),
                                 ),
                                  Padding(
-                                   padding: const EdgeInsets.only(left: 70,right: 20),
+                                   padding: const EdgeInsets.only(left: 30,right: 20),
                                    child: Text(
                                     searchfireModel[index].fire_color!,
                                     style: MyConstant().h4dark(),
