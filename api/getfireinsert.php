@@ -18,6 +18,10 @@
         if ($_GET['isAdd'] == 'true') {
             $date   = date('Y-m-d');
             $months = date('m');
+            $m = date('H');
+            $mm = date('H:m:s');
+            $datefull = date('Y-m-d H:m:s');
+
             $fire_id                      = $_GET['fire_id']; 
             // $fire_num                     = $_GET['fire_num'];
             $user_id                      = $_GET['user_id'];
@@ -78,8 +82,8 @@
                 echo "false";
             } else {
     
-                    $sql = "INSERT INTO `fire_check` (`fire_check_id`,`check_date`,`fire_num`,`user_id`,`fire_check_injection`,`fire_check_injection_name`,`fire_check_joystick`,`fire_check_joystick_name`,`fire_check_body`,`fire_check_body_name`,`fire_check_gauge`,`fire_check_gauge_name`,`fire_check_drawback`,`fire_check_drawback_name`,`fire_name`,`fire_check_location`,`fire_check_color`,`fire_id`) 
-                    VALUES(Null,'$date','$fire_num','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_name','$fire_check_location','$fire_check_color','$fire_id_')";
+                    $sql = "INSERT INTO `fire_check` (`fire_check_id`,`check_date`,`check_time`,`fire_num`,`user_id`,`fire_check_injection`,`fire_check_injection_name`,`fire_check_joystick`,`fire_check_joystick_name`,`fire_check_body`,`fire_check_body_name`,`fire_check_gauge`,`fire_check_gauge_name`,`fire_check_drawback`,`fire_check_drawback_name`,`fire_name`,`fire_check_location`,`fire_check_color`,`fire_id`) 
+                    VALUES(Null,'$date','$mm','$fire_num','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_name','$fire_check_location','$fire_check_color','$fire_id_')";
                     $result = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
 
                     if ($fire_check_injection =='1' || $fire_check_joystick == '1' || $fire_check_body=='1' || $fire_check_gauge == '1' || $fire_check_drawback =='1') {
