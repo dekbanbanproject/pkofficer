@@ -35,8 +35,8 @@ class _LoginState extends State<Login> {
             key: formKey,
             child: ListView(
               children: [
-                buildImage(size),
-                buildImagePK(size),
+                // buildImage(size),
+                buildImagePK(),
                 // builAppname(),
                 buildUser(size),
                 buildPassword(size),
@@ -211,7 +211,7 @@ class _LoginState extends State<Login> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 25),
+          margin: const EdgeInsets.only(top: 15),
           width: size * 0.6,
           child: TextFormField(
             controller: usernameController,
@@ -272,26 +272,26 @@ class _LoginState extends State<Login> {
             image: DecorationImage(
                 image: AssetImage("images/logo.png"), fit: BoxFit.cover),
           ),
-          margin: const EdgeInsets.only(top: 120),
+          margin: const EdgeInsets.only(top: 130),
           // width: size * 0.3,
           // child: ShowImage(path: MyConstant.img_logo),
         ),
       ],
     );
   }
-   Row buildImagePK(double size) {
+   Row buildImagePK() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          height: 200,
+          height: 150,
           width: 280,
           decoration: const BoxDecoration(
-            shape: BoxShape.circle,
+            // shape: BoxShape.circle,
             image: DecorationImage(
                 image: AssetImage("images/Logopk.png"), fit: BoxFit.cover),
           ),
-          margin: const EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 120),
           // width: size * 0.3,
           // child: ShowImage(path: MyConstant.img_logo),
         ),
