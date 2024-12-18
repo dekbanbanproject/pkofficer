@@ -86,7 +86,8 @@ class _MainFireaddState extends State<MainFireadd> {
 
     // String path =
     //     '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_id=$_scanBarcode';
-    final path = '${MyConstant.getFiredata}fire_id=$_scanBarcode';
+    // final path = '${MyConstant.getFiredata}fire_id=$_scanBarcode';
+     final path = '${MyConstant.getFiredata}fireNum=$_scanBarcode';
     //  'http://192.168.0.217/pkbackoffice/public/api/getfire/F88888888';
     await Dio().get(path).then((value) async {
       String dd = value.toString();
@@ -95,7 +96,8 @@ class _MainFireaddState extends State<MainFireadd> {
         FireListmodel model = FireListmodel.fromJson(item);
         var fireId = model.fire_id!.toString();
         var fireNum = model.fire_num!.toString();
-        print('###fire_id ==>>>$fireNum');
+        print('###fireNum == >>>$fireNum');
+        print('###fireId  == >>>$fireId');
         setState(() {
           firelistmodel.add(model);
           firenum = fireNum;
@@ -602,7 +604,7 @@ class _MainFireaddState extends State<MainFireadd> {
     print('######## Active = $fireStatus');
 
     String path =
-        '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_id=$_scanBarcode&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
+        '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_num=$_scanBarcode&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
     await Dio().get(path).then((value) async {
       String dd = value.toString();
       print('######## Vaaaaaaaaaa = $dd');

@@ -51,7 +51,7 @@ class _MainfirereqState extends State<Mainfirereq> {
   // Widget build(BuildContext context) {
   //   return Scaffold(
   Widget build(BuildContext context) => DefaultTabController(
-        length: 5,
+        length: 2,
         child: Scaffold(
           // backgroundColor: Colors.white,
           body: NestedScrollView(
@@ -168,12 +168,12 @@ class _MainfirereqState extends State<Mainfirereq> {
                         //   ),
                         // ),
                          Padding(
-                      padding: const EdgeInsets.only(top: 8,left: 2,right: 2,bottom: 8),
+                      padding: const EdgeInsets.only(top: 8,left: 0,right: 0,bottom: 8),
                       child: buildSearch(),
                     ),
                         Padding(
                           padding: const EdgeInsets.only(
-                              top: 5, left: 2, right: 2, bottom: 5),
+                              top: 5, left: 0, right: 0, bottom: 5),
                           child: buildListView(),
                         ),
                       ],
@@ -201,11 +201,11 @@ class _MainfirereqState extends State<Mainfirereq> {
         itemBuilder: (context, index) => Row(
           children: [
             Expanded(
-              flex: 2,
+              flex: 1,
               child: Text(searchfireModel[index].fire_num!),
             ),
             Expanded(
-              flex: 2,
+              flex: 1,
               child: Text(searchfireModel[index].check_date!),
             ),
             Expanded(
@@ -271,7 +271,7 @@ class _MainfirereqState extends State<Mainfirereq> {
               padding:
                   const EdgeInsets.only(left: 0, right: 0, top: 3, bottom: 3),
               child: Container(
-                height: 1000,
+                height: 1200,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: const Border(
@@ -303,55 +303,55 @@ class _MainfirereqState extends State<Mainfirereq> {
                     Table(
                       border: TableBorder.all(color: Colors.black),
                       columnWidths: {
-                        0: FixedColumnWidth(200.0),
-                        1: FixedColumnWidth(100.0),
-                        2: FixedColumnWidth(80.0),
-                        3: FixedColumnWidth(80.0),
-                        4: FixedColumnWidth(80.0),
-                        5: FixedColumnWidth(80.0),
+                        0: FixedColumnWidth(70.0),
+                        1: FixedColumnWidth(50.0),
+                        2: FixedColumnWidth(50.0),
+                        3: FixedColumnWidth(50.0),
+                        4: FixedColumnWidth(50.0),
+                        5: FixedColumnWidth(50.0),
                       },
                       children: [
                         TableRow(children: [
                           Container(
-                            margin: EdgeInsets.all(5),
+                            margin: EdgeInsets.all(1),
                             child: Text(
                               searchfireModel[index].fire_num!,
-                              style: MyConstant().h3dark(),
+                              style: MyConstant().h4darknarmal(),
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(5),
+                            margin: EdgeInsets.all(1),
                             child: Text(
                               searchfireModel[index].fire_check_injection_name!,
-                              style: MyConstant().h3dark(),
+                              style: MyConstant().h4darknarmal(),
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(5),
+                            margin: EdgeInsets.all(1),
                             child: Text(
                               searchfireModel[index].fire_check_joystick_name!,
-                              style: MyConstant().h3dark(),
+                              style: MyConstant().h4darknarmal(),
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(5),
+                            margin: EdgeInsets.all(1),
                             child: Text(
                               searchfireModel[index].fire_check_body_name!,
-                              style: MyConstant().h3dark(),
+                              style: MyConstant().h4darknarmal(),
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(5),
+                            margin: EdgeInsets.all(1),
                             child: Text(
                               searchfireModel[index].fire_check_gauge_name!,
-                              style: MyConstant().h3dark(),
+                              style: MyConstant().h4darknarmal(),
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.all(5),
+                            margin: EdgeInsets.all(1),
                             child: Text(
                               searchfireModel[index].fire_check_drawback_name!,
-                              style: MyConstant().h3dark(),
+                              style: MyConstant().h4darknarmal(),
                             ),
                           ),
                         ])
@@ -481,56 +481,59 @@ class _MainfirereqState extends State<Mainfirereq> {
                       child: ListTile(
                         leading: Text(
                           searchfireModel[index].fire_num!,
-                          style: MyConstant().h4dark(),
+                          style: MyConstant().h4darknarmal(),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              searchfireModel[index].check_date!,
-                              style: MyConstant().h4dark(),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 2, right: 2),
+                              child: Text(
+                                searchfireModel[index].check_date!,
+                                style: MyConstant().h4darknarmal(),
+                              ),
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 10, right: 3),
+                                  const EdgeInsets.only(left: 1, right: 2),
                               child: Text(
                                 searchfireModel[index]
                                     .fire_check_injection_name!,
-                                style: MyConstant().h4dark(),
+                                style: MyConstant().h4darknarmal(),
                               ),
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 2, right: 3),
+                                  const EdgeInsets.only(left: 1, right: 2),
                               child: Text(
                                 searchfireModel[index]
                                     .fire_check_joystick_name!,
-                                style: MyConstant().h4dark(),
+                                style: MyConstant().h4darknarmal(),
                               ),
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 2, right: 3),
+                                  const EdgeInsets.only(left: 1, right: 2),
                               child: Text(
                                 searchfireModel[index].fire_check_body_name!,
-                                style: MyConstant().h4dark(),
+                                style: MyConstant().h4darknarmal(),
                               ),
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 2, right: 3),
+                                  const EdgeInsets.only(left: 1, right: 2),
                               child: Text(
                                 searchfireModel[index].fire_check_gauge_name!,
-                                style: MyConstant().h4dark(),
+                                style: MyConstant().h4darknarmal(),
                               ),
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 2, right: 3),
+                                  const EdgeInsets.only(left: 1, right: 2),
                               child: Text(
                                 searchfireModel[index]
                                     .fire_check_drawback_name!,
-                                style: MyConstant().h4dark(),
+                                style: MyConstant().h4darknarmal(),
                               ),
                             ),
                           ],

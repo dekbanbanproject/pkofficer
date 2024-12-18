@@ -36,7 +36,8 @@ class _LoginState extends State<Login> {
             child: ListView(
               children: [
                 buildImage(size),
-                builAppname(),
+                buildImagePK(size),
+                // builAppname(),
                 buildUser(size),
                 buildPassword(size),
                 buildSubmitlogin(size),
@@ -272,6 +273,25 @@ class _LoginState extends State<Login> {
                 image: AssetImage("images/logo.png"), fit: BoxFit.cover),
           ),
           margin: const EdgeInsets.only(top: 120),
+          // width: size * 0.3,
+          // child: ShowImage(path: MyConstant.img_logo),
+        ),
+      ],
+    );
+  }
+   Row buildImagePK(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          height: 200,
+          width: 280,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(
+                image: AssetImage("images/Logopk.png"), fit: BoxFit.cover),
+          ),
+          margin: const EdgeInsets.only(top: 10),
           // width: size * 0.3,
           // child: ShowImage(path: MyConstant.img_logo),
         ),

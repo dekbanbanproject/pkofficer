@@ -297,6 +297,8 @@ class MyConstant {
       TextStyle(fontSize: 15, color: dark, fontWeight: FontWeight.bold);
   TextStyle h3dark() =>
       TextStyle(fontSize: 17, color: dark, fontWeight: FontWeight.bold);
+    TextStyle h4darknarmal() =>
+      TextStyle(fontSize: 13, color: dark, fontWeight: FontWeight.normal);
   TextStyle h4dark() =>
       TextStyle(fontSize: 13, color: dark, fontWeight: FontWeight.bold);
   TextStyle h5dark() =>

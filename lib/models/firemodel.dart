@@ -1,6 +1,7 @@
 class Firemodel {
   String? fire_check_id;
   String? fire_num;
+  String? fire_year;
   String? fire_name;
   String? fire_check_color;
   String? fire_check_location;
@@ -21,6 +22,7 @@ class Firemodel {
   Firemodel({
     this.fire_check_id,
     this.fire_num,
+    this.fire_year,
     this.fire_name,
     this.fire_check_color,
     this.fire_check_location,
@@ -43,6 +45,7 @@ class Firemodel {
     // id: map['id'] == null ? '' : map['id'],
     fire_check_id = json['fire_check_id'] ?? '';
     fire_num = json['fire_num'] ?? '';
+     fire_year = json['fire_year'] ?? '';
     fire_name = json['fire_name'] ?? '';
     fire_check_color =
         json['fire_check_color'] ?? '';
@@ -75,6 +78,7 @@ class Firemodel {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['fire_check_id'] = fire_check_id;
     data['fire_num'] = fire_num;
+     data['fire_year'] = fire_year;
     data['fire_name'] = fire_name;
     data['fire_check_color'] = fire_check_color;
     data['fire_check_location'] = fire_check_location;
