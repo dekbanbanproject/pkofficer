@@ -22,8 +22,8 @@
             $mm = date('H:m:s');
             $datefull = date('Y-m-d H:m:s');
 
-            $fire_id                      = $_GET['fire_id']; 
-            // $fire_num                     = $_GET['fire_num'];
+            // $fire_id                      = $_GET['fire_id']; 
+            $fire_num                     = $_GET['fire_num'];
             $user_id                      = $_GET['user_id'];
             $fire_check_injection         = $_GET['fire_check_injection'];
             $fire_check_joystick          = $_GET['fire_check_joystick'];
@@ -64,8 +64,8 @@
                     $budget_year      = $row_y[0]; 
                 }
             }
-
             $sql2 = "SELECT * FROM fire WHERE fire_num = '$fire_num' AND fire_year = '$budget_year'";
+            // $sql2 = "SELECT * FROM fire WHERE fire_num = '$fire_num' AND fire_year = '2568'";
             $result2 = mysqli_query($conn, $sql2);
                     
             if ($result2) {
@@ -92,8 +92,8 @@
                 echo "false";
             } else {
     
-                    $sql = "INSERT INTO `fire_check` (`fire_check_id`,`fire_year`,`check_date`,`check_time`,`fire_num`,`user_id`,`fire_check_injection`,`fire_check_injection_name`,`fire_check_joystick`,`fire_check_joystick_name`,`fire_check_body`,`fire_check_body_name`,`fire_check_gauge`,`fire_check_gauge_name`,`fire_check_drawback`,`fire_check_drawback_name`,`fire_name`,`fire_check_location`,`fire_check_color`,`fire_id`,`fire_size`) 
-                    VALUES(Null,'$budget_year','$date','$mm','$fire_num','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_name','$fire_check_location','$fire_check_color','$fire_id_','$fire_size')";
+                    $sql = "INSERT INTO `fire_check` (`fire_check_id`,`fire_year`,`check_date`,`check_time`,`fire_num`,`fire_name`,`user_id`,`fire_check_injection`,`fire_check_injection_name`,`fire_check_joystick`,`fire_check_joystick_name`,`fire_check_body`,`fire_check_body_name`,`fire_check_gauge`,`fire_check_gauge_name`,`fire_check_drawback`,`fire_check_drawback_name`,`fire_check_location`,`fire_check_color`,`fire_id`,`fire_size`) 
+                    VALUES(Null,'$fire_year','$date','$mm','$fire_num','$fire_name','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_check_location','$fire_check_color','$fire_id_','$fire_size')";
                     $result = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
 
                     if ($fire_check_injection =='1' || $fire_check_joystick == '1' || $fire_check_body=='1' || $fire_check_gauge == '1' || $fire_check_drawback =='1') {

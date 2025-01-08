@@ -81,28 +81,38 @@ class _MainFireaddState extends State<MainFireadd> {
   Future<Null> getFiredata() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String id = preferences.getString('id')!;
-    print('######## userid = $id');
-    print('######## Active = $fireStatus');
+    print('######## => userid = $id');
+    // print('######## => Active = $fireStatus');
 
-    // String path =
-    //     '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_id=$_scanBarcode';
+//  final apifire = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=$_scanBarcode';
+    // String apifire =
+        // '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fireNum=$_scanBarcode';
     // final path = '${MyConstant.getFiredata}fire_id=$_scanBarcode';
-     final path = '${MyConstant.getFiredata}fireNum=$_scanBarcode';
+    //  final path = '${MyConstant.getFiredata}fireNum=$_scanBarcode';
+      // final path = '${MyConstant.domain}/pkoffice/api/getFiredata.php?isAdd=true';
     //  'http://192.168.0.217/pkbackoffice/public/api/getfire/F88888888';
-    await Dio().get(path).then((value) async {
-      String dd = value.toString();
-      print('## value for API  ==>  $value');
+     print('##scanBarcode  ====>>>==>$_scanBarcode');
+ final apifire = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=$_scanBarcode';
+//  final apifire = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=FR020104';
+  //  final apifire = MyConstant.getfirenumnew;
+     
+    await Dio().get(apifire).then((value) async {
+      // String dd = value.toString();
+      print('## value for API  ====>>>==>  $value');
       for (var item in json.decode(value.data!)) {
         FireListmodel model = FireListmodel.fromJson(item);
         var fireId = model.fire_id!.toString();
         var fireNum = model.fire_num!.toString();
-        print('###fireNum == >>>$fireNum');
-        print('###fireId  == >>>$fireId');
+        print('###fireNum ======================================== >>>$fireNum');
+        print('###fireId  =========================================== >>>$fireId');
         setState(() {
           firelistmodel.add(model);
           firenum = fireNum;
         });
       }
+
+     
+
     });
   }
   // Future<List<FireListmodel>> getFiredata() async {
@@ -190,8 +200,8 @@ class _MainFireaddState extends State<MainFireadd> {
                 ),
                 // textNum(),
                 Text(
-                  // 'รหัสถังดับเพลิง :$_scanBarcode',
-                  'รหัสถังดับเพลิง : $firenum',
+                  'รหัสถังดับเพลิง :$_scanBarcode',
+                  // 'รหัสถังดับเพลิง : $firenum',
                   style: const TextStyle(fontSize: 18),
                 ),
                 Padding(
@@ -608,10 +618,12 @@ class _MainFireaddState extends State<MainFireadd> {
     await Dio().get(path).then((value) async {
       String dd = value.toString();
       print('######## Vaaaaaaaaaa = $dd');
-      if (value.toString() == 'false') {
-        MyDialog().normalDialog(context, 'บันทึกไปแล้ว', 'ข้อมูลซ้ำ');
-      } else {
+      if (value.toString() == '200') {
+        // MyDialog().normalDialog(context, 'บันทึกไปแล้ว', 'ข้อมูลซ้ำ');
         SuccessDialog();
+      } else {
+         MyDialog().normalDialog(context, 'บันทึกไปแล้ว', 'ข้อมูลซ้ำ');
+        // SuccessDialog();
         // Navigator.pop(context);
         // setState(() {
         //   barcodeScanRes = '';

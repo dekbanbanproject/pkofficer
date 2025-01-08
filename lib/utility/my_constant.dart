@@ -14,7 +14,7 @@ class MyConstant {
 
   static String appName = 'PK-OFFice';
   static String appbar = 'PK-OFFice';
-  static String version = '  V.670819';
+  static String version = '  V.671218';
   // static String domain = 'http://27.254.191.157/';
   static String domain = 'http://smarthos-phukieohos.moph.go.th';
   // static String authenspsch              = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/authen_spsch';
@@ -35,6 +35,9 @@ class MyConstant {
   static String fdh_sumincome_authen     = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_sumincome_authen';
   static String fdh_sumincome_noauthen   = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_sumincome_noauthen';
   static String getfirenum               = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/getfirenum';
+
+    static String getfirenumnew          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/getfirenumnew';
+
   static String countfiregreenall        = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreenall';
   static String countfiregreen           = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreen';
   static String countfireredall          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfireredall';
