@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:pkofficer/models/firelistmodel.dart';
+import 'package:pkofficer/models/firemodel.dart';
 import 'package:pkofficer/utility/my_constant.dart';
 import 'package:pkofficer/utility/my_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -41,7 +42,9 @@ class _MainFireaddState extends State<MainFireadd> {
   late String gaugeStatus = '';
   late String drawbackStatus = '';
   List<FireListmodel> firelistmodel = [];
-  String? firenum;
+  List<Firemodel> fireModel = [];
+  String? firenum,fireid;
+
 
   @override
   void initState() {
@@ -64,6 +67,7 @@ class _MainFireaddState extends State<MainFireadd> {
     setState(() {
       _scanBarcode = barcodeScanRes;
       getFiredata();
+      listFire();
     });
   }
 
@@ -76,6 +80,22 @@ class _MainFireaddState extends State<MainFireadd> {
   Future<void> _refreshpage() async {
     // return await Future.delayed(const Duration(seconds: 2));
     setState(() => injectionStatus.isEmpty);
+  }
+
+  Future<Null> listFire() async {
+    
+    final apifire = '${MyConstant.domain}/pkoffice/api/getfirenum.php?isAdd=true&fire_num=$_scanBarcode';
+    await Dio().get(apifire).then((value) async {
+      // print('## value for API  ==>  $value');
+      for (var item in json.decode(value.data!)) {
+        Firemodel model = Firemodel.fromJson(item);
+        var firename = model.fire_num!.toString();
+        print('### ==------->>>$firename');
+        setState(() {
+          fireModel.add(model); 
+        });
+      }
+    });
   }
 
   Future<Null> getFiredata() async {
@@ -92,11 +112,11 @@ class _MainFireaddState extends State<MainFireadd> {
       // final path = '${MyConstant.domain}/pkoffice/api/getFiredata.php?isAdd=true';
     //  'http://192.168.0.217/pkbackoffice/public/api/getfire/F88888888';
      print('##scanBarcode  ====>>>==>$_scanBarcode');
- final apifire = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=$_scanBarcode';
+ final apifire2 = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=$_scanBarcode';
 //  final apifire = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=FR020104';
   //  final apifire = MyConstant.getfirenumnew;
      
-    await Dio().get(apifire).then((value) async {
+    await Dio().get(apifire2).then((value) async {
       // String dd = value.toString();
       print('## value for API  ====>>>==>  $value');
       for (var item in json.decode(value.data!)) {
@@ -108,6 +128,7 @@ class _MainFireaddState extends State<MainFireadd> {
         setState(() {
           firelistmodel.add(model);
           firenum = fireNum;
+          fireid  = fireId;
         });
       }
 
@@ -612,18 +633,19 @@ class _MainFireaddState extends State<MainFireadd> {
     // String article_num2 = article_numController.text;
     print('######## userid = $id');
     print('######## Active = $fireStatus');
-
+// fireId
     String path =
-        '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_num=$_scanBarcode&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
+        // '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_num=$_scanBarcode&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
+         '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_id=$fireid&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
     await Dio().get(path).then((value) async {
       String dd = value.toString();
       print('######## Vaaaaaaaaaa = $dd');
-      if (value.toString() == '200') {
-        // MyDialog().normalDialog(context, 'บันทึกไปแล้ว', 'ข้อมูลซ้ำ');
-        SuccessDialog();
-      } else {
-         MyDialog().normalDialog(context, 'บันทึกไปแล้ว', 'ข้อมูลซ้ำ');
+      if (value.toString() == 'false') {
+        MyDialog().normalDialog(context, 'บันทึกไปแล้ว', 'ข้อมูลซ้ำ');
         // SuccessDialog();
+      } else {
+        //  MyDialog().normalDialog(context, 'บันทึกไปแล้ว', 'ข้อมูลซ้ำ');
+        SuccessDialog();
         // Navigator.pop(context);
         // setState(() {
         //   barcodeScanRes = '';

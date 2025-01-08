@@ -22,20 +22,21 @@
             $newDate = date('Y-m-d', strtotime($date . ' -1 months')); //ย้อนหลัง 1 เดือน
             $newyear = date('Y-m-d', strtotime($date . ' -1 year')); //ย้อนหลัง 1 ปี 
 
-            // $sqly = "SELECT leave_year_id FROM budget_year WHERE years_now = 'Y'";
-            // $result_y = mysqli_query($conn, $sqly);
-            // if ($result_y) {
-            //     while($rows = mysqli_fetch_row($result_y))
-            //     {
-            //         $fire_year_niw   = $rows[0];
+            $sqly = "SELECT leave_year_id FROM budget_year WHERE years_now = 'Y'";
+            $result_y = mysqli_query($conn, $sqly);
+            if ($result_y) {
+                while($rows = mysqli_fetch_row($result_y))
+                {
+                    $fire_year_niw   = $rows[0];
            
-            //     }
-            // }
+                }
+            }
 
-            $fireNum                     = $_GET['fire_num'];
+            $fire_num                     = $_GET['fire_num'];
 
-            $sql = "SELECT * FROM fire WHERE fire_num = '$fireNum' AND fire_year = '2568'";
+            // $sql = "SELECT * FROM fire WHERE fire_num = '$fire_num' AND fire_year = '2568'";
             // $sql2 = "SELECT * FROM fire WHERE fireNum = '$fireNum' AND fire_year = '$fire_year_niw'";
+            $sql = "SELECT * FROM fire WHERE fire_num = '$fire_num' AND fire_year = '$fire_year_niw'";
             $result = mysqli_query($conn, $sql);
                     
             // if ($result) {

@@ -22,8 +22,8 @@
             $mm = date('H:m:s');
             $datefull = date('Y-m-d H:m:s');
 
-            // $fire_id                      = $_GET['fire_id']; 
-            $fire_num                     = $_GET['fire_num'];
+            $fire_id                      = $_GET['fire_id']; 
+            $firenum                      = $_GET['fire_num'];
             $user_id                      = $_GET['user_id'];
             $fire_check_injection         = $_GET['fire_check_injection'];
             $fire_check_joystick          = $_GET['fire_check_joystick'];
@@ -64,10 +64,12 @@
                     $budget_year      = $row_y[0]; 
                 }
             }
-            $sql2 = "SELECT * FROM fire WHERE fire_num = '$fire_num' AND fire_year = '$budget_year'";
+            // $sql2 = "SELECT * FROM fire WHERE fire_num = '$fire_num' AND fire_year = '$budget_year'";
+            // $sql2 = "SELECT * FROM fire WHERE fire_id = '$fire_id' AND fire_year = '$budget_year'";
+            $sql2 = "SELECT * FROM fire WHERE fire_id = '$fire_id'";
             // $sql2 = "SELECT * FROM fire WHERE fire_num = '$fire_num' AND fire_year = '2568'";
             $result2 = mysqli_query($conn, $sql2);
-                    
+            // FR020201
             if ($result2) {
                 while($row = mysqli_fetch_row($result2))
                 {
@@ -76,24 +78,28 @@
                     $fire_num              = $row[2];
                     $fire_name             = $row[3];
                     $fire_size             = $row[4];
-                    $fire_check_location   = $row[6]; 
-                    $fire_check_color      = $row[5]; 
+                    $fire_color            = $row[5]; 
+                    $fire_location         = $row[6]; 
+                  
 
-                    // $fire_id               = $row["fire_id"];
+                    // $fire_id_              = $row["fire_id"];
+                    // $fire_year             = $row["fire_year"];
+                    // $fire_num              = $row["fire_num"];
                     // $fire_name             = $row["fire_name"];
+                    // $fire_size             = $row["fire_size"];
                     // $fire_check_location   = $row["fire_location"]; 
                     // $fire_check_color      = $row["fire_color"]; 
                 }
             }
 
-            $datacount_ = mysqli_query($conn,"SELECT * FROM fire_check WHERE month(check_date) = '$months' AND fire_num = '$fire_num'");
+            $datacount_ = mysqli_query($conn,"SELECT * FROM fire_check WHERE month(check_date) = '$months' AND fire_num = '$firenum'");
             $datacount = mysqli_num_rows($datacount_);  
             if ($datacount > 0) {
                 echo "false";
             } else {
     
                     $sql = "INSERT INTO `fire_check` (`fire_check_id`,`fire_year`,`check_date`,`check_time`,`fire_num`,`fire_name`,`user_id`,`fire_check_injection`,`fire_check_injection_name`,`fire_check_joystick`,`fire_check_joystick_name`,`fire_check_body`,`fire_check_body_name`,`fire_check_gauge`,`fire_check_gauge_name`,`fire_check_drawback`,`fire_check_drawback_name`,`fire_check_location`,`fire_check_color`,`fire_id`,`fire_size`) 
-                    VALUES(Null,'$fire_year','$date','$mm','$fire_num','$fire_name','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_check_location','$fire_check_color','$fire_id_','$fire_size')";
+                    VALUES(Null,'$fire_year','$date','$mm','$fire_num','$fire_name','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_location','$fire_color','$fire_id','$fire_size')";
                     $result = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
 
                     if ($fire_check_injection =='1' || $fire_check_joystick == '1' || $fire_check_body=='1' || $fire_check_gauge == '1' || $fire_check_drawback =='1') {
