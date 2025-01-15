@@ -91,28 +91,42 @@
                     // $fire_check_color      = $row["fire_color"]; 
                 }
             }
+            // COUNT(fire_num)
+            $datacount = mysqli_query($conn,"SELECT COUNT(*) FROM fire_check WHERE month(check_date) = '$months' AND fire_id = '$fire_id' AND fire_year = '$budget_year'");
+            $datacounts = mysqli_num_rows($datacount);  
 
-            $datacount_ = mysqli_query($conn,"SELECT COUNT(fire_num) FROM fire_check WHERE month(check_date) = '$months' AND fire_num = '$firenum'");
-            $datacount = mysqli_num_rows($datacount_);  
-            if ($datacount > 0) {
-                echo "false";
-            } else {
-    
-                    $sql = "INSERT INTO `fire_check` (`fire_check_id`,`fire_year`,`fire_backup`,`check_date`,`check_time`,`fire_num`,`fire_name`,`user_id`,`fire_check_injection`,`fire_check_injection_name`,`fire_check_joystick`,`fire_check_joystick_name`,`fire_check_body`,`fire_check_body_name`,`fire_check_gauge`,`fire_check_gauge_name`,`fire_check_drawback`,`fire_check_drawback_name`,`fire_check_location`,`fire_check_color`,`fire_id`,`fire_size`) 
+            $sql3 = "SELECT COUNT(fire_id) FROM fire_check WHERE month(check_date) = '$months' AND fire_id = '$fire_id' AND fire_year = '$budget_year'"; 
+            $result3 = mysqli_query($conn, $sql3);
+            if ($result3) {
+                while($row3 = mysqli_fetch_row($result3))
+                {
+                    $data_counts              = $row3[0]; 
+                }
+            }
+            // echo $months;
+            // echo $fire_id;
+            // echo $fire_num;
+            // echo $datacounts;
+            // echo $data_counts;
+            if ($data_counts < 1) {
+               
+                $sql = "INSERT INTO `fire_check` (`fire_check_id`,`fire_year`,`fire_backup`,`check_date`,`check_time`,`fire_num`,`fire_name`,`user_id`,`fire_check_injection`,`fire_check_injection_name`,`fire_check_joystick`,`fire_check_joystick_name`,`fire_check_body`,`fire_check_body_name`,`fire_check_gauge`,`fire_check_gauge_name`,`fire_check_drawback`,`fire_check_drawback_name`,`fire_check_location`,`fire_check_color`,`fire_id`,`fire_size`) 
                     VALUES(Null,'$fire_year','N','$date','$mm','$fire_num','$fire_name','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_location','$fire_color','$fire_id','$fire_size')";
-                    $result = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
+                    $resultnew = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
 
                     if ($fire_check_injection =='1' || $fire_check_joystick == '1' || $fire_check_body=='1' || $fire_check_gauge == '1' || $fire_check_drawback =='1') {
                         $sqlup    = "UPDATE `fire` SET `active` = 'N' WHERE fire_num = '$fire_num'"; 
                         $resultup = mysqli_query($conn, $sqlup) or die ("Error : $sqlup" .mysqli_error()); 
                     } 
 
-                    if ($result) { 
+                    if ($resultnew) { 
                         echo "true";
-                    }else{
-                        echo "false";
+                      
                     }
-               
+            } else {
+                // echo $datacounts;
+                    
+                echo "false";
             }
                
         } else echo "Wellcome";

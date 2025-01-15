@@ -36,7 +36,9 @@ class MyConstant {
   static String fdh_sumincome_noauthen   = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/fdh_sumincome_noauthen';
   static String getfirenum               = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/getfirenum';
 
-    static String getfirenumnew          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/getfirenumnew';
+  static String getfirenumnew          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/getfirenumnew';
+  static String getfirenumnewsave          = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/getfirenumnewsave';
+    
 
   static String countfiregreenall        = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreenall';
   static String countfiregreen           = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/countfiregreen';
@@ -280,7 +282,7 @@ class MyConstant {
       color: Color.fromARGB(255, 11, 185, 162),
       fontWeight: FontWeight.bold);
   TextStyle h1save() => const TextStyle(
-      fontSize: 20,
+      fontSize: 17,
       color: Color.fromARGB(255, 11, 185, 162),
       fontWeight: FontWeight.bold);
 

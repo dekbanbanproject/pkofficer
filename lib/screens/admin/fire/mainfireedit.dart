@@ -60,21 +60,7 @@ class _MainFireeditState extends State<MainFireedit> {
     await Dio().get(path).then((value) async {
       String active_ = value.toString();
       print('## value for API active ==>  $value');
-      // for (var item in json.decode(value.data!)) {
-      //   FireListmodel model = FireListmodel.fromJson(item);
-      // //   var fire_num = model.fire_num!.toString();
-      // //    var active_ = model.active!.toString();
-      //   print('###dd ==>>> $active_');
-      // //        print('###fire_num ==>>>$active_');
-      //   setState(() {
-      //     firelistmodel.add(model);
-      //     firenum = fire_num;
-      //     active  = active_;
-      //   });
-      // }
-      // setState(() {
-      //    active  = $active;
-      // });
+       
     });
   }
 
@@ -110,7 +96,7 @@ class _MainFireeditState extends State<MainFireedit> {
           children: [
             Padding(
               padding: const EdgeInsets.only(
-                  left: 15, right: 3, top: 30, bottom: 10),
+                  left: 5, right: 5, top: 20, bottom: 5),
               child: Column(
                 children: [
                   Padding(
@@ -142,12 +128,12 @@ class _MainFireeditState extends State<MainFireedit> {
                           ),
                         ],
                       ),
-                      child: Card(
-                        color: Colors.white,
+                      // child: Card(
+                        // color: Colors.white,
                         child: ListTile(
                           leading: const Text(
                             'สายฉีด',
-                            style: TextStyle(fontSize: 17),
+                            style: TextStyle(fontSize: 14),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -156,7 +142,7 @@ class _MainFireeditState extends State<MainFireedit> {
                             ],
                           ),
                         ),
-                      ),
+                      // ),
                     ),
                   ),
                   Padding(
@@ -189,12 +175,12 @@ class _MainFireeditState extends State<MainFireedit> {
                           ),
                         ],
                       ),
-                      child: Card(
-                        color: Colors.white,
+                      // child: Card(
+                        // color: Colors.white,
                         child: ListTile(
                           leading: const Text(
                             'คันบังคับ',
-                            style: TextStyle(fontSize: 17),
+                            style: TextStyle(fontSize: 14),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -203,7 +189,7 @@ class _MainFireeditState extends State<MainFireedit> {
                             ],
                           ),
                         ),
-                      ),
+                      // ),
                     ),
                   ),
                   Padding(
@@ -236,12 +222,12 @@ class _MainFireeditState extends State<MainFireedit> {
                           ),
                         ],
                       ),
-                      child: Card(
-                        color: Colors.white,
+                      // child: Card(
+                        // color: Colors.white,
                         child: ListTile(
                           leading: const Text(
                             'ตัวถัง',
-                            style: TextStyle(fontSize: 17),
+                            style: TextStyle(fontSize: 14),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -250,7 +236,7 @@ class _MainFireeditState extends State<MainFireedit> {
                             ],
                           ),
                         ),
-                      ),
+                      // ),
                     ),
                   ),
                   Padding(
@@ -283,12 +269,12 @@ class _MainFireeditState extends State<MainFireedit> {
                           ),
                         ],
                       ),
-                      child: Card(
-                        color: Colors.white,
+                      // child: Card(
+                        // color: Colors.white,
                         child: ListTile(
                           leading: const Text(
                             'เกจความดัน',
-                            style: TextStyle(fontSize: 17),
+                            style: TextStyle(fontSize: 14),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -296,7 +282,7 @@ class _MainFireeditState extends State<MainFireedit> {
                               gaugeRadio(),
                             ],
                           ),
-                        ),
+                        // ),
                       ),
                     ),
                   ),
@@ -330,12 +316,12 @@ class _MainFireeditState extends State<MainFireedit> {
                           ),
                         ],
                       ),
-                      child: Card(
-                        color: Colors.white,
+                      // child: Card(
+                        // color: Colors.white,
                         child: ListTile(
                           leading: const Text(
                             'สิ่งกีดขวาง',
-                            style: TextStyle(fontSize: 17),
+                            style: TextStyle(fontSize: 14),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -344,145 +330,10 @@ class _MainFireeditState extends State<MainFireedit> {
                             ],
                           ),
                         ),
-                      ),
+                      // ),
                     ),
                   ),
-                  // Container(
-                  //   child: Row(
-                  //     children: [
-                  //       Column(
-                  //         children: [
-                  //           Row(
-                  //             children: [
-                  //               Text(
-                  //                 ' สถานะ ',
-                  //                 style: TextStyle(fontSize: 17),
-                  //               ),
-                  //             ],
-                  //           ),
-                  //         ],
-                  //       ),
-                  //       Row(
-                  //         children: [
-                  //           Radio(
-                  //             activeColor: Colors.pink,
-                  //             value: 'Y',
-                  //             groupValue: active,
-                  //             onChanged: (value) {
-                  //               setState(() {
-                  //                 active = value!;
-                  //               });
-                  //             },
-                  //           ),
-                  //           Text(
-                  //             'ปกติ',
-                  //             style: TextStyle(fontSize: 17),
-                  //           ),
-                  //           Radio(
-                  //             activeColor: Colors.pink,
-                  //             value: 'N',
-                  //             groupValue: active,
-                  //             onChanged: (value) {
-                  //               setState(() {
-                  //                 active = value!;
-                  //               });
-                  //             },
-                  //           ),
-                  //           Text(
-                  //             'ชำรุด',
-                  //             style: TextStyle(fontSize: 17),
-                  //           ),
-                  //           Radio(
-                  //             activeColor: Colors.pink,
-                  //             value: 'D',
-                  //             groupValue: active,
-                  //             onChanged: (value) {
-                  //               setState(() {
-                  //                 active = value!;
-                  //               });
-                  //             },
-                  //           ),
-                  //           Text(
-                  //             'ส่งซ่อม',
-                  //             style: TextStyle(fontSize: 17),
-                  //           ),
-                  //         ],
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
-                  // Container(
-                  //   child: Row(
-                  //     children: [
-                  //       Column(
-                  //         children: [
-                  //           Row(
-                  //             children: [
-                  //               Text(
-                  //                 '                              ',
-                  //                 style: TextStyle(fontSize: 17),
-                  //               ),
-                  //             ],
-                  //           ),
-                  //         ],
-                  //       ),
-                  //       Row(
-                  //         children: [
-                  //           Radio(
-                  //             activeColor: Colors.pink,
-                  //             value: 'N',
-                  //             groupValue: active,
-                  //             onChanged: (value) {
-                  //               setState(() {
-                  //                 active = value!;
-                  //               });
-                  //             },
-                  //           ),
-                  //           Text(
-                  //             'ชำรุด',
-                  //             style: TextStyle(fontSize: 17),
-                  //           ),
-                  //         ],
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
-                  // Container(
-                  //   child: Row(
-                  //     children: [
-                  //       Column(
-                  //         children: [
-                  //           Row(
-                  //             children: [
-                  //               Text(
-                  //                 '                              ',
-                  //                 style: TextStyle(fontSize: 17),
-                  //               ),
-                  //             ],
-                  //           ),
-                  //         ],
-                  //       ),
-                  //       Row(
-                  //         children: [
-                  //           Radio(
-                  //             activeColor: Colors.pink,
-                  //             value: 'R',
-                  //             groupValue: active,
-                  //             onChanged: (value) {
-                  //               setState(() {
-                  //                 active = value!;
-                  //               });
-                  //             },
-                  //           ),
-                  //           Text(
-                  //             'ส่งซ่อม',
-                  //             style: TextStyle(fontSize: 17),
-                  //           ),
-                  //         ],
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
+                 
                 ],
               ),
             ),
@@ -506,7 +357,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ', style: TextStyle(fontSize: 17)),
+            const Text('ปกติ', style: TextStyle(fontSize: 14)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -517,7 +368,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด', style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด', style: TextStyle(fontSize: 14)),
           ],
         ),
       );
@@ -533,7 +384,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ', style: TextStyle(fontSize: 17)),
+            const Text('ปกติ', style: TextStyle(fontSize: 14)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -544,7 +395,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด', style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด', style: TextStyle(fontSize: 14)),
           ],
         ),
       );
@@ -561,7 +412,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ', style: TextStyle(fontSize: 17)),
+            const Text('ปกติ', style: TextStyle(fontSize: 14)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -572,7 +423,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด', style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด', style: TextStyle(fontSize: 14)),
           ],
         ),
       );
@@ -589,7 +440,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ', style: TextStyle(fontSize: 17)),
+            const Text('ปกติ', style: TextStyle(fontSize: 14)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -600,7 +451,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด', style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด', style: TextStyle(fontSize: 14)),
           ],
         ),
       );
@@ -617,7 +468,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ปกติ', style: TextStyle(fontSize: 17)),
+            const Text('ปกติ', style: TextStyle(fontSize: 14)),
             Radio(
               activeColor: Colors.pink,
               value: '1',
@@ -628,7 +479,7 @@ class _MainFireeditState extends State<MainFireedit> {
                 });
               },
             ),
-            const Text('ชำรุด', style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด', style: TextStyle(fontSize: 14)),
           ],
         ),
       );
@@ -639,26 +490,26 @@ class _MainFireeditState extends State<MainFireedit> {
       children: [
         Container(
           margin: const EdgeInsets.symmetric(vertical: 18),
-          width: size * 0.6,
+          width: size * 0.5,
           child: Padding(
             padding: const EdgeInsets.only(top: 3),
             child: ElevatedButton.icon(
               icon: const Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(5.0),
                 child: Icon(
                   Icons.save_as,
                   color: Color.fromARGB(255, 8, 190, 166),
-                  size: 50.0,
+                  size: 25.0,
                 ),
               ),
               label: Text(
                 'แก้ไข',
-                style: MyConstant().h2save(),
+                style: MyConstant().h1save(),
               ),
               onPressed: () => comfirmDialog(),
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderRadius: BorderRadius.circular(30.0),
                   ),
                   backgroundColor: const Color.fromARGB(255, 222, 248, 244)),
             ),

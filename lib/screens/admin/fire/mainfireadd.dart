@@ -176,47 +176,35 @@ class _MainFireaddState extends State<MainFireadd> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                          radius: 60,
+                          radius: 30,
                           child: Icon(
                             Icons.qr_code_scanner_sharp,
                             color: Colors.orange,
-                            size: 60,
+                            size: 30,
                           ),
                         ),
                       ],
                     ),
                   ),
-                ),
-                const Center(
-                  child: SizedBox(
-                    height: 10,
-                  ),
-                ),
-                const Text('SCAN QRCODE FIRE EXTINGUISHER'),
-                const Center(
-                  child: SizedBox(
-                    height: 3,
-                  ),
-                ),
-                // textNum(),
-
+                ),               
+                // const Text('SCAN QRCODE FIRE EXTINGUISHER'),
+                // const Center(
+                //   child: SizedBox(
+                //     height: 3,
+                //   ),
+                // ), 
                 Text(
                   'รหัสถังดับเพลิง :$firenums',
                   // 'รหัสถังดับเพลิง : $firenum',
                   style: const TextStyle(fontSize: 18),
                 ),
-
-                // Text(
-                //   fireModel[index]
-                //       .fire_num!,
-                //   style: MyConstant().h4darknarmal(),),
-
+ 
                 Padding(
                   padding: const EdgeInsets.only(
-                    top: 15,
-                    bottom: 10,
-                    left: 10,
-                    right: 10,
+                    top: 2,
+                    bottom: 2,
+                    left: 5,
+                    right: 5,
                   ),
                   child: Container(
                     decoration: BoxDecoration(
@@ -242,12 +230,12 @@ class _MainFireaddState extends State<MainFireadd> {
                         ),
                       ],
                     ),
-                    child: Card(
-                      color: Colors.white,
+                    // child: Card(
+                      // color: Colors.white,                      
                       child: ListTile(
                         leading: const Text(
                           'สายฉีด',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 14),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -256,12 +244,12 @@ class _MainFireaddState extends State<MainFireadd> {
                           ],
                         ),
                       ),
-                    ),
+                    // ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 10, right: 10),
+                      top: 2, bottom: 5, left: 5, right: 5),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -286,12 +274,12 @@ class _MainFireaddState extends State<MainFireadd> {
                         ),
                       ],
                     ),
-                    child: Card(
-                      color: Colors.white,
+                    // child: Card(
+                      // color: Colors.white,
                       child: ListTile(
                         leading: const Text(
                           'คันบังคับ',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 14),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -300,12 +288,12 @@ class _MainFireaddState extends State<MainFireadd> {
                           ],
                         ),
                       ),
-                    ),
+                    // ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 10, right: 10),
+                      top: 2, bottom: 5, left: 5, right: 5),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -330,12 +318,12 @@ class _MainFireaddState extends State<MainFireadd> {
                         ),
                       ],
                     ),
-                    child: Card(
-                      color: Colors.white,
+                    // child: Card(
+                      // color: Colors.white,
                       child: ListTile(
                         leading: const Text(
                           'ตัวถัง',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 14),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -344,12 +332,12 @@ class _MainFireaddState extends State<MainFireadd> {
                           ],
                         ),
                       ),
-                    ),
+                    // ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 10, left: 10, right: 10),
+                      top: 2, bottom: 5, left: 5, right: 5),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -374,12 +362,12 @@ class _MainFireaddState extends State<MainFireadd> {
                         ),
                       ],
                     ),
-                    child: Card(
-                      color: Colors.white,
+                    // child: Card(
+                      // color: Colors.white,
                       child: ListTile(
                         leading: const Text(
                           'เกจความดัน',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 14),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -388,12 +376,12 @@ class _MainFireaddState extends State<MainFireadd> {
                           ],
                         ),
                       ),
-                    ),
+                    // ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 3, bottom: 2, left: 10, right: 10),
+                      top: 2, bottom: 2, left: 5, right: 5),
                   child: Container(
                     decoration: BoxDecoration(
                       border: const Border(
@@ -418,12 +406,12 @@ class _MainFireaddState extends State<MainFireadd> {
                         ),
                       ],
                     ),
-                    child: Card(
-                      color: Colors.white,
+                    // child: Card(
+                      // color: Colors.white,
                       child: ListTile(
                         leading: const Text(
                           'สิ่งกีดขวาง',
-                          style: TextStyle(fontSize: 17),
+                          style: TextStyle(fontSize: 14),
                         ),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -432,7 +420,7 @@ class _MainFireaddState extends State<MainFireadd> {
                           ],
                         ),
                       ),
-                    ),
+                    // ),
                   ),
                 ),
               ],
@@ -457,11 +445,11 @@ class _MainFireaddState extends State<MainFireadd> {
             padding: const EdgeInsets.only(top: 2,bottom: 30),
             child: ElevatedButton.icon(
               icon: const Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(5.0),
                 child: Icon(
                   Icons.save_as,
                   color: Color.fromARGB(255, 8, 190, 166),
-                  size: 30.0,
+                  size: 25.0,
                 ),
               ),
               label: Text(
@@ -471,7 +459,7 @@ class _MainFireaddState extends State<MainFireadd> {
               onPressed: () => comfirmDialog(),
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderRadius: BorderRadius.circular(30.0),
                   ),
                   backgroundColor: const Color.fromARGB(255, 222, 248, 244)),
             ),
@@ -623,6 +611,7 @@ class _MainFireaddState extends State<MainFireadd> {
     String path =
         // '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_num=$_scanBarcode&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
          '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_id=$_scanBarcode&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
+        //  '${MyConstant.domain}/pkbackoffice/public/api/getfirenumnewsave/fire_id=$_scanBarcode/user_id=$id/fire_check_injection=$injectionStatus/fire_check_joystick=$joystickStatus/fire_check_body=$bodyStatus/fire_check_gauge=$gaugeStatus/fire_check_drawback=$drawbackStatus';
     await Dio().get(path).then((value) async {
       String dd = value.toString();
       print('######## Vaaaaaaaaaa = $dd');
@@ -669,7 +658,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 17)),
+            const Text('ปกติ',style: TextStyle(fontSize: 14)),
             Radio(
                 activeColor: Colors.pink,
               value: '1',
@@ -680,7 +669,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 14)),
           ],
         ),
       );
@@ -697,7 +686,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 17)),
+            const Text('ปกติ',style: TextStyle(fontSize: 14)),
             Radio(
                 activeColor: Colors.pink,
               value: '1',
@@ -708,7 +697,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 14)),
           ],
         ),
       );
@@ -725,7 +714,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 17)),
+            const Text('ปกติ',style: TextStyle(fontSize: 14)),
             Radio(  activeColor: Colors.pink,
               value: '1',
               groupValue: bodyStatus,
@@ -735,7 +724,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 14)),
           ],
         ),
       );
@@ -752,7 +741,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 17)),
+            const Text('ปกติ',style: TextStyle(fontSize: 14)),
             Radio(  activeColor: Colors.pink,
               value: '1',
               groupValue: gaugeStatus,
@@ -762,7 +751,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 14)),
           ],
         ),
       );
@@ -779,7 +768,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ปกติ',style: TextStyle(fontSize: 17)),
+            const Text('ปกติ',style: TextStyle(fontSize: 14)),
             Radio(  activeColor: Colors.pink,
               value: '1',
               groupValue: drawbackStatus,
@@ -789,7 +778,7 @@ class _MainFireaddState extends State<MainFireadd> {
                 });
               },
             ),
-            const Text('ชำรุด',style: TextStyle(fontSize: 17)),
+            const Text('ชำรุด',style: TextStyle(fontSize: 14)),
           ],
         ),
       );
