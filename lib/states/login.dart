@@ -289,7 +289,7 @@ class _LoginState extends State<Login> {
           decoration: const BoxDecoration(
             // shape: BoxShape.circle,
             image: DecorationImage(
-                image: AssetImage("images/Logopk.png"), fit: BoxFit.cover),
+                image: AssetImage("images/Logo_new.png"), fit: BoxFit.cover),
           ),
           margin: const EdgeInsets.only(top: 120),
           // width: size * 0.3,
