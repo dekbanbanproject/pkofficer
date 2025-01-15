@@ -43,7 +43,7 @@ class _MainFireaddState extends State<MainFireadd> {
   late String drawbackStatus = '';
   List<FireListmodel> firelistmodel = [];
   List<Firemodel> fireModel = [];
-  String? firenum,fireid;
+  String? firenum,fireid,firenums;
 
 
   @override
@@ -66,8 +66,9 @@ class _MainFireaddState extends State<MainFireadd> {
 
     setState(() {
       _scanBarcode = barcodeScanRes;
-      getFiredata();
+     
       listFire();
+      // getFiredata();
     });
   }
 
@@ -81,100 +82,78 @@ class _MainFireaddState extends State<MainFireadd> {
     // return await Future.delayed(const Duration(seconds: 2));
     setState(() => injectionStatus.isEmpty);
   }
+ 
 
-  Future<Null> listFire() async {
-    
-    final apifire = '${MyConstant.domain}/pkoffice/api/getfirenum.php?isAdd=true&fire_num=$_scanBarcode';
+   Future<Null> listFire() async {
+    if (fireModel.isNotEmpty) {
+      fireModel.clear();
+    } else {}
+    final apifire = '${MyConstant.domain}/pkoffice/api/fire.php?isAdd=true&fire_id=$_scanBarcode';
     await Dio().get(apifire).then((value) async {
-      // print('## value for API  ==>  $value');
+      print('## value for API  ==>  $value');
       for (var item in json.decode(value.data!)) {
         Firemodel model = Firemodel.fromJson(item);
-        var firename = model.fire_num!.toString();
-        print('### ==------->>>$firename');
+        var firenum = model.fire_num!.toString();
+         var fireid = model.fire_id!.toString();
+         print('### ==>>>==========>>>> $fireid');
+        print('### ==>>>==========>>>> $firenum');
         setState(() {
-          fireModel.add(model); 
+          fireModel.add(model);
+          // fire_nums = fireModel.toString();
+          firenums = firenum;
         });
+        print('### ==>>>==========>>>> $firenums');
       }
     });
   }
 
-  Future<Null> getFiredata() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    String id = preferences.getString('id')!;
-    print('######## => userid = $id');
-    // print('######## => Active = $fireStatus');
 
-//  final apifire = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=$_scanBarcode';
-    // String apifire =
-        // '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fireNum=$_scanBarcode';
-    // final path = '${MyConstant.getFiredata}fire_id=$_scanBarcode';
-    //  final path = '${MyConstant.getFiredata}fireNum=$_scanBarcode';
-      // final path = '${MyConstant.domain}/pkoffice/api/getFiredata.php?isAdd=true';
-    //  'http://192.168.0.217/pkbackoffice/public/api/getfire/F88888888';
-     print('##scanBarcode  ====>>>==>$_scanBarcode');
- final apifire2 = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=$_scanBarcode';
-//  final apifire = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=FR020104';
-  //  final apifire = MyConstant.getfirenumnew;
+//   Future<Null> getFiredata() async {
+//     SharedPreferences preferences = await SharedPreferences.getInstance();
+//     String id = preferences.getString('id')!;
+//     print('######## => userid = $id');
+//     // print('######## => Active = $fireStatus');
+
+// //  final apifire = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=$_scanBarcode';
+//     // String apifire =
+//         // '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fireNum=$_scanBarcode';
+//     // final path = '${MyConstant.getFiredata}fire_id=$_scanBarcode';
+//     //  final path = '${MyConstant.getFiredata}fireNum=$_scanBarcode';
+//       // final path = '${MyConstant.domain}/pkoffice/api/getFiredata.php?isAdd=true';
+//     //  'http://192.168.0.217/pkbackoffice/public/api/getfire/F88888888';
+//      print('##scanBarcode  ====>>>==>$_scanBarcode');
+//  final apifire2 = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=$_scanBarcode';
+// //  final apifire = '${MyConstant.domain}/pkoffice/api/getfire_detailsave.php?isAdd=true&fire_num=FR020104';
+//   //  final apifire = MyConstant.getfirenumnew;
      
-    await Dio().get(apifire2).then((value) async {
-      // String dd = value.toString();
-      print('## value for API  ====>>>==>  $value');
-      for (var item in json.decode(value.data!)) {
-        FireListmodel model = FireListmodel.fromJson(item);
-        var fireId = model.fire_id!.toString();
-        var fireNum = model.fire_num!.toString();
-        print('###fireNum ======================================== >>>$fireNum');
-        print('###fireId  =========================================== >>>$fireId');
-        setState(() {
-          firelistmodel.add(model);
-          firenum = fireNum;
-          fireid  = fireId;
-        });
-      }
+//     await Dio().get(apifire2).then((value) async {
+//       // String dd = value.toString();
+//       print('## value for API  ====>>>==>  $value');
+//       for (var item in json.decode(value.data!)) {
+//         // FireListmodel model = FireListmodel.fromJson(item);
+//         Firemodel model = Firemodel.fromJson(item);
+//         var fireId = model.fire_id!.toString();
+//         var fireNum = model.fire_num!.toString();
+//         print('###fireNum ======================================== >>>$fireNum');
+//         print('###fireId  =========================================== >>>$fireId');
+//         setState(() {
+//           fireModel.add(model);
+//           firenum = fireNum;
+//           fireid  = fireId;
+//         });
+//       }
 
      
 
-    });
-  }
-  // Future<List<FireListmodel>> getFiredata() async {
-  //   final response = await http.get(Uri.parse(
-  //       'http://192.168.0.217/pkbackoffice/public/api/getfire/F88888888'));
-  //   var data = jsonDecode(response.body.toString());
-  //   print('## value Alll for API  ==>  $data');
-  //   if (response.statusCode == 200) {
-  //     firelistmodel.clear();
-  //     for (var i in data) {
-  //       firelistmodel.add(FireListmodel.fromJson(i));
-  //       // FireListmodel model = FireListmodel.fromJson(i);
-  //       // var fire_id = model.fire_id!.toString();
-  //        print('## value fire_id for API  ==>  $firelistmodel');
-  //     }
-  //     return firelistmodel;
-  //   } else {
-  //     return firelistmodel;
-  //   }
-  // }
+//     });
+//   }
+   
 
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: const Color.fromARGB(255, 222, 248, 244),
-      //   title: const Padding(
-      //     padding: EdgeInsets.only(right: 30),
-      //     child: Center(
-      //       child: Text(
-      //         'บันทึกข้อมูลถังดับเพลิง',
-      //         // _gleaveModel.LEAVE_PERSON_FULLNAME,
-      //         style: TextStyle(
-      //             fontSize: 20,
-      //             fontFamily: 'Kanit-Regular',
-      //             color: Color.fromARGB(255, 8, 190, 166)),
-      //       ),
-      //     ),
-      //   ),
-      // ),
+ 
       body: LiquidPullToRefresh(
         onRefresh: _refreshpage,
         color: Colors.deepPurple, height: 200,
@@ -220,11 +199,18 @@ class _MainFireaddState extends State<MainFireadd> {
                   ),
                 ),
                 // textNum(),
+
                 Text(
-                  'รหัสถังดับเพลิง :$_scanBarcode',
+                  'รหัสถังดับเพลิง :$firenums',
                   // 'รหัสถังดับเพลิง : $firenum',
                   style: const TextStyle(fontSize: 18),
                 ),
+
+                // Text(
+                //   fireModel[index]
+                //       .fire_num!,
+                //   style: MyConstant().h4darknarmal(),),
+
                 Padding(
                   padding: const EdgeInsets.only(
                     top: 15,
@@ -636,7 +622,7 @@ class _MainFireaddState extends State<MainFireadd> {
 // fireId
     String path =
         // '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_num=$_scanBarcode&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
-         '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_id=$fireid&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
+         '${MyConstant.domain}/pkoffice/api/getfireinsert.php?isAdd=true&fire_id=$_scanBarcode&user_id=$id&fire_check_injection=$injectionStatus&fire_check_joystick=$joystickStatus&fire_check_body=$bodyStatus&fire_check_gauge=$gaugeStatus&fire_check_drawback=$drawbackStatus';
     await Dio().get(path).then((value) async {
       String dd = value.toString();
       print('######## Vaaaaaaaaaa = $dd');

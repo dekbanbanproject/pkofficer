@@ -49,8 +49,8 @@
                     $budget_year      = $row_y[0]; 
                 }
             }
-            
-            $result = mysqli_query($conn,"SELECT * FROM fire WHERE fire_num = '$fire_num' AND fire_year = '$budget_year'");
+            $result = mysqli_query($conn,"SELECT * FROM fire WHERE fire_num = '$fire_num'");
+            // $result = mysqli_query($conn,"SELECT * FROM fire WHERE fire_num = '$fire_num' AND fire_year = '$budget_year'");
 
             // $sql = "SELECT * FROM cctv_check WHERE cctv_check_date BETWEEN '$newDate' AND '$date' AND fire_extinguisher='Y' ORDER BY cctv_check_date DESC";
             // $result = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
