@@ -52,13 +52,13 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 1, left: 10, right: 10),
+          padding: const EdgeInsets.only(top: 1, left: 1, right: 1),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 15),
               Padding(
-                padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
+                padding: const EdgeInsets.only(top: 30, left: 2, right: 2),
                 child: CustomAppBar(),
               ),
               Padding(
@@ -70,64 +70,7 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
                   ],
                 ),
               ),
-              // Row(
-              //   children: [
-              //     Padding(
-              //       padding: const EdgeInsets.all(8.0),
-              //       child: Text(
-              //         'รหัสถังดับเพลิง',
-              //         style: MyConstant().h3header(),
-              //       ),
-              //     ),
-              //     Padding(
-              //       padding: const EdgeInsets.all(8.0),
-              //       child: Text(
-              //         'ขนาด(ปอนด์)',
-              //         style: MyConstant().h3header(),
-              //       ),
-              //     ),
-              //     Padding(
-              //       padding: const EdgeInsets.only(left: 40, right: 20),
-              //       child: Text(
-              //         'ถังสี',
-              //         style: MyConstant().h3header(),
-              //       ),
-              //     ),
-              //     Padding(
-              //       padding: const EdgeInsets.only(left: 30, right: 20),
-              //       child: Text(
-              //         'สถานที่ติดตั้ง',
-              //         style: MyConstant().h3header(),
-              //       ),
-              //     ),
-              //     // Padding(
-              //     //   padding: const EdgeInsets.only(left: 20, right: 20),
-              //     //   child: Text(
-              //     //     'ตัวถัง',
-              //     //     style: MyConstant().h3header(),
-              //     //   ),
-              //     // ),
-              //     // Padding(
-              //     //   padding: const EdgeInsets.only(left: 20, right: 20),
-              //     //   child: Text(
-              //     //     'เกจความดัน',
-              //     //     style: MyConstant().h3header(),
-              //     //   ),
-              //     // ),
-              //     // Padding(
-              //     //   padding: const EdgeInsets.only(left: 20, right: 20),
-              //     //   child: Text(
-              //     //     'สิ่งกีดขวาง',
-              //     //     style: MyConstant().h3header(),
-              //     //   ),
-              //     // ),
-              //   ],
-              // ),
-              
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 10),
-              //   child: buildSearch(),
-              // ),
+               
               Padding(
                 padding: const EdgeInsets.only(top: 10),
                 child: buildListView(),
@@ -178,7 +121,7 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
           children: [
             Padding(
               padding:
-                  const EdgeInsets.only(left: 0, right: 0, top: 3, bottom: 3),
+                  const EdgeInsets.only(left: 2, right: 2, top: 3, bottom: 3),
               child: Container(
                 height: 55,
                 width: double.infinity,
@@ -215,42 +158,23 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
                           mainAxisAlignment: MainAxisAlignment.start,
                            
                               children: [ 
-                                // Text(
-                                //   searchfireModel[index].check_date!,
-                                //   style: MyConstant().h4dark(),
-                                // ),
-                                // Padding(
-                                //   padding: const EdgeInsets.only(left: 30,right: 40),
-                                //   child: Text(
-                                //     searchfireModel[index]
-                                //         .fire_check_injection_name!,
-                                //     style: MyConstant().h4dark(),
-                                //   ),
-                                // ),
-                                // Padding(
-                                //   padding: const EdgeInsets.only(left: 30,right: 40),
-                                //   child: Text(
-                                //     searchfireModel[index]
-                                //         .fire_check_joystick_name!,
-                                //     style: MyConstant().h4dark(),
-                                //   ),
-                                // ),
+                               
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 50,right: 50),
+                                  padding: const EdgeInsets.only(left: 2,right: 2),
                                   child: Text(
                                     searchfireModel[index].fire_size!,
                                     style: MyConstant().h4dark(),
                                   ),
                                 ),
                                  Padding(
-                                   padding: const EdgeInsets.only(left: 30,right: 20),
+                                   padding: const EdgeInsets.only(left: 10,right: 2),
                                    child: Text(
                                     searchfireModel[index].fire_color!,
                                     style: MyConstant().h4dark(),
                                                                    ),
                                  ),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 30,right: 10),
+                                  padding: const EdgeInsets.only(left: 10,right: 2),
                                   child: Text(
                                     searchfireModel[index]
                                         .fire_location!,
@@ -260,39 +184,7 @@ class _MainFirerepaireState extends State<MainFirerepaire> {
                               ],
                           
                         ),
-                        // subtitle: Row(
-                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //   children: [
-                        //     // Text(
-                        //     //   searchfireModel[index].fire_num!,
-                        //     //   style: MyConstant().h3dark(),
-                        //     // ),
-                        // Text(
-                        //   searchfireModel[index].check_date!,
-                        //   style: MyConstant().h3dark(),
-                        // ),
-                        //     Text(
-                        //       searchfireModel[index].fire_check_injection_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //     Text(
-                        //      searchfireModel[index].fire_check_joystick_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //     Text(
-                        //        searchfireModel[index].fire_check_body_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //     Text(
-                        //       searchfireModel[index].fire_check_gauge_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //     Text(
-                        //       searchfireModel[index].fire_check_drawback_name!,
-                        //       style: MyConstant().h3dark(),
-                        //     ),
-                        //   ],
-                        // ),
+                       
                       ),
                     ),
               ),

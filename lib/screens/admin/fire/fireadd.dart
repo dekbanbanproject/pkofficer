@@ -15,14 +15,14 @@ class _FireAddPageState extends State<FireAddPage> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(top: 1, left: 10, right: 10),
+          padding: EdgeInsets.only(top: 1, left: 1, right: 1),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 15),
               //for custom appbar
               Padding(
-                padding: EdgeInsets.only(top: 30, left: 15, right: 15),
+                padding: EdgeInsets.only(top: 30, left: 2, right: 2),
                 child: CustomAppBar(),
               ),
               //for searchbar
