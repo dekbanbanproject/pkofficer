@@ -14,7 +14,7 @@ class MyConstant {
 
   static String appName = 'PK-OFFice';
   static String appbar = 'PK-OFFice';
-  static String version = '  V.680115';
+  static String version = '  V.680127';
   // static String domain = 'http://27.254.191.157/';
   static String domain = 'http://smarthos-phukieohos.moph.go.th';
   // static String authenspsch              = 'http://smarthos-phukieohos.moph.go.th/pkbackoffice/public/api/authen_spsch';
