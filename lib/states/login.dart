@@ -137,6 +137,10 @@ class _LoginState extends State<Login> {
                 Navigator.pushNamedAndRemoveUntil(
                     context, MyConstant.routeUserPage, (route) => false);
                 break;
+              case 'PATIENT':
+                Navigator.pushNamedAndRemoveUntil(
+                    context, MyConstant.routePatientPage, (route) => false);
+                break;
 
               default:
             }

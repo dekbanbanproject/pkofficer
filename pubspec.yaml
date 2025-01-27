@@ -61,6 +61,7 @@ dependencies:
   json_table: ^2.0.1
   syncfusion_flutter_charts: ^25.1.38
   pdftron_flutter: ^1.0.1-20
+  audioplayers: ^6.1.0
 
 dev_dependencies:
   build_runner: ^2.4.9

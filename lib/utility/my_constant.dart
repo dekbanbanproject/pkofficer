@@ -107,6 +107,7 @@ class MyConstant {
   static String routeLogin = '/login';
   static String routeHome = '/home';
   static String routeUserPage = '/user';
+   static String routePatientPage = '/patient';
   static String routeCameracctv = '/cameracctv';
   static String routeCctvhome = '/cctvhome';
   static String routeAdminPage = '/admin';

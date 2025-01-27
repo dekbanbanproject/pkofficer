@@ -18,6 +18,7 @@ import 'package:pkofficer/states/adminnew.dart';
 import 'package:pkofficer/states/cameracctv.dart';
 import 'package:pkofficer/states/home.dart';
 import 'package:pkofficer/states/login.dart';
+import 'package:pkofficer/states/patient.dart';
 import 'package:pkofficer/states/user.dart';
 import 'package:pkofficer/utility/my_constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,6 +29,7 @@ final Map<String, WidgetBuilder> map = {
   '/admin': (BuildContext context) => const AdminPage(),
   '/adminnew': (BuildContext context) => const AdminNew(),
   '/user': (BuildContext context) => const UserPage(),
+  '/patient': (BuildContext context) => const PatientPage(),
   '/cameracctv': (BuildContext context) => const CameraCCtv(),
   '/cctvhome': (BuildContext context) => const HomePage(),
   '/cctvadd': (BuildContext context) => const MainCctvAdd(),
@@ -66,6 +68,10 @@ Future<Null> main() async {
         break;
       case 'USER':
         initlalRoute = MyConstant.routeUserPage;
+        runApp(const MyApp());
+        break;
+      case 'PATIENT':
+        initlalRoute = MyConstant.routePatientPage;
         runApp(const MyApp());
         break;
       default:
