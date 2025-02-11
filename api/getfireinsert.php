@@ -111,7 +111,7 @@
             if ($data_counts < 1) {
                
                 $sql = "INSERT INTO `fire_check` (`fire_check_id`,`fire_year`,`fire_backup`,`check_date`,`check_time`,`fire_num`,`fire_name`,`user_id`,`fire_check_injection`,`fire_check_injection_name`,`fire_check_joystick`,`fire_check_joystick_name`,`fire_check_body`,`fire_check_body_name`,`fire_check_gauge`,`fire_check_gauge_name`,`fire_check_drawback`,`fire_check_drawback_name`,`fire_check_location`,`fire_check_color`,`fire_id`,`fire_size`) 
-                    VALUES(Null,'$fire_year','N','$date','$mm','$fire_num','$fire_name','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_location','$fire_color','$fire_id','$fire_size')";
+                    VALUES(Null,'$budget_year','N','$date','$mm','$fire_num','$fire_name','$user_id','$fire_check_injection','$fire_check_injection_name','$fire_check_joystick','$fire_check_joystick_name','$fire_check_body','$fire_check_body_name','$fire_check_gauge','$fire_check_gauge_name','$fire_check_drawback','$fire_check_drawback_name','$fire_location','$fire_color','$fire_id','$fire_size')";
                     $resultnew = mysqli_query($conn, $sql) or die ("Error : $sql" .mysqli_error());
 
                     if ($fire_check_injection =='1' || $fire_check_joystick == '1' || $fire_check_body=='1' || $fire_check_gauge == '1' || $fire_check_drawback =='1') {
